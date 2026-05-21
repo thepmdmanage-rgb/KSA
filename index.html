@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" translate="no">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
 <title>사단법인 1인가구협회 | KSA</title>
 <meta name="description" content="1인가구협회(KSA)는 1인 가구의 권익 증진과 사회적 연결망 강화를 위한 정책 연구, 교육, 지역사회 연계 사업을 수행하는 비영리 공익단체입니다.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +44,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif;
   color: var(--text);
   background: var(--white);
   line-height: 1.75;
@@ -74,7 +75,7 @@ body {
 section { padding: 80px 0; }
 
 .sl { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
-.st { font-family: 'Noto Serif KR', serif; font-size: clamp(24px, 2.8vw, 34px); font-weight: 700; color: var(--navy); line-height: 1.4; margin-bottom: 12px; }
+.st { font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Malgun Gothic', serif; font-size: clamp(24px, 2.8vw, 34px); font-weight: 700; color: var(--navy); line-height: 1.4; margin-bottom: 12px; }
 .ss { color: var(--muted); font-size: 15px; line-height: 1.9; max-width: 560px; }
 .dg { width: 38px; height: 3px; background: var(--gold); margin: 16px 0 44px; border-radius: 2px; }
 
@@ -100,14 +101,14 @@ header { background: var(--white); border-bottom: 1px solid var(--border); posit
 .header-inner { display: flex; align-items: stretch; justify-content: space-between; height: 72px; }
 
 .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; cursor: pointer; background: none; border: none; font-family: inherit; }
-.logo-em { width: 42px; height: 42px; background: var(--navy); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: var(--gold); font-family: 'Noto Serif KR', serif; font-size: 14px; font-weight: 700; }
-.logo-tx .ko { font-family: 'Noto Serif KR', serif; font-size: 16px; font-weight: 700; color: var(--navy); line-height: 1.2; display: block; }
+.logo-em { width: 42px; height: 42px; background: var(--navy); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: var(--gold); font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Malgun Gothic', serif; font-size: 14px; font-weight: 700; }
+.logo-tx .ko { font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Malgun Gothic', serif; font-size: 16px; font-weight: 700; color: var(--navy); line-height: 1.2; display: block; }
 .logo-tx .en { font-size: 11px; color: var(--muted-light); letter-spacing: .8px; display: block; }
 
 /* 데스크탑 네비 */
 .main-nav { display: flex; align-items: stretch; }
 .ni { position: relative; display: flex; align-items: center; }
-.nl { display: flex; align-items: center; gap: 4px; color: var(--text); text-decoration: none; font-size: 14px; font-weight: 500; padding: 0 14px; height: 100%; border: none; background: none; border-bottom: 3px solid transparent; transition: color var(--transition), border-color var(--transition); white-space: nowrap; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; }
+.nl { display: flex; align-items: center; gap: 4px; color: var(--text); text-decoration: none; font-size: 14px; font-weight: 500; padding: 0 14px; height: 100%; border: none; background: none; border-bottom: 3px solid transparent; transition: color var(--transition), border-color var(--transition); white-space: nowrap; cursor: pointer; font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif; }
 .nl:hover, .ni:hover .nl { color: var(--navy); border-bottom-color: var(--teal); }
 .arr { font-size: 10px; color: var(--muted-light); transition: transform var(--transition); }
 .ni:hover .arr { transform: rotate(180deg); }
@@ -117,7 +118,7 @@ header { background: var(--white); border-bottom: 1px solid var(--border); posit
 /* 드롭다운 */
 .dd { position: absolute; top: calc(100% + 1px); left: 50%; transform: translateX(-50%) translateY(6px); background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--teal); box-shadow: var(--shadow-md); border-radius: 0 0 var(--radius) var(--radius); min-width: 190px; opacity: 0; pointer-events: none; transition: opacity var(--transition), transform var(--transition); z-index: 300; }
 .ni:hover .dd { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
-.dd a, .dd button { display: block; width: 100%; text-align: left; padding: 11px 22px; font-size: 14px; color: var(--text); text-decoration: none; border: none; background: none; border-bottom: 1px solid var(--cream); cursor: pointer; font-family: 'Noto Sans KR', sans-serif; transition: background var(--transition), color var(--transition); white-space: nowrap; }
+.dd a, .dd button { display: block; width: 100%; text-align: left; padding: 11px 22px; font-size: 14px; color: var(--text); text-decoration: none; border: none; background: none; border-bottom: 1px solid var(--cream); cursor: pointer; font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif; transition: background var(--transition), color var(--transition); white-space: nowrap; }
 .dd a:last-child, .dd button:last-child { border-bottom: none; }
 .dd a:hover, .dd button:hover { background: var(--cream); color: var(--teal); }
 
@@ -128,7 +129,7 @@ header { background: var(--white); border-bottom: 1px solid var(--border); posit
 .mc:first-child { padding-left: 0; }
 .mc:last-child { border-right: none; padding-right: 0; }
 .mc-title { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; color: var(--teal); text-transform: uppercase; margin-bottom: 12px; padding-bottom: 9px; border-bottom: 1px solid var(--cream-dark); }
-.mc a, .mc button { display: block; width: 100%; text-align: left; padding: 9px 0; font-size: 13px; color: var(--text); background: none; border: none; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; transition: color var(--transition); line-height: 1.45; }
+.mc a, .mc button { display: block; width: 100%; text-align: left; padding: 9px 0; font-size: 13px; color: var(--text); background: none; border: none; cursor: pointer; font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif; transition: color var(--transition); line-height: 1.45; }
 .mc a:hover, .mc button:hover { color: var(--teal); }
 .mc .sd { display: block; font-size: 11px; color: var(--muted-light); margin-top: 2px; }
 
@@ -143,25 +144,25 @@ header { background: var(--white); border-bottom: 1px solid var(--border); posit
 .mobile-drawer { display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0; background: var(--white); z-index: 190; overflow-y: auto; padding: 20px 0 40px; transform: translateX(100%); transition: transform .3s ease; }
 .mobile-drawer.open { transform: translateX(0); }
 .mob-section { border-bottom: 1px solid var(--border); }
-.mob-section-title { display: flex; align-items: center; justify-content: space-between; padding: 15px 24px; font-size: 15px; font-weight: 600; color: var(--navy); background: none; border: none; width: 100%; text-align: left; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; }
+.mob-section-title { display: flex; align-items: center; justify-content: space-between; padding: 15px 24px; font-size: 15px; font-weight: 600; color: var(--navy); background: none; border: none; width: 100%; text-align: left; cursor: pointer; font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif; }
 .mob-section-title .arr { font-size: 11px; transition: transform .2s; }
 .mob-section-title.open .arr { transform: rotate(180deg); }
 .mob-sub { display: none; padding: 0 24px 14px 36px; }
 .mob-sub.open { display: block; }
-.mob-sub a, .mob-sub button { display: block; padding: 9px 0; font-size: 14px; color: var(--muted); text-decoration: none; background: none; border: none; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; border-bottom: 1px solid var(--cream-dark); width: 100%; text-align: left; transition: color var(--transition); }
+.mob-sub a, .mob-sub button { display: block; padding: 9px 0; font-size: 14px; color: var(--muted); text-decoration: none; background: none; border: none; cursor: pointer; font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif; border-bottom: 1px solid var(--cream-dark); width: 100%; text-align: left; transition: color var(--transition); }
 .mob-sub a:hover, .mob-sub button:hover { color: var(--teal); }
 .mob-sub a:last-child, .mob-sub button:last-child { border-bottom: none; }
-.mob-cta { margin: 22px 24px 0; display: block; background: var(--navy); color: var(--white) !important; text-align: center; padding: 14px; border-radius: 4px; font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; border: none; font-family: 'Noto Sans KR', sans-serif; width: calc(100% - 48px); }
+.mob-cta { margin: 22px 24px 0; display: block; background: var(--navy); color: var(--white) !important; text-align: center; padding: 14px; border-radius: 4px; font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; border: none; font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif; width: calc(100% - 48px); }
 
 /* ════ 서브페이지 배너 ════ */
 .page-banner { background: linear-gradient(135deg, #1a2e4a 0%, #243d5c 60%, #1a3d35 100%); padding: 64px 0 56px; position: relative; overflow: hidden; }
 .page-banner::after { content: ''; position: absolute; top: -60px; right: -40px; width: 320px; height: 320px; border-radius: 50%; border: 56px solid rgba(196,154,60,.08); }
 .page-banner .w { position: relative; z-index: 1; }
 .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,.5); margin-bottom: 16px; flex-wrap: wrap; }
-.breadcrumb a, .breadcrumb button { color: rgba(255,255,255,.5); text-decoration: none; background: none; border: none; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; font-size: 13px; padding: 0; transition: color var(--transition); }
+.breadcrumb a, .breadcrumb button { color: rgba(255,255,255,.5); text-decoration: none; background: none; border: none; cursor: pointer; font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif; font-size: 13px; padding: 0; transition: color var(--transition); }
 .breadcrumb a:hover, .breadcrumb button:hover { color: var(--gold-light); }
 .breadcrumb span { color: rgba(255,255,255,.3); }
-.page-banner h1 { font-family: 'Noto Serif KR', serif; font-size: clamp(24px, 3vw, 36px); color: var(--white); font-weight: 700; line-height: 1.35; margin-bottom: 12px; }
+.page-banner h1 { font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Malgun Gothic', serif; font-size: clamp(24px, 3vw, 36px); color: var(--white); font-weight: 700; line-height: 1.35; margin-bottom: 12px; }
 .page-banner .pg-desc { color: rgba(255,255,255,.65); font-size: 15px; line-height: 1.8; max-width: 560px; }
 .gold-line { width: 36px; height: 3px; background: var(--gold); border-radius: 2px; margin: 16px 0 0; }
 
@@ -178,19 +179,19 @@ header { background: var(--white); border-bottom: 1px solid var(--border); posit
 .eyebrow { display: inline-flex; align-items: center; gap: 9px; background: rgba(196,154,60,.14); border: 1px solid rgba(196,154,60,.35); color: var(--gold-light); font-size: 12px; letter-spacing: 2px; padding: 6px 16px; border-radius: 20px; margin-bottom: 24px; }
 .eyebrow-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold-light); animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
-.hero h1 { font-family: 'Noto Serif KR', serif; font-size: clamp(30px, 4vw, 52px); font-weight: 700; color: var(--white); line-height: 1.32; margin-bottom: 22px; }
+.hero h1 { font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Malgun Gothic', serif; font-size: clamp(30px, 4vw, 52px); font-weight: 700; color: var(--white); line-height: 1.32; margin-bottom: 22px; }
 .hero h1 em { color: var(--gold-light); font-style: normal; }
 .hero-desc { color: rgba(255,255,255,.80); font-size: 16px; line-height: 1.85; margin-bottom: 36px; max-width: 480px; }
 .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
-.btn-gold { background: var(--gold); color: var(--navy-dark); padding: 13px 30px; font-size: 15px; font-weight: 600; text-decoration: none; border-radius: 4px; border: none; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; transition: background var(--transition), transform var(--transition); display: inline-flex; align-items: center; gap: 6px; }
+.btn-gold { background: var(--gold); color: var(--navy-dark); padding: 13px 30px; font-size: 15px; font-weight: 600; text-decoration: none; border-radius: 4px; border: none; cursor: pointer; font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif; transition: background var(--transition), transform var(--transition); display: inline-flex; align-items: center; gap: 6px; }
 .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
-.btn-ghost { border: 1.5px solid rgba(255,255,255,.45); color: var(--white); padding: 13px 30px; font-size: 15px; text-decoration: none; border-radius: 4px; background: none; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; transition: border-color var(--transition), background var(--transition); display: inline-flex; align-items: center; gap: 6px; }
+.btn-ghost { border: 1.5px solid rgba(255,255,255,.45); color: var(--white); padding: 13px 30px; font-size: 15px; text-decoration: none; border-radius: 4px; background: none; cursor: pointer; font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif; transition: border-color var(--transition), background var(--transition); display: inline-flex; align-items: center; gap: 6px; }
 .btn-ghost:hover { border-color: rgba(255,255,255,.9); background: rgba(255,255,255,.07); }
 .hero-card { background: rgba(255,255,255,.09); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,.18); border-radius: 14px; padding: 30px; }
 .hero-card-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--gold-light); text-transform: uppercase; margin-bottom: 22px; }
 .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .stat-item { text-align: center; padding: 14px 8px; }
-.stat-num { font-family: 'Noto Serif KR', serif; font-size: 32px; font-weight: 700; color: var(--white); display: block; line-height: 1.1; }
+.stat-num { font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Malgun Gothic', serif; font-size: 32px; font-weight: 700; color: var(--white); display: block; line-height: 1.1; }
 .stat-num sup { font-size: 16px; color: var(--gold-light); vertical-align: super; }
 .stat-label { color: rgba(255,255,255,.65); font-size: 12px; margin-top: 5px; line-height: 1.5; }
 .stat-divider { grid-column: 1/-1; height: 1px; background: rgba(255,255,255,.12); }
@@ -198,7 +199,7 @@ header { background: var(--white); border-bottom: 1px solid var(--border); posit
 .hstats-in { display: grid; grid-template-columns: repeat(4,1fr); }
 .hs { padding: 22px 28px; border-right: 1px solid rgba(255,255,255,.1); }
 .hs:last-child { border-right: none; }
-.hs-num { font-family: 'Noto Serif KR', serif; font-size: 26px; font-weight: 700; color: var(--white); }
+.hs-num { font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Malgun Gothic', serif; font-size: 26px; font-weight: 700; color: var(--white); }
 .hs-num sup { font-size: 14px; color: var(--gold-light); }
 .hs-lb { font-size: 12px; color: rgba(255,255,255,.6); margin-top: 3px; line-height: 1.45; }
 
@@ -207,7 +208,7 @@ header { background: var(--white); border-bottom: 1px solid var(--border); posit
 .nbar .w { display: flex; align-items: center; gap: 14px; }
 .ntag { background: var(--navy); color: var(--white); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 2px; white-space: nowrap; letter-spacing: .5px; flex-shrink: 0; }
 .ntxt { font-size: 14px; color: var(--text); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.nmore { font-size: 13px; color: var(--teal); text-decoration: none; white-space: nowrap; font-weight: 600; background: none; border: none; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; }
+.nmore { font-size: 13px; color: var(--teal); text-decoration: none; white-space: nowrap; font-weight: 600; background: none; border: none; cursor: pointer; font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif; }
 .nmore:hover { text-decoration: underline; }
 
 /* ════ 협회 소개 ════ */
@@ -231,7 +232,7 @@ header { background: var(--white); border-bottom: 1px solid var(--border); posit
 .ms { background: linear-gradient(135deg, #152840 0%, #1a2e4a 60%, #16342e 100%); padding: 72px 0; }
 .ms-in { display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: center; }
 .ms-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--gold-light); margin-bottom: 16px; }
-.ms-quote { font-family: 'Noto Serif KR', serif; font-size: clamp(20px, 2.2vw, 27px); color: var(--white); line-height: 1.65; font-weight: 600; margin-bottom: 20px; }
+.ms-quote { font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Malgun Gothic', serif; font-size: clamp(20px, 2.2vw, 27px); color: var(--white); line-height: 1.65; font-weight: 600; margin-bottom: 20px; }
 .ms-quote em { color: var(--gold-light); font-style: normal; }
 .ms-p { color: rgba(255,255,255,.72); font-size: 14px; line-height: 1.95; }
 .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
@@ -248,11 +249,11 @@ header { background: var(--white); border-bottom: 1px solid var(--border); posit
 .pc:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
 .pc::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, var(--teal), var(--teal-light)); }
 .pc-n { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 2px; margin-bottom: 11px; }
-.pc h3 { font-family: 'Noto Serif KR', serif; font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.4; }
+.pc h3 { font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Malgun Gothic', serif; font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.4; }
 .pc p { font-size: 13px; color: var(--muted); line-height: 1.82; }
 .pc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
 .tag { font-size: 11px; padding: 4px 10px; border-radius: 4px; background: var(--teal-pale); color: var(--teal); font-weight: 600; }
-.pc-link { display: inline-flex; align-items: center; gap: 5px; color: var(--teal); font-size: 13px; font-weight: 600; text-decoration: none; margin-top: 16px; background: none; border: none; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; transition: gap var(--transition); }
+.pc-link { display: inline-flex; align-items: center; gap: 5px; color: var(--teal); font-size: 13px; font-weight: 600; text-decoration: none; margin-top: 16px; background: none; border: none; cursor: pointer; font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif; transition: gap var(--transition); }
 .pc-link:hover { gap: 8px; }
 
 /* ════ 통계 인포 ════ */
@@ -261,31 +262,31 @@ header { background: var(--white); border-bottom: 1px solid var(--border); posit
 .ic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .ic { background: var(--white); border-radius: 10px; padding: 24px 20px; border: 1px solid var(--border-light); text-align: center; transition: box-shadow var(--transition); box-shadow: 0 2px 8px rgba(26,46,74,.05); }
 .ic:hover { box-shadow: var(--shadow-sm); }
-.ic .big { font-family: 'Noto Serif KR', serif; font-size: 34px; font-weight: 700; color: var(--navy); line-height: 1; margin-bottom: 5px; }
+.ic .big { font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Malgun Gothic', serif; font-size: 34px; font-weight: 700; color: var(--navy); line-height: 1; margin-bottom: 5px; }
 .ic .big span { color: var(--teal); font-size: 20px; }
 .ic .sm { font-size: 12px; color: var(--muted); line-height: 1.55; }
 .ic.acc { background: var(--navy); border-color: var(--navy); }
 .ic.acc .big { color: var(--white); }
 .ic.acc .big span { color: var(--gold-light); }
 .ic.acc .sm { color: rgba(255,255,255,.6); }
-.info-text h3 { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 700; color: var(--navy); line-height: 1.55; margin-bottom: 16px; }
+.info-text h3 { font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Malgun Gothic', serif; font-size: 22px; font-weight: 700; color: var(--navy); line-height: 1.55; margin-bottom: 16px; }
 .info-text p { font-size: 14px; color: var(--muted); line-height: 1.95; margin-bottom: 12px; }
 
 /* ════ 뉴스 + 공지 ════ */
 .news-sec { background: var(--white); }
 .nw-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; }
 .bh { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--navy); }
-.bt { font-family: 'Noto Serif KR', serif; font-size: 18px; font-weight: 700; color: var(--navy); }
-.bm { font-size: 12px; color: var(--muted); text-decoration: none; background: none; border: none; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; transition: color var(--transition); }
+.bt { font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Malgun Gothic', serif; font-size: 18px; font-weight: 700; color: var(--navy); }
+.bm { font-size: 12px; color: var(--muted); text-decoration: none; background: none; border: none; cursor: pointer; font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif; transition: color var(--transition); }
 .bm:hover { color: var(--teal); }
-.ni-item { display: flex; gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--border-light); text-decoration: none; color: inherit; cursor: pointer; background: none; border-left: none; border-right: none; border-top: none; width: 100%; text-align: left; font-family: 'Noto Sans KR', sans-serif; transition: opacity var(--transition); }
+.ni-item { display: flex; gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--border-light); text-decoration: none; color: inherit; cursor: pointer; background: none; border-left: none; border-right: none; border-top: none; width: 100%; text-align: left; font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif; transition: opacity var(--transition); }
 .ni-item:hover { opacity: .8; }
 .ni-item:hover .ni-title { color: var(--teal); }
 .nth { width: 80px; height: 60px; background: var(--navy-mid); border-radius: 5px; flex-shrink: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; }
 .nth img { width: 100%; height: 100%; object-fit: cover; }
 .ni-title { font-size: 14px; font-weight: 500; color: var(--navy); line-height: 1.55; margin-bottom: 5px; transition: color var(--transition); }
 .ni-meta { font-size: 12px; color: var(--muted-light); }
-.notice-row { display: flex; align-items: baseline; gap: 9px; padding: 11px 0; border-bottom: 1px solid var(--border-light); text-decoration: none; color: inherit; cursor: pointer; background: none; border-left: none; border-right: none; border-top: none; width: 100%; text-align: left; font-family: 'Noto Sans KR', sans-serif; }
+.notice-row { display: flex; align-items: baseline; gap: 9px; padding: 11px 0; border-bottom: 1px solid var(--border-light); text-decoration: none; color: inherit; cursor: pointer; background: none; border-left: none; border-right: none; border-top: none; width: 100%; text-align: left; font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif; }
 .notice-row:hover .nr-title { color: var(--teal); }
 .nb { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 3px; white-space: nowrap; flex-shrink: 0; }
 .nb-new { background: var(--teal); color: var(--white); }
@@ -298,10 +299,10 @@ header { background: var(--white); border-bottom: 1px solid var(--border); posit
 .cta { background: linear-gradient(135deg, #152840 0%, #1a2e4a 55%, #153028 100%); padding: 80px 0; text-align: center; position: relative; overflow: hidden; }
 .cta::before { content: ''; position: absolute; top: -100px; right: -80px; width: 380px; height: 380px; border-radius: 50%; border: 70px solid rgba(196,154,60,.09); }
 .cta::after { content: ''; position: absolute; bottom: -90px; left: -60px; width: 300px; height: 300px; border-radius: 50%; border: 60px solid rgba(26,107,88,.12); }
-.cta h2 { font-family: 'Noto Serif KR', serif; font-size: clamp(22px, 3vw, 34px); color: var(--white); font-weight: 700; margin-bottom: 14px; position: relative; z-index: 1; }
+.cta h2 { font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Malgun Gothic', serif; font-size: clamp(22px, 3vw, 34px); color: var(--white); font-weight: 700; margin-bottom: 14px; position: relative; z-index: 1; }
 .cta p { color: rgba(255,255,255,.72); font-size: 15px; margin-bottom: 34px; position: relative; z-index: 1; line-height: 1.85; }
 .cta-btns { display: flex; gap: 13px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
-.btn-ow { border: 1.5px solid rgba(255,255,255,.45); color: var(--white); padding: 13px 30px; font-size: 15px; text-decoration: none; border-radius: 4px; background: none; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; transition: border-color var(--transition), background var(--transition); }
+.btn-ow { border: 1.5px solid rgba(255,255,255,.45); color: var(--white); padding: 13px 30px; font-size: 15px; text-decoration: none; border-radius: 4px; background: none; cursor: pointer; font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif; transition: border-color var(--transition), background var(--transition); }
 .btn-ow:hover { border-color: rgba(255,255,255,.9); background: rgba(255,255,255,.07); }
 
 /* ════ 협력 기관 ════ */
@@ -319,7 +320,7 @@ header { background: var(--white); border-bottom: 1px solid var(--border); posit
 /* ════ FOOTER ════ */
 footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px; }
 .fg { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 44px; margin-bottom: 40px; }
-.fb .name { font-family: 'Noto Serif KR', serif; font-size: 16px; color: var(--white); font-weight: 700; margin-bottom: 3px; }
+.fb .name { font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Malgun Gothic', serif; font-size: 16px; color: var(--white); font-weight: 700; margin-bottom: 3px; }
 .fb .en { font-size: 11px; color: rgba(255,255,255,.38); letter-spacing: .8px; margin-bottom: 18px; display: block; }
 .fb .addr { font-size: 13px; line-height: 2.1; color: rgba(255,255,255,.5); }
 .fb .addr a { color: rgba(255,255,255,.55); text-decoration: none; }
@@ -327,7 +328,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
 .fc h4 { font-size: 12px; font-weight: 700; color: rgba(255,255,255,.75); letter-spacing: 1px; margin-bottom: 14px; }
 .fc ul { list-style: none; }
 .fc li { margin-bottom: 9px; }
-.fc a, .fc button { color: rgba(255,255,255,.48); text-decoration: none; font-size: 13px; transition: color var(--transition); background: none; border: none; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; text-align: left; padding: 0; }
+.fc a, .fc button { color: rgba(255,255,255,.48); text-decoration: none; font-size: 13px; transition: color var(--transition); background: none; border: none; cursor: pointer; font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif; text-align: left; padding: 0; }
 .fc a:hover, .fc button:hover { color: var(--gold-light); }
 .fbot { border-top: 1px solid rgba(255,255,255,.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
 .fcopy { font-size: 12px; color: rgba(255,255,255,.4); }
@@ -371,7 +372,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
 .charter-toc a:hover { text-decoration: underline; }
 .chapter { margin-bottom: 48px; padding-bottom: 40px; border-bottom: 1px solid var(--border-light); }
 .chapter:last-child { border-bottom: none; }
-.chapter-title { font-family: 'Noto Serif KR', serif; font-size: 18px; font-weight: 700; color: var(--navy); background: var(--cream); border-left: 4px solid var(--teal); padding: 10px 18px; margin-bottom: 24px; border-radius: 0 4px 4px 0; }
+.chapter-title { font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Malgun Gothic', serif; font-size: 18px; font-weight: 700; color: var(--navy); background: var(--cream); border-left: 4px solid var(--teal); padding: 10px 18px; margin-bottom: 24px; border-radius: 0 4px 4px 0; }
 .article { margin-bottom: 20px; }
 .article h4 { font-size: 14px; font-weight: 700; color: var(--navy-mid); margin-bottom: 8px; }
 .article p, .article li { font-size: 14px; color: var(--text); line-height: 2; }
@@ -385,7 +386,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
 .disc-table td { padding: 12px 16px; border-bottom: 1px solid var(--border-light); color: var(--text); line-height: 1.6; }
 .disc-table tr:last-child td { border-bottom: none; }
 .disc-table tr:hover td { background: var(--cream); }
-.disc-section-title { font-family: 'Noto Serif KR', serif; font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid var(--navy); }
+.disc-section-title { font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Malgun Gothic', serif; font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid var(--navy); }
 /* 공지사항 */
 .notice-sec { background: var(--cream); padding: 64px 0; }
 .notice-filter { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px; }
