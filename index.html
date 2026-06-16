@@ -216,6 +216,7 @@ header { background: var(--white); border-bottom: 1px solid var(--border); posit
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
 .about-media { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4/3; background: var(--navy-mid); }
 .about-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: rgba(255,255,255,.4); font-size: 14px; text-align: center; padding: 24px; }
+.about-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .about-placeholder-icon { font-size: 40px; opacity: .35; }
 .about-badge { position: absolute; top: 16px; left: 16px; background: var(--gold); color: var(--navy-dark); font-size: 11px; font-weight: 700; padding: 5px 12px; border-radius: 3px; letter-spacing: .5px; }
 .about-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(10,22,40,.78)); padding: 22px 18px 16px; }
@@ -664,9 +665,10 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
         <div class="mega">
           <div class="mc">
             <div class="mc-title">협회 정보</div>
-            <button onclick="go('pg-about-greeting')">이사장 인사<span class="sd">이사장 인사말</span></button>
+            <button onclick="go('pg-about-greeting')">회장 인사<span class="sd">회장 인사말</span></button>
             <button onclick="go('pg-about-vision')">설립 목적·비전<span class="sd">협회 미션과 설립 취지</span></button>
             <button onclick="go('pg-about-history')">연혁<span class="sd">협회 설립 및 주요 활동</span></button>
+            <button onclick="go('pg-about-charter')">정관<span class="sd">사단법인 정관 전문</span></button>
           </div>
           <div class="mc">
             <div class="mc-title">함께하는 사람들</div>
@@ -710,6 +712,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
           <button onclick="go('pg-member-join')">회원 가입 안내</button>
           <button onclick="go('pg-member-support')">후원 신청</button>
           <button onclick="go('pg-member-receipt')">기부금 영수증</button>
+          <button onclick="go('pg-disclosure')">정보공개·공시</button>
           <button onclick="go('pg-news-notice')">공지사항</button>
         </div>
       </div>
@@ -728,9 +731,10 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
   <div class="mob-section">
     <button class="mob-section-title" onclick="toggleMob(this)">협회 소개 <span class="arr">▾</span></button>
     <div class="mob-sub">
-      <button onclick="go('pg-about-greeting');closeDrawer()">이사장 인사</button>
+      <button onclick="go('pg-about-greeting');closeDrawer()">회장 인사</button>
       <button onclick="go('pg-about-vision');closeDrawer()">설립 목적·비전</button>
       <button onclick="go('pg-about-history');closeDrawer()">연혁</button>
+      <button onclick="go('pg-about-charter');closeDrawer()">정관</button>
       <button onclick="go('pg-about-board');closeDrawer()">임원진</button>
     </div>
   </div>
@@ -762,6 +766,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
       <button onclick="go('pg-member-join');closeDrawer()">회원 가입 안내</button>
       <button onclick="go('pg-member-support');closeDrawer()">후원 신청</button>
       <button onclick="go('pg-member-receipt');closeDrawer()">기부금 영수증</button>
+      <button onclick="go('pg-disclosure');closeDrawer()">정보공개·공시</button>
     </div>
   </div>
   <button onclick="go('pg-member-join');closeDrawer()" class="mob-cta">회원 가입 신청</button>
@@ -871,13 +876,9 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
   <div class="w about-grid">
     <div class="reveal">
       <div class="about-media">
-        <div class="about-placeholder">
-          <span class="about-placeholder-icon">🏛️</span>
-          <span>협회 대표 이미지 또는<br>활동 사진 삽입</span>
-          <small style="margin-top:6px;opacity:.6">권장: 800×600px 이상, JPG/WebP</small>
-        </div>
-        <span class="about-badge">사단법인 인가</span>
-        <div class="about-overlay"><p class="about-caption">사단법인 1인가구협회 창립총회 (2026. 4. 30.)</p></div>
+        <img class="about-img" src="ksa-about.jpg" alt="1인가구협회 회원 소모임·교육 활동 현장">
+        
+        <div class="about-overlay"><p class="about-caption">사단법인 1인가구협회</p></div>
       </div>
     </div>
     <div class="about-body">
@@ -923,7 +924,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
       <div class="pc reveal reveal-d2"><div class="pc-n">02</div><h3>교육·세미나 (연 12회, 무료)</h3><p>연 12회 정책 포럼·세미나를 회원 무료로 운영합니다. 현장 + 온라인 병행 진행.</p><div class="pc-tags"><span class="tag">무료참가</span><span class="tag">정책포럼</span></div><button onclick="go('pg-seminar-schedule')" class="pc-link">일정 보기 →</button></div>
       <div class="pc reveal reveal-d3"><div class="pc-n">03</div><h3>지자체·기관 협력 사업</h3><p>서울특별시·성평등가족부·행정안전부 등과 협력하여 지역 밀착형 1인 가구 지원 사업을 추진합니다.</p><div class="pc-tags"><span class="tag">MOU</span><span class="tag">정부협력</span></div><button onclick="go('pg-programs-local')" class="pc-link">협력 현황 →</button></div>
       <div class="pc reveal reveal-d1"><div class="pc-n">04</div><h3>회원 네트워킹</h3><p>당사자·사회복지사·정책 연구자·지자체 담당자를 잇는 커뮤니티를 운영합니다.</p><div class="pc-tags"><span class="tag">당사자네트워크</span></div><button onclick="go('pg-member-join')" class="pc-link">회원 가입 →</button></div>
-      <div class="pc reveal reveal-d2"><div class="pc-n">05</div><h3>홍보·캠페인</h3><p>SNS·미디어 캠페인으로 1인 가구 정책 의제 공론화 및 사회 인식 개선 활동을 전개합니다.</p><div class="pc-tags"><span class="tag">SNS콘텐츠</span><span class="tag">인식개선</span></div><button class="pc-link">채널 보기 →</button></div>
+      <div class="pc reveal reveal-d2"><div class="pc-n">05</div><h3>홍보·캠페인</h3><p>SNS·미디어 캠페인으로 1인 가구 정책 의제 공론화 및 사회 인식 개선 활동을 전개합니다.</p><div class="pc-tags"><a class="tag" href="https://blog.naver.com/ksa_official" target="_blank" rel="noopener" style="text-decoration:none;">SNS콘텐츠</a><span class="tag">인식개선</span></div><a class="pc-link" href="https://www.youtube.com/@1%EC%9D%B8%EA%B0%80%EA%B5%AC%ED%98%91%ED%9A%8C" target="_blank" rel="noopener" style="text-decoration:none;">채널 보기 →</a></div>
       <div class="pc reveal reveal-d3"><div class="pc-n">06</div><h3>컨설팅·자문</h3><p>지자체·복지기관·기업의 1인 가구 프로그램 설계에 전문적 자문을 제공합니다.</p><div class="pc-tags"><span class="tag">기관자문</span></div><button class="pc-link">문의하기 →</button></div>
     </div>
   </div>
@@ -955,14 +956,12 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
     <div class="reveal">
       <div class="bh"><div class="bt">뉴스·활동</div><button onclick="go('pg-news-press')" class="bm">전체 보기 →</button></div>
       <button onclick="go('pg-news-press')" class="ni-item"><div class="nth"><svg viewBox="0 0 80 60" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="60" fill="#1a2e4a"/><rect x="10" y="18" width="60" height="7" rx="2" fill="rgba(255,255,255,.18)"/><rect x="10" y="31" width="42" height="4" rx="2" fill="rgba(255,255,255,.1)"/></svg></div><div><div class="ni-title">사단법인 1인가구협회 창립총회 성료 — 2026년 4월 30일 성공적 출범</div><div class="ni-meta">2026.04.30 · 협회 소식</div></div></button>
-      <button onclick="go('pg-news-press')" class="ni-item"><div class="nth"><svg viewBox="0 0 80 60" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="60" fill="#1b3a4a"/><circle cx="28" cy="30" r="10" fill="#2a8a72" opacity=".7"/><circle cx="52" cy="30" r="10" fill="#c9a04a" opacity=".7"/></svg></div><div><div class="ni-title">서울특별시 성평등가족부 업무협약 — 1인 가구 지원 사업 공동 추진 협의</div><div class="ni-meta">2025.05.10 · 협약</div></div></button>
       <button onclick="go('pg-news-press')" class="ni-item"><div class="nth"><svg viewBox="0 0 80 60" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="60" fill="#243d5c"/><rect x="20" y="14" width="40" height="32" rx="3" fill="#1a2e4a"/><rect x="24" y="20" width="32" height="4" rx="1" fill="rgba(255,255,255,.22)"/></svg></div><div><div class="ni-title">제1회 1인가구 정책포럼 — 주거·돌봄·안전 3대 의제 심층 논의</div><div class="ni-meta">2025.05.20 · 행사결과</div></div></button>
     </div>
     <div class="reveal reveal-d1">
       <div class="bh"><div class="bt">공지사항</div><button onclick="go('pg-news-notice')" class="bm">전체 보기 →</button></div>
       <button onclick="go('pg-news-notice')" class="notice-row"><span class="nb nb-new">NEW</span><span class="nr-title">제1회 세미나 참가 신청 안내 (무료, 회원 우선)</span><span class="nr-date">25.06.01</span></button>
       <button onclick="go('pg-news-notice')" class="notice-row"><span class="nb nb-imp">중요</span><span class="nr-title">사단법인 창립총회 성료 및 임원 선출 공고</span><span class="nr-date">26.04.30</span></button>
-      <button onclick="go('pg-news-notice')" class="notice-row"><span class="nb nb-n">공지</span><span class="nr-title">사단법인 인가 및 법인 등기 완료 공고</span><span class="nr-date">25.04.15</span></button>
       <button onclick="go('pg-news-notice')" class="notice-row"><span class="nb nb-n">공지</span><span class="nr-title">회원 가입 안내 및 혜택 소개</span><span class="nr-date">25.04.01</span></button>
       <button onclick="go('pg-news-notice')" class="notice-row"><span class="nb nb-n">공지</span><span class="nr-title">협회 홈페이지 개설 안내</span><span class="nr-date">25.03.30</span></button>
     </div>
@@ -992,13 +991,13 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
 </div><!-- /pg-home -->
 
 
-<!-- ██ 이사장 인사 (플레이스홀더) ██ -->
+<!-- ██ 회장 인사 (플레이스홀더) ██ -->
 <div class="page" id="pg-about-greeting">
 <div class="page-banner">
   <div class="w">
-    <nav class="breadcrumb"><button onclick="go('pg-home')">홈</button><span>›</span><span>협회 소개</span><span>›</span><span style="color:rgba(255,255,255,.85);">이사장 인사</span></nav>
-    <h1>이사장 인사</h1>
-    <p class="pg-desc">사단법인 1인가구협회 이사장의 인사말씀을 전합니다.</p>
+    <nav class="breadcrumb"><button onclick="go('pg-home')">홈</button><span>›</span><span>협회 소개</span><span>›</span><span style="color:rgba(255,255,255,.85);">회장 인사</span></nav>
+    <h1>회장 인사</h1>
+    <p class="pg-desc">사단법인 1인가구협회 회장의 인사말씀을 전합니다.</p>
     <div class="gold-line"></div>
   </div>
 </div>
@@ -1006,16 +1005,16 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
 <section style="background:var(--cream);">
   <div class="w">
     <div class="sl reveal">GREETING</div>
-    <h2 class="st reveal reveal-d1">이사장 인사말</h2>
+    <h2 class="st reveal reveal-d1">회장 인사말</h2>
     <div class="dg reveal reveal-d1"></div>
     <div style="max-width:760px; margin:0 auto;" class="reveal reveal-d2">
       <div style="background:var(--white); border:1px solid var(--border-light); border-radius:var(--radius); padding:40px 48px; border-left:4px solid var(--teal);">
-        <p style="font-size:15px; color:var(--muted); line-height:1.9; margin-bottom:18px;">안녕하십니까. 사단법인 1인가구협회 이사장 최 태 열입니다.</p>
+        <p style="font-size:15px; color:var(--muted); line-height:1.9; margin-bottom:18px;">안녕하십니까. 사단법인 1인가구협회 회장 최 태 열입니다.</p>
         <p style="font-size:15px; color:var(--muted); line-height:1.9; margin-bottom:18px;">우리나라 전체 가구의 35%, 750만 명이 혼자 살고 있습니다. 1인 가구는 이제 가장 흔한 가구 형태가 되었음에도, 주거·복지·의료·금융 등 사회 제도는 여전히 다인 가구 중심으로 설계되어 있습니다.</p>
         <p style="font-size:15px; color:var(--muted); line-height:1.9; margin-bottom:18px;">사단법인 1인가구협회는 이러한 제도적 공백을 해소하고, 1인 가구가 고립 없이 존엄하고 자립적인 삶을 누릴 수 있는 사회를 만들기 위해 출범하였습니다.</p>
         <p style="font-size:15px; color:var(--muted); line-height:1.9; margin-bottom:18px;">협회는 근거 기반의 정책 연구, 지자체와의 협력, 교육·세미나를 통해 1인가구 의제를 사회적 공론장으로 끌어올리고 실질적인 제도 변화를 이끌어 나가겠습니다.</p>
         <p style="font-size:15px; color:var(--muted); line-height:1.9;">여러분의 많은 관심과 참여를 부탁드립니다.</p>
-        <div style="margin-top:32px; text-align:right; font-family:'Noto Serif KR',serif; color:var(--navy); font-size:16px; font-weight:700;">사단법인 1인가구협회<br>이사장 최 태 열</div>
+        <div style="margin-top:32px; text-align:right; font-family:'Noto Serif KR',serif; color:var(--navy); font-size:16px; font-weight:700;">사단법인 1인가구협회<br>회장 최 태 열</div>
       </div>
     </div>
   </div>
@@ -1112,7 +1111,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
       <div class="tl-item"><div class="tl-month">12월</div><div class="tl-content"><h4>1인가구페스타 개최</h4><p>1인 가구 당사자·연구자·정책 관계자가 함께하는 1인가구페스타 행사 성료.</p></div></div>
 
       <div class="tl-year">2026년</div>
-      <div class="tl-item"><div class="tl-month">01.21</div><div class="tl-content"><h4>협회장 변경</h4><p>이사회 의결을 통해 신임 회장 선임. 협회의 새로운 도약 기반 마련.</p></div></div>
+      <div class="tl-item"><div class="tl-month">01.21</div><div class="tl-content"><h4>대표자 변경</h4><p>이사회 의결을 통해 신임 회장 선임. 협회의 새로운 도약 기반 마련.</p></div></div>
       <div class="tl-item"><div class="tl-month">01~05월</div><div class="tl-content"><h4>정기 세미나 1~5회 개최</h4><p>1인 가구 주거·복지·안전·금융·정책 등 주제로 정기 세미나 연속 개최. 현장·온라인 병행 진행.</p></div></div>
       <div class="tl-item"><div class="tl-month">03월</div><div class="tl-content"><h4>사단법인 설립 검토</h4><p>비영리법인에서 사단법인으로의 전환을 위한 설립 요건 검토 및 준비 착수.</p></div></div>
       <div class="tl-item"><div class="tl-month">04.30</div><div class="tl-content"><h4>사단법인 창립총회 개최 <span class="tl-badge">NEW</span></h4><p>사단법인 1인가구협회 창립총회 개최. 초대 임원진 선출, 정관 채택, 사업계획 의결.</p></div></div>
@@ -1141,7 +1140,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
     <h2 class="st reveal reveal-d1">이사회</h2>
     <div class="dg reveal reveal-d1"></div>
     <div class="board-grid">
-      <div class="board-card reveal reveal-d1"><div class="board-photo">👤</div><div class="board-pos">회 장</div><div class="board-name">최 태 열</div><div class="board-career">사단법인 1인가구협회 초대 회장<br>1인 가구 권익 증진 및 정책 활동</div></div>
+      <div class="board-card reveal reveal-d1"><div class="board-photo">👤</div><div class="board-pos">회장</div><div class="board-name">최 태 열</div><div class="board-career">사단법인 1인가구협회 초대 회장<br>1인 가구 권익 증진 및 정책 활동</div></div>
       <div class="board-card reveal reveal-d2"><div class="board-photo">👤</div><div class="board-pos">상임이사</div><div class="board-name">김 남 순</div><div class="board-career">협회 운영 총괄<br>1인 가구 지원 사업 기획·운영</div></div>
       <div class="board-card reveal reveal-d3"><div class="board-photo">👤</div><div class="board-pos">이 사</div><div class="board-name">김 경 수</div><div class="board-career">이사회 구성원<br>협회 정책·사업 자문</div></div>
       <div class="board-card reveal reveal-d1"><div class="board-photo">👤</div><div class="board-pos">이 사</div><div class="board-name">강 세 련</div><div class="board-career">이사회 구성원<br>협회 정책·사업 자문</div></div>
@@ -1387,8 +1386,8 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
     <h2 class="st reveal">납부 방법</h2>
     <div class="dg reveal"></div>
     <div class="reveal reveal-d1" style="max-width:720px;">
-      <div class="account-box"><strong>계좌 이체 안내</strong><br>은행명: [은행명 입력 예정]<br>계좌번호: [계좌번호 입력 예정]<br>예금주: <strong>사단법인 1인가구협회</strong><br><br><span style="color:rgba(255,255,255,.75);font-size:14px;">입금 메모: 후원자 성함 + '후원'</span></div>
-      <div class="notice-info reveal reveal-d2">연간 30만원 이상 후원 시 <strong>기부금 영수증 자동 발행</strong>됩니다. (<button onclick="go('pg-member-receipt')" style="color:var(--teal);font-weight:600;text-decoration:none;background:none;border:none;cursor:pointer;font-family:'Noto Sans KR',sans-serif;padding:0;">영수증 발급 신청 →</button>)</div>
+      <div class="account-box"><strong>기부금 전용계좌 안내</strong><br>은행명: IBK기업은행<br>계좌번호: 089-090980-04-012<br>예금주: <strong>사단법인 1인가구협회</strong><br><br><span style="color:rgba(255,255,255,.75);font-size:14px;">입금 메모: 후원자 성함 + '후원'</span></div>
+      <div class="notice-info reveal reveal-d2">기부금 영수증은 <strong>공익법인(기부금단체) 지정 이후</strong> 세액공제용으로 발급됩니다. 지정 전 후원분은 지정 후 소급 안내드립니다. (<button onclick="go('pg-member-receipt')" style="color:var(--teal);font-weight:600;text-decoration:none;background:none;border:none;cursor:pointer;font-family:'Noto Sans KR',sans-serif;padding:0;">영수증 발급 신청 →</button>)</div>
       <div style="margin-top:20px;"><a href="mailto:info.ksaofficial@gmail.com?subject=후원문의" class="btn-teal">📧 후원 문의하기</a></div>
     </div>
   </div>
@@ -1413,7 +1412,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
     <h2 class="st reveal reveal-d1">기부금 영수증 안내</h2>
     <div class="dg reveal reveal-d1"></div>
     <div class="receipt-guide">
-      <div class="rg-box reveal reveal-d2"><h3>📋 기부금 영수증 발급 안내</h3><ul><li>개인: 기부금액의 15% (1,000만원 초과분 30%) 세액공제</li><li>법인: 일정 한도 내 손금 산입 가능</li><li>연간 30만원 이상 후원 시 영수증 자동 발행</li><li>국세청 연말정산 간소화 서비스에서도 조회 가능 (공익법인 지정 후 적용)</li></ul></div>
+      <div class="rg-box reveal reveal-d2"><h3>📋 기부금 영수증 발급 안내</h3><ul><li>개인: 기부금액의 15% (1,000만원 초과분 30%) 세액공제</li><li>법인: 일정 한도 내 손금 산입 가능</li><li>공익법인 지정 후, 후원분에 대해 기부금 영수증 발급</li><li>지정 후 국세청 연말정산 간소화 서비스에서 조회 가능</li></ul></div>
       <div class="rg-box reveal reveal-d3"><h3>📌 발급 절차</h3><ol><li>아래 신청서 작성 및 제출</li><li>사무국 확인 (2영업일 이내)</li><li>이메일로 영수증 PDF 발송</li></ol></div>
     </div>
   </div>
@@ -1433,10 +1432,16 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
           <div class="form-row"><label class="form-label" for="r-year">후원 연도 <span class="req-mark">*</span></label><select class="form-select" id="r-year" name="year" required><option value="">선택하세요</option><option value="2025">2025년</option><option value="2026">2026년</option></select></div>
           <div class="form-row"><label class="form-label" for="r-amount">후원금액 <span class="req-mark">*</span></label><input class="form-input" type="text" id="r-amount" name="amount" placeholder="예) 300,000" required></div>
         </div>
-        <div class="form-row"><label class="form-label" for="r-rn">주민등록번호 앞 6자리 <span class="req-mark">*</span></label><input class="form-input" type="text" id="r-rn" name="rn" placeholder="000000" maxlength="6" required><p class="privacy-note">※ 영수증 발행을 위해서만 사용되며, 보안 처리됩니다.</p></div>
+        <div class="form-row"><p class="privacy-note">※ 기부금영수증 발급에 필요한 주민등록번호는 신청 접수 후 <strong>보안 채널</strong>로 별도 안내드립니다(공개 폼에서 수집하지 않습니다).</p></div>
         <div class="form-row"><label class="form-label" for="r-note">문의사항</label><textarea class="form-textarea" id="r-note" name="note" placeholder="문의사항이 있으시면 작성해 주세요. (선택)"></textarea></div>
+        <div class="form-row" style="display:flex;align-items:flex-start;gap:8px;">
+          <input type="checkbox" id="r-agree" name="agree" required style="margin-top:5px;">
+          <label for="r-agree" style="font-size:13px;color:var(--muted);">개인정보 수집·이용 및 기부금영수증 발급 목적 처리에 동의합니다. (필수)
+            <button type="button" onclick="go('pg-privacy')" style="color:var(--teal);background:none;border:none;cursor:pointer;padding:0;">[전문 보기]</button>
+          </label>
+        </div>
         <button type="submit" class="form-submit">영수증 발급 신청</button>
-        <p class="privacy-note" style="margin-top:12px;">입력하신 개인정보는 기부금 영수증 발급 목적으로만 사용되며, 처리 후 즉시 파기됩니다.</p>
+        <p class="privacy-note" style="margin-top:12px;">입력하신 개인정보는 기부금 영수증 발급·관계 법령에 따른 발급명세 보관 목적으로 사용되며, 「소득세법」에 따라 발급일로부터 5년간 보관 후 파기됩니다.</p>
       </form>
     </div>
   </div>
@@ -1676,7 +1681,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
         <tr><th>규모</th><td>200개사 / 250부스, 참관객 10,000명(예상)</td></tr>
         <tr><th>주최</th><td>사단법인 1인가구협회</td></tr>
         <tr><th>주관</th><td>주식회사 더피엠디</td></tr>
-        <tr><th>후원(예정)</th><td>성평등가족부, 행정안전부, 서울시, 경기도, 국토교통부 등</td></tr>
+        <tr><th>후원·협력(협의 중)</th><td>관계 부처·지자체와 협의 예정</td></tr>
         <tr><th>관람대상</th><td>나만의 라이프스타일을 만들고 싶은 1인가구 및 예비 1인가구<br>(2030 청년 · 4050 중장년 · 60+ 시니어)</td></tr>
         <tr><th>주요 프로그램</th><td>전시회, 정책홍보특별관, 컨퍼런스, 세미나, 워크숍, 이벤트 등</td></tr>
       </table>
@@ -1868,6 +1873,247 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
 </main>
 </div><!-- /pg-research-library -->
 
+<!-- ██ 정보공개(공시) ██ -->
+<div class="page" id="pg-disclosure">
+<div class="page-banner">
+  <div class="w">
+    <nav class="breadcrumb"><button onclick="go('pg-home')">홈</button><span>›</span><span>정보공개</span><span>›</span><span style="color:rgba(255,255,255,.85);">재정·기부금 공시</span></nav>
+    <h1>정보공개 · 재정 공시</h1>
+    <p class="pg-desc">사단법인 1인가구협회는 「법인세법 시행령」 제39조에 따라 정관·결산서류 및 연간 기부금 모금액·활용실적을 투명하게 공개합니다.</p>
+    <div class="gold-line"></div>
+  </div>
+</div>
+<main>
+<section class="disc-section">
+  <div class="w">
+    <h2 class="disc-section-title reveal">연간 기부금 모금액 및 활용실적</h2>
+    <table class="disc-table reveal reveal-d1">
+      <thead>
+        <tr><th>사업연도</th><th>모금액(원)</th><th>지출액(원)</th><th>주요 활용 내역</th><th>비고</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>2026</td><td>(설립연도 / 공시 예정)</td><td>—</td><td>정책연구·세미나·지역돌봄</td><td>결산 확정 후 게시</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;color:var(--muted-light);margin-bottom:40px;">※ 매 사업연도 종료 후 결산 확정 시 갱신합니다. 공익법인 지정 후에는 국세청 홈택스 공익법인 공시와 동일 내용을 게시합니다.</p>
+
+    <h2 class="disc-section-title reveal">결산 · 예산 서류</h2>
+    <table class="disc-table reveal reveal-d1">
+      <thead>
+        <tr><th>구분</th><th>사업연도</th><th>문서</th><th>게시일</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>사업계획·수지예산서</td><td>2026</td><td><a href="#" style="color:var(--teal);">PDF 보기</a></td><td>—</td></tr>
+        <tr><td>결산보고서</td><td>2026</td><td>결산 확정 후 게시</td><td>—</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="disc-section-title reveal" style="margin-top:8px;">법인 정보 · 정관</h2>
+    <table class="disc-table reveal reveal-d1">
+      <tbody>
+        <tr><th style="width:160px;">법인명</th><td>사단법인 1인가구협회</td></tr>
+        <tr><th>고유번호</th><td>229-82-69076</td></tr>
+        <tr><th>대표자</th><td>최태열</td></tr>
+        <tr><th>소재지</th><td>서울특별시 영등포구 영등포로20길 22-8, 지율빌딩 3F</td></tr>
+        <tr><th>정관</th><td><button onclick="go('pg-about-charter')" style="color:var(--teal);background:none;border:none;cursor:pointer;font-family:inherit;padding:0;">정관 전문 보기 →</button></td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="disc-section-title reveal" style="margin-top:8px;">외부 공시 연계</h2>
+    <p style="font-size:14px;color:var(--muted);line-height:1.9;">
+      · <a href="https://www.hometax.go.kr" target="_blank" rel="noopener" style="color:var(--teal);">국세청 홈택스 — 공익법인 결산서류 공시</a><br>
+      · <a href="https://www.acrc.go.kr" target="_blank" rel="noopener" style="color:var(--teal);">국민권익위원회</a><br>
+      · <a href="https://www.mohw.go.kr" target="_blank" rel="noopener" style="color:var(--teal);">주무관청(보건복지부)</a>
+    </p>
+  </div>
+</section>
+</main>
+</div><!-- /pg-disclosure -->
+
+<!-- ██ 정관 ██ -->
+<div class="page" id="pg-about-charter">
+<div class="page-banner">
+  <div class="w">
+    <nav class="breadcrumb"><button onclick="go('pg-home')">홈</button><span>›</span><span>협회 소개</span><span>›</span><span style="color:rgba(255,255,255,.85);">정관</span></nav>
+    <h1>정 관</h1>
+    <p class="pg-desc">사단법인 1인가구협회의 정관 전문입니다. 2026년 4월 30일 창립총회에서 제정되었습니다.</p>
+    <div class="gold-line"></div>
+  </div>
+</div>
+<main>
+<section style="background:var(--white);">
+  <div class="w">
+    <div class="charter-wrap">
+      <a href="#" class="pdf-dl reveal">📄 정관 전문 PDF 다운로드</a>
+      <div class="notice-box reveal" style="margin-bottom:28px;">※ 본 정관은 2026년 4월 30일 창립총회 통과 검증본입니다. 공익법인 지정에 따른 보완 문구는 추후 정관 개정 시 반영될 예정입니다.</div>
+
+      <div class="chapter reveal">
+        <div class="chapter-title">제1장 총칙</div>
+        <div class="article"><h4>제1조(명칭)</h4><p>본 회는 1인가구협회라 칭하며, 영문으로는 Korea Small-household Association (KSA)이라 표기한다.</p></div>
+        <div class="article"><h4>제2조(목적)</h4><p>본 회는 1인가구를 비롯하여 비혼 동거, 무자녀 가구 등 독립적 라이프스타일을 지향하는 소형가구 전반의 권익을 옹호하고 삶의 질 향상을 도모하며, 관련 산업과의 연계를 통해 소형가구 생태계 발전과 건강한 사회적 안전망 구축에 기여함을 목적으로 한다.</p></div>
+        <div class="article"><h4>제3조(사무소의 소재지)</h4><p>본 회의 주사무소는 서울특별시에 둔다.</p></div>
+        <div class="article"><h4>제4조(지회 및 지부의 설치)</h4><p>① 본 회는 필요에 따라 상임이사의 승인과 이사회의 의결을 거쳐 서울과 경기 지역을 제외한 지방에 지회를 둘 수 있다.</p><p>② 지회의 설치 요건, 지회장의 지위, 운영 및 지휘통제에 관한 세부 사항은 본 정관의 하위 규정(지회 운영 규정)으로 정한다.</p></div>
+        <div class="article"><h4>제5조(사업)</h4><p>본 회는 제2조의 목적을 달성하기 위하여 다음 각 호의 사업을 수행한다.</p><ol><li>소형가구 관련 정책 연구 및 제도 개선 제안</li><li>소형가구 권익 보호 및 고립 예방을 위한 교육, 세미나 개최</li><li>소형가구 관련 지자체 위탁 사업 및 민관 협력 사업</li><li>소형가구 산업 발전을 위한 B2B 및 B2G 네트워크 구축 및 페스타 개최</li><li>기타 본 회의 목적 달성에 필요한 부대사업</li></ol></div>
+      </div>
+
+      <div class="chapter reveal">
+        <div class="chapter-title">제2장 회원</div>
+        <div class="article"><h4>제6조(회원의 자격 및 구분)</h4><p>① 본 회의 회원은 본 회의 설립 목적에 찬동하고 소정의 가입 절차를 마친 개인, 법인 및 단체로 한다.</p><p>② 회원은 개인회원과 기업회원(이사사, 일반회원, 스타트업 등)으로 구분하며, 각 등급별 가입 기준은 이사회의 별도 규정으로 정한다.</p></div>
+        <div class="article"><h4>제7조(회원의 권리와 의무)</h4><p>① 개인회원은 총회에 참석하여 발언하고 의결에 참여할 권리를 가진다.</p><p>② 기업회원은 협회의 사업에 참여하고 혜택을 제공받을 수 있으나, NGO로서의 독립적인 거버넌스 확보를 위하여 총회에서의 의결권은 제한된다. 단, 별도 규정에 따라 이사회 및 산하 위원회에 참여할 수 있다.</p><p>③ 회원은 본 회의 정관을 준수하고 종류 및 등급에 따른 회비 납부 의무를 진다.</p></div>
+        <div class="article"><h4>제8조(회원의 탈퇴 및 징계)</h4><p>① 회원은 본인의 의사에 따라 자유롭게 탈퇴할 수 있다. 단, 기 납부한 잔여기간 회비는 반납하지 않는다.</p><p>② 회원이 본 회의 명예를 훼손하거나 목적에 위배되는 행위를 한 경우, 상임이사의 제청과 이사회의 의결을 거쳐 제명 등 징계할 수 있다.</p></div>
+      </div>
+
+      <div class="chapter reveal">
+        <div class="chapter-title">제3장 임원 및 사무국</div>
+        <div class="article"><h4>제9조(임원의 종류 및 정수)</h4><p>본 회는 다음의 임원을 둔다.</p><ol><li>회장(대표) 1인</li><li>상임이사를 포함한 이사 5인 이내</li><li>감사 1인</li></ol></div>
+        <div class="article"><h4>제10조(임원의 결격사유)</h4><p>다음 각 호의 어느 하나에 해당하는 자는 본 회의 임원이 될 수 없다.</p><ol><li>피성년후견인 또는 피한정후견인</li><li>파산선고를 받고 복권되지 아니한 자</li><li>금고 이상의 형을 받고 그 집행이 종료되거나 집행을 받지 아니하기로 확정된 후 3년이 경과되지 아니한 자</li></ol></div>
+        <div class="article"><h4>제11조(임원의 임기 및 직무)</h4><p>① 임원의 임기는 3년으로 하며 연임할 수 있다.</p><p>② 회장은 본 회를 대표하고 총회 및 이사회의 의장이 되며 회무를 총괄한다.</p><p>③ 상임이사는 회장을 보좌하며, 협회의 내부 통제, 외부 협약 체결, 주요 예산 집행 및 사무국 운영 전반에 대한 공식적인 의사결정권과 전결권을 가진다.</p></div>
+        <div class="article"><h4>제12조(사무국 및 권한 구조)</h4><p>① 본 회의 제반 실무를 집행하기 위하여 사무국을 두며, 사무국장을 임명한다.</p><p>② 사무국장은 일상적인 행정 업무를 자체적으로 처리하되, 예산 집행, 인력 채용, 회원 영업 및 외부 계약 체결 등 주요 업무는 상임이사와 사전 협의(제청)를 거쳐야 하며, 최종 전결권은 상임이사에게 귀속된다.</p><p>③ 사무국은 정기 세미나, 페스타 등 대규모 목적사업의 효율적인 운영을 위하여 상임이사 및 이사회의 승인을 거쳐 외부 전문기관과 업무협약(MOU)을 체결하고 실무의 일부를 위탁할 수 있다.</p></div>
+      </div>
+
+      <div class="chapter reveal">
+        <div class="chapter-title">제4장 총회 및 이사회</div>
+        <div class="article"><h4>제13조(총회)</h4><p>① 총회는 본 회의 최고 의결기관으로 의결권을 가진 개인회원으로 구성한다.</p><p>② 총회는 정관의 변경, 임원의 선출 및 해임, 사업계획 및 예산의 승인, 주요 운영 규정의 승인 등을 의결한다.</p></div>
+        <div class="article"><h4>제14조(총회의 의결정족수)</h4><p>총회는 재적 정회원 과반수의 출석으로 개회하고, 출석 정회원 과반수의 찬성으로 의결한다.</p></div>
+        <div class="article"><h4>제15조(이사회 및 운영위원회)</h4><p>① 이사회는 회장, 상임이사 및 이사로 구성되며, 협회 운영에 관한 주요 사항을 심의하고 의결한다.</p><p>② 이사회는 신속한 실무 집행과 기업회원과의 비즈니스 연계를 위하여 이사회 산하에 상임이사를 위원장으로 하는 운영위원회를 두고 제반사항을 처리하게 한 후, 심의, 승인한다.</p></div>
+      </div>
+
+      <div class="chapter reveal">
+        <div class="chapter-title">제5장 재산 및 회계</div>
+        <div class="article"><h4>제16조(재산의 구분)</h4><p>① 본 회의 재산은 기본재산과 보통재산으로 구분한다.</p><p>② 기본재산은 설립 시 출연한 재산과 이사회에서 기본재산으로 정한 재산으로 하며, 그 밖의 재산은 보통재산으로 한다.</p></div>
+        <div class="article"><h4>제17조(재정 및 수익사업)</h4><p>① 본 회의 재정은 회원의 회비, 기부금, 목적사업 후원금, 수익사업 수입 등으로 충당한다.</p><p>② 본 회는 목적사업 경비를 충당하기 위하여, 본 회의 목적사업에 반하지 않고 지장을 주지 아니하는 범위 내에서 이사회의 의결을 거쳐 수익사업(세미나 참가비 수취, 리포트 판매, 부스 전시 영업, 도서 발간, 행사 공동 주최 등 여러 사업)을 영위할 수 있다. 수익사업을 개시하고자 할 때에는 관할 세무서에 수익사업 개시신고를 하여야 한다.</p><p>③ 본 회는 세무 및 회계의 투명성을 위해 고유목적사업과 수익사업의 회계를 명확히 분리하여(구분경리) 운영하며, 수입 전용 통장과 지출 전용 통장을 분리하여 관리한다.</p></div>
+        <div class="article"><h4>제18조(회계연도 및 결산)</h4><p>본 회의 회계연도는 매년 1월 1일부터 12월 31일까지로 하며, 결산 내역은 정기총회에 보고하여 승인을 받아야 한다.</p></div>
+      </div>
+
+      <div class="chapter reveal">
+        <div class="chapter-title">제6장 보칙</div>
+        <div class="article"><h4>제19조(정관변경)</h4><p>본 회의 정관을 변경하고자 할 때에는 총회에서 출석회원 3분의 2 이상의 찬성으로 의결한다.</p></div>
+        <div class="article"><h4>제20조(해산 및 잔여재산의 귀속)</h4><p>① 본 회를 해산하고자 할 때에는 총회에서 재적회원 4분의 3 이상의 찬성으로 의결한다.</p><p>② 해산 시 잔여재산은 총회의 의결을 거쳐 국가, 지방자치단체 또는 본 회와 유사한 목적을 가진 비영리법인에 귀속한다.</p></div>
+        <div class="article"><h4>제21조(준용규정)</h4><p>본 정관에 명시되지 아니한 사항은 민법 중 사단법인에 관한 규정 및 주무관청의 규칙에 따른다.</p></div>
+      </div>
+
+      <div class="chapter reveal">
+        <div class="chapter-title">부칙</div>
+        <div class="article"><h4>제1조(시행일)</h4><p>본 정관은 창립총회에서 통과된 날로부터 시행한다.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+</div><!-- /pg-about-charter -->
+
+<!-- ██ 개인정보처리방침 ██ -->
+<div class="page" id="pg-privacy">
+<div class="page-banner">
+  <div class="w">
+    <nav class="breadcrumb"><button onclick="go('pg-home')">홈</button><span>›</span><span>약관·정책</span><span>›</span><span style="color:rgba(255,255,255,.85);">개인정보처리방침</span></nav>
+    <h1>개인정보처리방침</h1>
+    <p class="pg-desc">사단법인 1인가구협회는 「개인정보 보호법」에 따라 이용자의 개인정보를 보호하고 관련 권익을 보장합니다.</p>
+    <div class="gold-line"></div>
+  </div>
+</div>
+<main>
+<section style="background:var(--white);">
+  <div class="w">
+    <div class="charter-wrap">
+      <div class="chapter reveal">
+        <div class="chapter-title">제1조 (수집하는 개인정보 항목 및 수집 목적)</div>
+        <div class="article"><p>협회는 다음의 목적을 위하여 최소한의 개인정보를 수집합니다.</p><ul>
+          <li>회원 가입·관리: 성명, 연락처, 이메일</li>
+          <li>후원 및 기부금영수증 발급: 성명, 연락처, 이메일, 후원내역, (영수증 발급 시) 주민등록번호 — 「소득세법」에 따른 법정 발급 항목</li>
+          <li>문의·상담 처리: 성명, 연락처, 이메일, 문의 내용</li>
+        </ul></div>
+      </div>
+      <div class="chapter reveal">
+        <div class="chapter-title">제2조 (개인정보의 보유 및 이용기간)</div>
+        <div class="article"><p>수집된 개인정보는 수집·이용 목적이 달성된 후 지체 없이 파기합니다. 다만 관계 법령에 따라 보존할 필요가 있는 경우 아래 기간 동안 보관합니다.</p><ul>
+          <li>기부금영수증 발급명세: 「소득세법」에 따라 발급일로부터 5년</li>
+          <li>회원 가입·관리 정보: 회원 탈퇴 시까지</li>
+          <li>관계 법령에 별도 보존기간이 정해진 경우 해당 기간</li>
+        </ul></div>
+      </div>
+      <div class="chapter reveal">
+        <div class="chapter-title">제3조 (개인정보의 제3자 제공)</div>
+        <div class="article"><p>협회는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 이용자가 사전에 동의한 경우 또는 법령의 규정에 의거하거나 수사 목적으로 법령에 정해진 절차와 방법에 따라 요구가 있는 경우는 예외로 합니다.</p></div>
+      </div>
+      <div class="chapter reveal">
+        <div class="chapter-title">제4조 (개인정보의 파기)</div>
+        <div class="article"><p>보유기간이 경과하거나 처리 목적이 달성된 개인정보는 지체 없이 파기합니다. 전자적 파일은 복구할 수 없는 방법으로 영구 삭제하며, 종이 문서는 분쇄 또는 소각합니다.</p></div>
+      </div>
+      <div class="chapter reveal">
+        <div class="chapter-title">제5조 (정보주체의 권리)</div>
+        <div class="article"><p>이용자는 언제든지 자신의 개인정보에 대한 열람·정정·삭제·처리정지를 요구할 수 있으며, 협회는 관계 법령에 따라 지체 없이 조치합니다.</p></div>
+      </div>
+      <div class="chapter reveal">
+        <div class="chapter-title">제6조 (개인정보의 안전성 확보조치)</div>
+        <div class="article"><p>협회는 개인정보의 안전한 처리를 위하여 접근권한 관리, 접근통제, 고유식별정보의 암호화, 처리 직원에 대한 교육 등 관리적·기술적 보호조치를 시행합니다.</p></div>
+      </div>
+      <div class="chapter reveal">
+        <div class="chapter-title">제7조 (개인정보 보호책임자)</div>
+        <div class="article"><p>개인정보 처리에 관한 문의·불만·피해구제는 아래로 연락 주시기 바랍니다.</p><ul>
+          <li>개인정보 보호책임자: 협회 사무국</li>
+          <li>이메일: info.ksaofficial@gmail.com</li>
+          <li>전화: 02-2635-9076</li>
+        </ul></div>
+      </div>
+      <div class="chapter reveal">
+        <div class="chapter-title">부칙</div>
+        <div class="article"><p>이 개인정보처리방침은 게시일로부터 시행하며, 내용의 추가·삭제·수정이 있을 경우 시행 전 홈페이지를 통해 공지합니다.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+</div><!-- /pg-privacy -->
+
+<!-- ██ 이용약관 ██ -->
+<div class="page" id="pg-terms">
+<div class="page-banner">
+  <div class="w">
+    <nav class="breadcrumb"><button onclick="go('pg-home')">홈</button><span>›</span><span>약관·정책</span><span>›</span><span style="color:rgba(255,255,255,.85);">이용약관</span></nav>
+    <h1>이용약관</h1>
+    <p class="pg-desc">사단법인 1인가구협회 홈페이지 이용에 관한 기본 약관입니다.</p>
+    <div class="gold-line"></div>
+  </div>
+</div>
+<main>
+<section style="background:var(--white);">
+  <div class="w">
+    <div class="charter-wrap">
+      <div class="chapter reveal">
+        <div class="chapter-title">제1조 (목적)</div>
+        <div class="article"><p>이 약관은 사단법인 1인가구협회(이하 "협회")가 운영하는 홈페이지에서 제공하는 서비스의 이용 조건 및 절차, 이용자와 협회의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.</p></div>
+      </div>
+      <div class="chapter reveal">
+        <div class="chapter-title">제2조 (약관의 효력 및 변경)</div>
+        <div class="article"><p>이 약관은 홈페이지에 게시함으로써 효력이 발생합니다. 협회는 관계 법령을 위배하지 않는 범위에서 약관을 개정할 수 있으며, 개정 시 시행일과 개정 사유를 명시하여 홈페이지에 공지합니다.</p></div>
+      </div>
+      <div class="chapter reveal">
+        <div class="chapter-title">제3조 (서비스의 제공)</div>
+        <div class="article"><p>협회는 협회 소개, 정책 연구 자료, 공지·소식, 회원 가입 및 후원 안내 등 비영리 공익 목적의 정보를 제공합니다. 협회는 운영·기술상 필요에 따라 서비스의 내용을 변경하거나 중단할 수 있습니다.</p></div>
+      </div>
+      <div class="chapter reveal">
+        <div class="chapter-title">제4조 (이용자의 의무)</div>
+        <div class="article"><p>이용자는 관계 법령과 이 약관을 준수하여야 하며, 협회의 업무를 방해하거나 타인의 권리를 침해하는 행위를 하여서는 안 됩니다.</p></div>
+      </div>
+      <div class="chapter reveal">
+        <div class="chapter-title">제5조 (저작권)</div>
+        <div class="article"><p>홈페이지에 게시된 자료의 저작권은 협회 또는 정당한 권리자에게 있습니다. 협회가 무료로 공개한 연구 자료는 출처를 표시하는 조건으로 자유롭게 활용할 수 있습니다.</p></div>
+      </div>
+      <div class="chapter reveal">
+        <div class="chapter-title">제6조 (면책)</div>
+        <div class="article"><p>협회는 천재지변, 이용자의 귀책사유 등 협회의 통제를 벗어난 사유로 발생한 손해에 대하여 책임을 지지 않습니다.</p></div>
+      </div>
+      <div class="chapter reveal">
+        <div class="chapter-title">제7조 (준거법 및 관할)</div>
+        <div class="article"><p>이 약관은 대한민국 법령에 따라 해석되며, 협회와 이용자 간 분쟁에 관한 소송의 관할은 관계 법령이 정하는 바에 따릅니다.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+</div><!-- /pg-terms -->
+
 <!-- ==================== SHARED FOOTER ==================== -->
 <footer>
   <div class="w">
@@ -1876,15 +2122,17 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
         <div class="name">사단법인 1인가구협회</div>
         <span class="en">Korea Small-Household Association</span>
         <div class="addr">
+          소재지 : 서울특별시 영등포구 영등포로20길 22-8, 지율빌딩 3F<br>
+          대표자 : 최태열<br>
           대표전화 : <a href="tel:02-2635-9076">02-2635-9076</a><br>
           이메일 : <a href="mailto:info.ksaofficial@gmail.com">info.ksaofficial@gmail.com</a><br>
-          고유번호증 : 229-82-69076
+          고유번호 : 229-82-69076
         </div>
       </div>
       <div class="fc">
         <h4>협회 소개</h4>
         <ul>
-          <li><button onclick="go('pg-about-greeting')">이사장 인사</button></li>
+          <li><button onclick="go('pg-about-greeting')">회장 인사</button></li>
           <li><button onclick="go('pg-about-vision')">설립 목적·비전</button></li>
           <li><button onclick="go('pg-about-history')">연혁</button></li>
           <li><button onclick="go('pg-about-board')">임원진</button></li>
@@ -1906,6 +2154,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
           <li><button onclick="go('pg-member-join')">회원 가입</button></li>
           <li><button onclick="go('pg-member-support')">후원 안내</button></li>
           <li><button onclick="go('pg-member-receipt')">기부금 영수증</button></li>
+          <li><button onclick="go('pg-disclosure')">정보공개·공시</button></li>
           <li><button onclick="go('pg-news-notice')">공지사항</button></li>
         </ul>
       </div>
@@ -1913,9 +2162,10 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
     <div class="fbot">
       <div class="fcopy">© 2025 사단법인 1인가구협회. All rights reserved.</div>
       <div class="flinks">
-        <a href="#">개인정보처리방침</a>
-        <a href="#">이용약관</a>
+        <a href="javascript:void(0)" onclick="go('pg-privacy')">개인정보처리방침</a>
+        <a href="javascript:void(0)" onclick="go('pg-terms')">이용약관</a>
         <a href="#">이메일무단수집거부</a>
+        <a href="https://www.hometax.go.kr" target="_blank" rel="noopener">공익법인 공시(홈택스)</a>
       </div>
     </div>
   </div>
@@ -1933,7 +2183,8 @@ const ALL_PAGES = [
   'pg-news-notice','pg-news-press',
   'pg-member-join','pg-member-support','pg-member-receipt',
   'pg-programs-research','pg-programs-local',
-  'pg-seminar-schedule','pg-festa','pg-research-library'
+  'pg-seminar-schedule','pg-festa','pg-research-library',
+  'pg-disclosure','pg-about-charter','pg-privacy','pg-terms'
 ];
 
 // ── Router ──
