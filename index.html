@@ -702,6 +702,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
         <div class="dd">
           <button onclick="go('pg-news-notice')">공지사항</button>
           <button onclick="go('pg-news-press')">뉴스·보도</button>
+          <button onclick="window.open('https://ksaofficial.co.kr/info','_blank','noopener')">정보 게시판 ↗</button>
           <button onclick="go('pg-news-faq')">자주 묻는 질문</button>
         </div>
       </div>
@@ -759,6 +760,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
     <div class="mob-sub">
       <button onclick="go('pg-news-notice');closeDrawer()">공지사항</button>
       <button onclick="go('pg-news-press');closeDrawer()">뉴스·보도</button>
+      <button onclick="window.open('https://ksaofficial.co.kr/info','_blank','noopener');closeDrawer()">정보 게시판 ↗</button>
       <button onclick="go('pg-news-faq');closeDrawer()">자주 묻는 질문</button>
     </div>
   </div>
@@ -1183,10 +1185,10 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
   <div class="w">
     <div class="notice-info reveal" style="margin-bottom:22px;">📌 자주 찾는 정보로 바로 이동하실 수 있습니다.</div>
     <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:8px;">
-      <a href="javascript:void(0)" onclick="go('pg-news-press')" style="display:block;padding:30px 28px;border:1px solid var(--border-light);border-radius:var(--radius);background:var(--white);text-decoration:none;">
+      <a href="https://ksaofficial.co.kr/info" target="_blank" rel="noopener" style="display:block;padding:30px 28px;border:1px solid var(--border-light);border-radius:var(--radius);background:var(--white);text-decoration:none;">
         <div style="font-size:12px;color:var(--teal);font-weight:700;letter-spacing:.06em;">INFORMATION BOARD</div>
-        <div style="font-size:18px;font-weight:700;color:var(--navy);margin:8px 0 6px;">정보 게시판 →</div>
-        <div style="font-size:14px;color:var(--muted);line-height:1.7;">1인가구 관련 최신 기사·정책 소식과 협회 주간 뉴스레터를 확인하세요.</div>
+        <div style="font-size:18px;font-weight:700;color:var(--navy);margin:8px 0 6px;">정보 게시판 ↗</div>
+        <div style="font-size:14px;color:var(--muted);line-height:1.7;">1인가구 관련 정보 글을 모은 협회 정보게시판으로 이동합니다.</div>
       </a>
       <a href="javascript:void(0)" onclick="go('pg-news-faq')" style="display:block;padding:30px 28px;border:1px solid var(--border-light);border-radius:var(--radius);background:var(--white);text-decoration:none;">
         <div style="font-size:12px;color:var(--teal);font-weight:700;letter-spacing:.06em;">FAQ</div>
@@ -1860,7 +1862,6 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
       <table class="festa-sched">
         <thead><tr><th>구분</th><th>신청 마감</th><th>기본부스</th><th>독립부스</th></tr></thead>
         <tbody>
-          <tr><td>수퍼 얼리버드</td><td>2026.04.30(목)</td><td>2,100,000원</td><td>1,800,000원</td></tr>
           <tr><td>얼리버드</td><td>2026.07.31(금)</td><td>2,300,000원</td><td>2,000,000원</td></tr>
           <tr><td>일반신청</td><td>2026.11.26(목)</td><td>2,500,000원</td><td>2,200,000원</td></tr>
         </tbody>
@@ -2497,6 +2498,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
           <li><button onclick="go('pg-member-receipt')">기부금 영수증</button></li>
           <li><button onclick="go('pg-disclosure')">정보공개·공시</button></li>
           <li><button onclick="go('pg-news-notice')">공지사항</button></li>
+          <li><button onclick="window.open('https://ksaofficial.co.kr/info','_blank','noopener')">정보 게시판 ↗</button></li>
           <li><button onclick="go('pg-news-faq')">자주 묻는 질문</button></li>
         </ul>
       </div>
