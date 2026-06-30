@@ -1518,7 +1518,16 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
     <div class="reveal reveal-d1" style="max-width:720px;">
       <div class="account-box"><strong>기부금 전용계좌 안내</strong><br>은행명: IBK기업은행<br>계좌번호: 089-090980-04-012<br>예금주: <strong>사단법인 1인가구협회</strong><br><br><span style="color:rgba(255,255,255,.75);font-size:14px;">입금 메모: 후원자 성함 + '후원'</span></div>
       <div class="notice-info reveal reveal-d2">기부금 영수증은 <strong>공익법인(기부금단체) 지정 이후</strong> 세액공제용으로 발급됩니다. 지정 전 후원분은 지정 후 소급 안내드립니다. (<button onclick="go('pg-member-receipt')" style="color:var(--teal);font-weight:600;text-decoration:none;background:none;border:none;cursor:pointer;font-family:'Noto Sans KR',sans-serif;padding:0;">영수증 발급 신청 →</button>)</div>
-      <div style="margin-top:20px;"><a href="mailto:info.ksaofficial@gmail.com?subject=후원문의" class="btn-teal">📧 후원 문의하기</a></div>
+      <div style="margin-top:20px;"><button type="button" class="btn-teal" onclick="var d=document.getElementById('donate-options');d.style.display=(d.style.display==='block')?'none':'block';">📧 후원 문의하기</button></div>
+      <div id="donate-options" style="display:none;margin-top:24px;">
+        <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:16px;">관심 있는 후원 분야를 선택해 문의해 주세요. 금전 후원뿐 아니라 <strong>물품·운영비 후원, 전문 재능기부</strong>까지 모두 환영합니다.</p>
+        <div class="donation-grid">
+          <div class="don-card"><span class="don-icon">🎤</span><div class="don-name">세미나 후원</div><div class="don-divider"></div><ul class="don-benefits" style="text-align:left;"><li>세미나 운영 물품 후원</li><li>세미나 운영비 후원</li></ul><a href="mailto:info.ksaofficial@gmail.com?subject=세미나 후원 문의" style="display:inline-block;margin-top:14px;background:var(--navy);color:#fff;font-weight:700;font-size:13px;padding:9px 16px;border-radius:7px;text-decoration:none;">세미나 후원 문의 →</a></div>
+          <div class="don-card"><span class="don-icon">🏛️</span><div class="don-name">정책제안 후원</div><div class="don-divider"></div><ul class="don-benefits" style="text-align:left;"><li>자문위원 전문 재능기부<br>(정책·연구 자문)</li></ul><a href="mailto:info.ksaofficial@gmail.com?subject=정책제안 후원(전문 재능기부) 문의" style="display:inline-block;margin-top:14px;background:var(--navy);color:#fff;font-weight:700;font-size:13px;padding:9px 16px;border-radius:7px;text-decoration:none;">정책제안 후원 문의 →</a></div>
+          <div class="don-card"><span class="don-icon">🏢</span><div class="don-name">사무국 운영 후원</div><div class="don-divider"></div><ul class="don-benefits" style="text-align:left;"><li>사무국 운영 물품 후원</li><li>사무국 운영비 후원</li></ul><a href="mailto:info.ksaofficial@gmail.com?subject=사무국 운영 후원 문의" style="display:inline-block;margin-top:14px;background:var(--navy);color:#fff;font-weight:700;font-size:13px;padding:9px 16px;border-radius:7px;text-decoration:none;">사무국 운영 후원 문의 →</a></div>
+          <div class="don-card"><span class="don-icon">🙋</span><div class="don-name">자원봉사 후원</div><div class="don-divider"></div><ul class="don-benefits" style="text-align:left;"><li>소외·고립가구 전화 상담</li><li>1인가구 세미나 운영 자원봉사</li></ul><a href="mailto:info.ksaofficial@gmail.com?subject=자원봉사 후원 문의" style="display:inline-block;margin-top:14px;background:var(--navy);color:#fff;font-weight:700;font-size:13px;padding:9px 16px;border-radius:7px;text-decoration:none;">자원봉사 후원 문의 →</a></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
