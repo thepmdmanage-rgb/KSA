@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="ko" translate="no">
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google" content="notranslate">
 <title>사단법인 1인가구협회 | KSA</title>
 <meta name="description" content="1인가구협회(KSA)는 1인 가구의 권익 증진과 사회적 연결망 강화를 위한 정책 연구, 교육, 지역사회 연계 사업을 수행하는 비영리 공익단체입니다.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -102,6 +101,7 @@ header { background: var(--white); border-bottom: 1px solid var(--border); posit
 
 .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; cursor: pointer; background: none; border: none; font-family: inherit; }
 .logo-em { width: 42px; height: 42px; background: var(--navy); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: var(--gold); font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Malgun Gothic', serif; font-size: 14px; font-weight: 700; }
+.logo-tx { text-align: left; }
 .logo-tx .ko { font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Malgun Gothic', serif; font-size: 16px; font-weight: 700; color: var(--navy); line-height: 1.2; display: block; }
 .logo-tx .en { font-size: 11px; color: var(--muted-light); letter-spacing: .8px; display: block; }
 
@@ -640,9 +640,9 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
   <div class="w">
     <span>사단법인 1인가구협회 · Korea Small-Household Association</span>
     <div class="topbar-links">
-      <a href="#">오시는 길</a>
-      <a href="#">사이트맵</a>
-      <a href="#">English</a>
+      <a href="#" onclick="window.open('https://www.google.com/maps/search/?api=1&amp;query='+encodeURIComponent('서울특별시 영등포구 영등포로20길 22-8 지율빌딩'),'_blank','noopener');return false;">오시는 길</a>
+      <a href="#" onclick="document.querySelector('footer').scrollIntoView({behavior:'smooth'});return false;">사이트맵</a>
+      <a href="#" onclick="window.open('https://thepmdmanage--rgb-github-io.translate.goog/KSA/?_x_tr_sl=ko&amp;_x_tr_tl=en&amp;_x_tr_hl=en','_blank','noopener');return false;">English</a>
     </div>
   </div>
 </div>
@@ -1196,7 +1196,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
         <div style="font-size:14px;color:var(--muted);line-height:1.7;">회원가입·세미나·후원·자료 이용 등 자주 묻는 내용을 모았습니다.</div>
       </a>
     </div>
-    <div class="notice-list" style="display:none">
+    <div class="notice-list">
       <div class="notice-filter reveal" role="group" aria-label="공지 분류 필터">
         <button class="nf-btn active" data-filter="all" onclick="filterNotice(this,'all')">전체</button>
         <button class="nf-btn" data-filter="imp" onclick="filterNotice(this,'imp')">중요</button>
@@ -1208,20 +1208,21 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
         <div class="notice-accordion" data-cats="imp" data-bot-cat="imp" data-bot-date="2025-04-30">
           <button class="notice-item bot-notice-item" onclick="toggleAccordion(this)" aria-expanded="false">
             <span class="ni-pin" aria-hidden="true">📌</span>
-            <div style="flex:1;min-width:0;"><div class="ni-badge-wrap"><span class="nbadge nb-imp">중요</span></div><div class="ni-h4 bot-notice-title">사단법인 1인가구협회 창립총회 성료 안내</div><div class="ni-meta2 bot-notice-date">2025.04.30 &nbsp;·&nbsp; 조회 1,024</div></div>
+            <div style="flex:1;min-width:0;"><div class="ni-badge-wrap"><span class="nbadge nb-imp">중요</span></div><div class="ni-h4 bot-notice-title">사단법인 1인가구협회 창립총회 성료 안내</div><div class="ni-meta2 bot-notice-date">2026.04.30</div></div>
             <span style="font-size:13px;color:var(--muted-light);flex-shrink:0;margin-left:12px;" class="acc-arrow">▾</span>
           </button>
           <div class="notice-detail">
-            <p>사단법인 1인가구협회는 2025년 4월 30일(수) 서울특별시에서 창립총회를 성황리에 개최하였습니다.</p>
-            <p>이날 총회에서는 ▲초대 임원진 선출 ▲정관 채택 ▲2025년 사업계획 및 예산 의결 ▲협회 비전 선언이 이루어졌습니다.</p>
-            <p>협회는 750만 1인 가구의 권익 증진을 위해 정책 연구, 교육·세미나, 지역사회 협력 사업을 적극 추진할 예정입니다.</p>
+            <p>사단법인 1인가구협회는 2026년 4월 30일(수) 서울특별시에서 창립총회를 개최하고 공식 출범하였습니다.</p>
+            <p>이날 총회에서는 ▲정관(회칙) 채택 ▲초대 임원진 선출 ▲2026년 사업계획 및 예산 의결 ▲협회 비전·중장기 전략 선언이 이루어졌습니다.</p>
+            <p>협회는 ‘From SOLO, To CULTURE’ 슬로건 아래 1인 가구를 ‘취약계층’이 아닌 ‘능동적 사회주체’로 바라보며, 정책 연구·제도 개선, 교육·세미나(연 12회), 1인가구 페스타, 지자체 협력 사업을 본격적으로 추진합니다.</p>
+            <p>앞으로 1인 가구의 ▲주거 안정 ▲사회적 고립 예방 ▲복지제도의 1인가구 친화적 재설계 ▲인식·문화 전환을 위해 힘쓰겠습니다. 회원 여러분과 시민사회의 많은 관심과 참여를 부탁드립니다.</p>
             <div class="detail-contact">문의: <a href="mailto:info.ksaofficial@gmail.com">info.ksaofficial@gmail.com</a> &nbsp;/&nbsp; <a href="tel:02-2635-9076">02-2635-9076</a></div>
           </div>
         </div>
         <div class="notice-accordion" data-cats="general" data-bot-cat="imp" data-bot-date="2025-04-15">
           <button class="notice-item bot-notice-item" onclick="toggleAccordion(this)" aria-expanded="false">
             <span class="ni-pin" aria-hidden="true">📌</span>
-            <div style="flex:1;min-width:0;"><div class="ni-badge-wrap"><span class="nbadge nb-general">공지</span></div><div class="ni-h4 bot-notice-title">협회 사무국 연락처 및 운영 안내</div><div class="ni-meta2 bot-notice-date">2025.05.02 &nbsp;·&nbsp; 조회 568</div></div>
+            <div style="flex:1;min-width:0;"><div class="ni-badge-wrap"><span class="nbadge nb-general">공지</span></div><div class="ni-h4 bot-notice-title">협회 사무국 연락처 및 운영 안내</div><div class="ni-meta2 bot-notice-date">2026.05.04</div></div>
             <span style="font-size:13px;color:var(--muted-light);flex-shrink:0;margin-left:12px;" class="acc-arrow">▾</span>
           </button>
           <div class="notice-detail">
@@ -1234,7 +1235,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
         <div class="notice-accordion reveal reveal-d2" data-cats="new general" data-bot-cat="new" data-bot-date="2026-06-01">
           <button class="notice-item bot-notice-item" onclick="toggleAccordion(this)" aria-expanded="false">
             <span class="ni-num">5</span>
-            <div style="flex:1;min-width:0;"><div class="ni-badge-wrap"><span class="nbadge nb-new">NEW</span></div><div class="ni-h4 bot-notice-title">2026년 세미나 일정 안내</div><div class="ni-meta2 bot-notice-date">2025.05.10 &nbsp;·&nbsp; 조회 322</div></div>
+            <div style="flex:1;min-width:0;"><div class="ni-badge-wrap"><span class="nbadge nb-new">NEW</span></div><div class="ni-h4 bot-notice-title">2026년 세미나 일정 안내</div><div class="ni-meta2 bot-notice-date">2026.05.26</div></div>
             <span style="font-size:13px;color:var(--muted-light);flex-shrink:0;margin-left:12px;" class="acc-arrow">▾</span>
           </button>
           <div class="notice-detail"><p>2026년 연간 세미나 일정이 확정되었습니다. 연 12회 개최 예정이며 세미나 일정 페이지에서 확인하실 수 있습니다.</p><p>회원은 전 세미나 무료로 참가하실 수 있습니다.</p><div class="detail-contact">문의: <a href="mailto:info.ksaofficial@gmail.com">info.ksaofficial@gmail.com</a></div></div>
@@ -1242,7 +1243,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
         <div class="notice-accordion reveal reveal-d2" data-cats="general" data-bot-cat="general" data-bot-date="2025-04-01">
           <button class="notice-item bot-notice-item" onclick="toggleAccordion(this)" aria-expanded="false">
             <span class="ni-num">4</span>
-            <div style="flex:1;min-width:0;"><div class="ni-badge-wrap"><span class="nbadge nb-general">공지</span></div><div class="ni-h4 bot-notice-title">회원 가입 안내</div><div class="ni-meta2 bot-notice-date">2025.05.07 &nbsp;·&nbsp; 조회 487</div></div>
+            <div style="flex:1;min-width:0;"><div class="ni-badge-wrap"><span class="nbadge nb-general">공지</span></div><div class="ni-h4 bot-notice-title">회원 가입 안내</div><div class="ni-meta2 bot-notice-date">2026.05.07</div></div>
             <span style="font-size:13px;color:var(--muted-light);flex-shrink:0;margin-left:12px;" class="acc-arrow">▾</span>
           </button>
           <div class="notice-detail"><p>회원 구분: 개인회원 / 기업회원 — 세부 등급·자격 및 회비 안내는 준비 중입니다.</p><p>가입 신청: <a href="mailto:info.ksaofficial@gmail.com" style="color:var(--teal);font-weight:600;">info.ksaofficial@gmail.com</a>으로 가입 신청서를 송부해 주시거나 협회 사무국으로 문의하여 주시기 바랍니다.</p><div class="detail-contact">문의: <a href="mailto:info.ksaofficial@gmail.com">info.ksaofficial@gmail.com</a> &nbsp;/&nbsp; <a href="tel:02-2635-9076">02-2635-9076</a></div></div>
@@ -1250,7 +1251,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
         <div class="notice-accordion reveal reveal-d3" data-cats="recruit" data-bot-cat="recruit" data-bot-date="2025-03-20">
           <button class="notice-item bot-notice-item" onclick="toggleAccordion(this)" aria-expanded="false">
             <span class="ni-num">3</span>
-            <div style="flex:1;min-width:0;"><div class="ni-badge-wrap"><span class="nbadge nb-recruit">모집</span></div><div class="ni-h4 bot-notice-title">협회 자문위원 모집 공고</div><div class="ni-meta2 bot-notice-date">2025.04.28 &nbsp;·&nbsp; 조회 445</div></div>
+            <div style="flex:1;min-width:0;"><div class="ni-badge-wrap"><span class="nbadge nb-recruit">모집</span></div><div class="ni-h4 bot-notice-title">협회 자문위원 모집 공고</div><div class="ni-meta2 bot-notice-date">2026.05.20</div></div>
             <span style="font-size:13px;color:var(--muted-light);flex-shrink:0;margin-left:12px;" class="acc-arrow">▾</span>
           </button>
           <div class="notice-detail"><p>1인가구 관련 정책·연구·복지·법률 분야 전문가를 자문위원으로 모집합니다.</p><p>자문위원은 협회 정책 연구 및 사업 방향 설정에 전문적 의견을 제공하는 역할을 담당합니다.</p><div class="detail-contact">지원: <a href="mailto:info.ksaofficial@gmail.com">info.ksaofficial@gmail.com</a></div></div>
@@ -1258,7 +1259,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
         <div class="notice-accordion reveal reveal-d3" data-cats="general" data-bot-cat="general" data-bot-date="2025-03-30">
           <button class="notice-item bot-notice-item" onclick="toggleAccordion(this)" aria-expanded="false">
             <span class="ni-num">2</span>
-            <div style="flex:1;min-width:0;"><div class="ni-badge-wrap"><span class="nbadge nb-general">공지</span></div><div class="ni-h4 bot-notice-title">홈페이지 오픈 안내</div><div class="ni-meta2 bot-notice-date">2025.05.01 &nbsp;·&nbsp; 조회 712</div></div>
+            <div style="flex:1;min-width:0;"><div class="ni-badge-wrap"><span class="nbadge nb-general">공지</span></div><div class="ni-h4 bot-notice-title">홈페이지 오픈 안내</div><div class="ni-meta2 bot-notice-date">2026.05.01</div></div>
             <span style="font-size:13px;color:var(--muted-light);flex-shrink:0;margin-left:12px;" class="acc-arrow">▾</span>
           </button>
           <div class="notice-detail"><p>사단법인 1인가구협회 공식 홈페이지가 오픈되었습니다. 홈페이지를 통해 협회 소식, 세미나 일정, 정책 연구 자료 등 다양한 정보를 확인하실 수 있습니다.</p><div class="detail-contact">문의: <a href="mailto:info.ksaofficial@gmail.com">info.ksaofficial@gmail.com</a></div></div>
@@ -1266,7 +1267,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
         <div class="notice-accordion reveal reveal-d3" data-cats="general" data-bot-cat="general" data-bot-date="2025-03-15">
           <button class="notice-item bot-notice-item" onclick="toggleAccordion(this)" aria-expanded="false">
             <span class="ni-num">1</span>
-            <div style="flex:1;min-width:0;"><div class="ni-badge-wrap"><span class="nbadge nb-general">공지</span></div><div class="ni-h4 bot-notice-title">개인정보처리방침 제정 안내</div><div class="ni-meta2 bot-notice-date">2025.05.03 &nbsp;·&nbsp; 조회 201</div></div>
+            <div style="flex:1;min-width:0;"><div class="ni-badge-wrap"><span class="nbadge nb-general">공지</span></div><div class="ni-h4 bot-notice-title">개인정보처리방침 제정 안내</div><div class="ni-meta2 bot-notice-date">2026.05.03</div></div>
             <span style="font-size:13px;color:var(--muted-light);flex-shrink:0;margin-left:12px;" class="acc-arrow">▾</span>
           </button>
           <div class="notice-detail"><p>협회 개인정보처리방침이 제정되었습니다. 홈페이지 하단에서 확인하실 수 있습니다.</p><p>회원 및 이용자의 개인정보는 개인정보 보호법 및 관계 법령에 따라 안전하게 보호됩니다.</p><div class="detail-contact">문의: <a href="mailto:info.ksaofficial@gmail.com">info.ksaofficial@gmail.com</a></div></div>
@@ -1295,27 +1296,28 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
     <div class="sl reveal">KSA WEEKLY</div>
     <h2 class="st reveal reveal-d1">주간 뉴스레터</h2>
     <div class="dg reveal reveal-d1"></div>
-    <p class="reveal reveal-d1" style="text-align:center;max-width:960px;margin:0 auto 36px;color:var(--muted);line-height:1.8;white-space:nowrap;">매주 월요일, 1인가구를 위한 한 주의 정책·생활 소식을 정리해 회원께 보내드립니다.</p>
+    <p class="reveal reveal-d1" style="text-align:center;max-width:960px;margin:0 auto 36px;color:var(--muted);line-height:1.8;white-space:nowrap;">매주 월요일, 1인가구를 위한 한 주의 정책·생활 소식을 정리해 회원님께 이메일로 보내드립니다.</p>
 
     <div class="reveal reveal-d2" style="background:var(--navy);border-radius:18px;overflow:hidden;color:#fff;display:grid;grid-template-columns:210px 1fr;box-shadow:0 14px 40px rgba(0,0,0,.16);">
       <div style="background:linear-gradient(160deg,#1a2744,#0d1626);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:34px 18px;text-align:center;">
         <div style="font-size:13px;letter-spacing:2px;color:var(--gold);font-weight:700;">KSA WEEKLY</div>
-        <div style="font-size:42px;font-weight:800;margin:6px 0;line-height:1;">제2호</div>
-        <div style="font-size:13px;opacity:.82;">2026.06.22(월)</div>
+        <div style="font-size:42px;font-weight:800;margin:6px 0;line-height:1;">제3호</div>
+        <div style="font-size:13px;opacity:.82;">2026.06.29(월)</div>
         <div style="font-size:12px;opacity:.62;margin-top:4px;">최신호</div>
       </div>
       <div style="padding:30px 32px;">
         <div style="font-size:19px;font-weight:700;margin-bottom:16px;">혼자 사는 삶을 위한 한 주의 정책·생활 소식</div>
         <ul style="list-style:none;padding:0;margin:0 0 22px;">
-          <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:15px;"><span style="color:var(--gold);font-weight:700;">01</span>&nbsp;&nbsp;7월 세미나 〈전기세 폭탄 없는 여름나기〉 신청 시작</li>
-          <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:15px;"><span style="color:var(--gold);font-weight:700;">02</span>&nbsp;&nbsp;전월세 안심계약 무료 집보기 동행 · 청년인생설계학교 2기 모집</li>
-          <li style="padding:8px 0;font-size:15px;"><span style="color:var(--gold);font-weight:700;">03</span>&nbsp;&nbsp;1인가구 고립·자살예방 2026 — '연결'이 가장 큰 안전망</li>
+          <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:15px;"><span style="color:var(--gold);font-weight:700;">01</span>&nbsp;&nbsp;7월 세미나 〈전기세 폭탄 없는 여름나기〉 신청 마감 임박</li>
+          <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:15px;"><span style="color:var(--gold);font-weight:700;">02</span>&nbsp;&nbsp;청년미래적금 신청 시작(~7/3) · 강동구 안심버팀목 주거안전</li>
+          <li style="padding:8px 0;font-size:15px;"><span style="color:var(--gold);font-weight:700;">03</span>&nbsp;&nbsp;여름 빈집털이 안전수칙 7 · 청년 1인가구 독립 만족도 81.5%</li>
         </ul>
-        <a href="newsletter-2.html" target="_blank" rel="noopener" style="display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;padding:11px 22px;border-radius:8px;text-decoration:none;">제2호 전문 보기 →</a>
+        <a href="newsletter-3.html" target="_blank" rel="noopener" style="display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;padding:11px 22px;border-radius:8px;text-decoration:none;">제3호 전문 보기 →</a>
       </div>
     </div>
 
     <div class="reveal reveal-d3" style="margin-top:16px;">
+      <button class="press-list-item" onclick="window.open('newsletter-2.html','_blank','noopener')"><span class="pls" style="background:var(--navy);color:#fff;">제2호</span><span class="plt">7월 세미나 신청 시작 · 전월세 안심계약 · 1인가구 고립·자살예방 2026</span><span class="pld">2026.06.22</span></button>
       <button class="press-list-item" onclick="window.open('newsletter-1.html','_blank','noopener')"><span class="pls" style="background:var(--navy);color:#fff;">제1호</span><span class="plt">주거급여 7.2% 인상 · 여름 숙박할인권 · 대전 청년 보증금 이자지원</span><span class="pld">2026.06.15</span></button>
     </div>
     <p class="reveal reveal-d3" style="text-align:center;margin-top:26px;color:var(--muted);font-size:14.5px;line-height:1.7;">매주 새 호가 발행되며 이곳에 차례로 추가됩니다.<br>뉴스레터를 메일로 받아보시려면 <button onclick="go('pg-member-join')" style="background:none;border:none;color:var(--navy);font-weight:700;text-decoration:underline;cursor:pointer;padding:0;font-size:inherit;">회원가입 →</button></p>
@@ -1326,12 +1328,13 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
     <div class="sl reveal">1인가구 NEWS</div>
     <h2 class="st reveal reveal-d1">1인가구 관련 주요 뉴스</h2>
     <div class="dg reveal reveal-d1"></div>
-    <p class="reveal reveal-d1" style="text-align:center;max-width:680px;margin:0 auto 32px;color:var(--muted);line-height:1.8;">협회가 작성한 보도자료가 아닌, 정부·언론이 다룬 1인가구 관련 주요 소식을 선별해 연결합니다. 제목을 누르면 해당 기사로 이동합니다.</p>
-    <button class="press-list-item reveal reveal-d2" onclick="window.open('https://www.kostat.go.kr/board.es?mid=a10301010000&amp;bid=10820&amp;act=view&amp;list_no=442130','_blank','noopener')"><span class="pls">통계청</span><span class="plt">2025 통계로 보는 1인가구 (공식 보도자료) — 전체 가구의 36.1%, 804만 가구</span><span class="pld">2025.12</span></button>
-    <button class="press-list-item reveal reveal-d2" onclick="window.open('https://news.nate.com/view/20260623n02013','_blank','noopener')"><span class="pls">이데일리</span><span class="plt">정부 1인가구 지원 늘린다는데…주무부처는 예산 규모조차 몰라</span><span class="pld">2026.06.23</span></button>
-    <button class="press-list-item reveal reveal-d3" onclick="window.open('https://www.kyeonggi.com/article/20260208580251','_blank','noopener')"><span class="pls">경기일보</span><span class="plt">'혼자여도 편안하게'…인천시 2026년 1인가구 시행계획 마련</span><span class="pld">2026.02.08</span></button>
-    <button class="press-list-item reveal reveal-d3" onclick="window.open('http://www.cnbizm.com/news/articleView.html?idxno=211075','_blank','noopener')"><span class="pls">문화경제</span><span class="plt">종로구, 1인가구 46% 시대…2026년 통합 지원체계 가동</span><span class="pld">2026</span></button>
-    <button class="press-list-item reveal reveal-d4" onclick="window.open('http://www.sisacast.kr/news/articleView.html?idxno=89011','_blank','noopener')"><span class="pls">시사캐스트</span><span class="plt">2026년 새롭게 바뀌는 1인 정책…청년·독거노인 지원 확대</span><span class="pld">2026</span></button>
+    <p class="reveal reveal-d1" style="text-align:left;margin:0 0 32px;color:var(--muted);line-height:1.8;">정부·언론이 다룬 1인가구 관련 주요 소식을 선별해 연결합니다. 제목을 누르면 해당 기사로 이동합니다.</p>
+    <button class="press-list-item reveal reveal-d2" onclick="window.open('https://news.nate.com/view/20260623n02013','_blank','noopener')"><span class="pls">이데일리</span><span class="plt">정부 1인가구 지원 늘린다는데…주무부처는 예산 규모조차 몰라</span><span class="pld">2026.06</span></button>
+    <button class="press-list-item reveal reveal-d2" onclick="window.open('https://www.kmib.co.kr/article/view.asp?arcid=1778660729&amp;code=11131100&amp;sid1=soc','_blank','noopener')"><span class="pls">국민일보</span><span class="plt">고독사 6년새 1.6배 늘어…외로움, 이제 국가 관리 과제로</span><span class="pld">2026.05</span></button>
+    <button class="press-list-item reveal reveal-d2" onclick="window.open('https://www.khan.co.kr/article/202605131627011/','_blank','noopener')"><span class="pls">경향신문</span><span class="plt">복지부 '사회적 고립 전담 차관' 지정…영국·일본 이어 고독사·고립 국가가 챙긴다</span><span class="pld">2026.05</span></button>
+    <button class="press-list-item reveal reveal-d3" onclick="window.open('https://blog.opensurvey.co.kr/trendreport/youth-soloeconomy-2026/','_blank','noopener')"><span class="pls">오픈서베이</span><span class="plt">청년 1인가구 트렌드 리포트 2026 — 독립 10년 이상 생활 만족도 91%</span><span class="pld">2026.04</span></button>
+    <button class="press-list-item reveal reveal-d3" onclick="window.open('https://www.kyeonggi.com/article/20260208580251','_blank','noopener')"><span class="pls">경기일보</span><span class="plt">'혼자여도 편안하게'…인천시 2026년 1인가구 시행계획 마련</span><span class="pld">2026.02</span></button>
+    <button class="press-list-item reveal reveal-d4" onclick="window.open('https://www.korea.kr/briefing/pressReleaseView.do?newsId=156734077','_blank','noopener')"><span class="pls">정책브리핑</span><span class="plt">2025 통계로 보는 1인가구 — 전체 가구의 36.1%, 804만 가구</span><span class="pld">2025.12</span></button>
     <div class="press-contact reveal reveal-d4"><strong>보도자료·취재 문의</strong> info.ksaofficial@gmail.com</div>
   </div>
 </section>
@@ -1940,23 +1943,59 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
       <span class="lib-cat">정책 제언</span>
       <span class="lib-dl">아티클 보기 →</span>
     </a>
-    <a href="#" onclick="go('pg-lib-forum1');return false;" class="lib-row reveal reveal-d3">
+    <a href="https://mods.go.kr/board.es?mid=a10301030300&amp;bid=211&amp;act=view&amp;list_no=445516" target="_blank" rel="noopener" class="lib-row reveal reveal-d3">
       <div class="lib-icon pdf">📄</div>
       <div style="flex:1">
-        <div class="lib-title">제1회 신년 포럼 발표자료</div>
-        <div class="lib-meta">1인가구협회 · 2026.01</div>
+        <div class="lib-title">2025년 하반기 지역별고용조사 — 맞벌이·1인가구 취업 현황</div>
+        <div class="lib-meta">국가데이터처(통계청) · 2026.06</div>
       </div>
-      <span class="lib-cat">세미나 자료</span>
-      <span class="lib-dl">아티클 보기 →</span>
+      <span class="lib-cat">정부·기관 자료</span>
+      <span class="lib-dl">⬇ 다운로드</span>
     </a>
-    <a href="#" onclick="go('pg-lib-seminar2');return false;" class="lib-row reveal reveal-d3">
-      <div class="lib-icon ppt">📊</div>
+    <a href="https://mods.go.kr/board.es?mid=a10301060500&amp;bid=10820&amp;act=view&amp;list_no=442130" target="_blank" rel="noopener" class="lib-row reveal reveal-d3">
+      <div class="lib-icon pdf">📄</div>
       <div style="flex:1">
-        <div class="lib-title">제2회 주거 세미나 발표자료</div>
-        <div class="lib-meta">1인가구협회 · 2026.02</div>
+        <div class="lib-title">2025 통계로 보는 1인가구</div>
+        <div class="lib-meta">국가데이터처(통계청) · 2025.12</div>
       </div>
-      <span class="lib-cat">세미나 자료</span>
-      <span class="lib-dl">아티클 보기 →</span>
+      <span class="lib-cat">정부·기관 자료</span>
+      <span class="lib-dl">⬇ 다운로드</span>
+    </a>
+    <a href="https://mods.go.kr/board.es?mid=a10301060500&amp;bid=10820&amp;act=view&amp;list_no=434103" target="_blank" rel="noopener" class="lib-row reveal reveal-d3">
+      <div class="lib-icon pdf">📄</div>
+      <div style="flex:1">
+        <div class="lib-title">2024 통계로 보는 1인가구</div>
+        <div class="lib-meta">국가데이터처(통계청) · 2024.12</div>
+      </div>
+      <span class="lib-cat">정부·기관 자료</span>
+      <span class="lib-dl">⬇ 다운로드</span>
+    </a>
+    <a href="https://mods.go.kr/board.es?mid=a80301010500&amp;bid=12000&amp;act=view&amp;list_no=442501" target="_blank" rel="noopener" class="lib-row reveal reveal-d3">
+      <div class="lib-icon pdf">📄</div>
+      <div style="flex:1">
+        <div class="lib-title">데이터로 보는 강원 생애단계별 1인가구 현황</div>
+        <div class="lib-meta">강원지방데이터청 · 2025.12</div>
+      </div>
+      <span class="lib-cat">정부·기관 자료</span>
+      <span class="lib-dl">⬇ 다운로드</span>
+    </a>
+    <a href="https://mods.go.kr/board.es?mid=a60301010500&amp;bid=11802&amp;act=view&amp;list_no=437778" target="_blank" rel="noopener" class="lib-row reveal reveal-d3">
+      <div class="lib-icon pdf">📄</div>
+      <div style="flex:1">
+        <div class="lib-title">동남권 1인가구의 생애단계별 현황 및 특성</div>
+        <div class="lib-meta">동남지방데이터청 · 2025.07</div>
+      </div>
+      <span class="lib-cat">정부·기관 자료</span>
+      <span class="lib-dl">⬇ 다운로드</span>
+    </a>
+    <a href="https://mods.go.kr/board.es?mid=a50301010600&amp;bid=5148&amp;act=view&amp;list_no=436744" target="_blank" rel="noopener" class="lib-row reveal reveal-d3">
+      <div class="lib-icon pdf">📄</div>
+      <div style="flex:1">
+        <div class="lib-title">[기획보도] 호남·제주지역 1인 가구 변화상</div>
+        <div class="lib-meta">호남지방데이터청 · 2025.05</div>
+      </div>
+      <span class="lib-cat">정부·기관 자료</span>
+      <span class="lib-dl">⬇ 다운로드</span>
     </a>
     <a href="https://kostat.go.kr/board.es?mid=a10301010000&amp;bid=10820&amp;act=view&amp;list_no=428414" target="_blank" rel="noopener" class="lib-row reveal reveal-d3">
       <div class="lib-icon pdf">📄</div>
@@ -2687,13 +2726,11 @@ document.addEventListener('keydown', (e) => {
    Notice Accordion  (pg-news-notice)
    ============================================================ */
 function toggleAccordion(btn) {
-  const item = btn.closest('.notice-item');
-  if (!item) return;
-  const detail = item.querySelector('.notice-detail');
-  const isOpen = item.classList.toggle('open');
-  if (detail) {
-    detail.style.display = isOpen ? 'block' : 'none';
-  }
+  const acc = btn.closest('.notice-accordion');
+  if (!acc) return;
+  const detail = acc.querySelector('.notice-detail');
+  const isOpen = detail ? detail.classList.toggle('open') : false;
+  btn.classList.toggle('expanded', isOpen);
   btn.setAttribute('aria-expanded', String(isOpen));
 }
 
