@@ -702,9 +702,13 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
         <div class="dd">
           <button onclick="go('pg-news-notice')">공지사항</button>
           <button onclick="go('pg-news-press')">뉴스·보도</button>
-          <button onclick="window.open('https://ksaofficial.co.kr/info','_blank','noopener')">정보 게시판 ↗</button>
           <button onclick="go('pg-news-faq')">자주 묻는 질문</button>
         </div>
+      </div>
+
+      <!-- 정보게시판 (매일 업데이트 · 외부) -->
+      <div class="ni">
+        <button class="nl" onclick="window.open('https://ksaofficial.co.kr/info','_blank','noopener')" aria-label="정보게시판 새 창에서 열기">정보게시판 <span class="arr" style="font-size:11px;vertical-align:1px;">↗</span></button>
       </div>
 
       <!-- 회원·후원 -->
@@ -805,6 +809,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
         <div class="hero-btns">
           <button onclick="go('pg-about-vision')" class="btn-gold">협회 소개 보기 →</button>
           <button onclick="go('pg-seminar-schedule')" class="btn-ghost">세미나 일정 →</button>
+          <button onclick="window.open('https://ksaofficial.co.kr/info','_blank','noopener')" class="btn-ghost">정보게시판 ↗</button>
         </div>
       </div>
       <div class="hero-card">
