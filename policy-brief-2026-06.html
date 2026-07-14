@@ -1,0 +1,348 @@
+<!-- status: published / 공식 게시본 · 대상기간 2026-06 · 발행 2026-07-14 · 주요 수치 1차 출처 검증 완료 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="1인가구협회 월간 정책브리핑 제2026-06호 — 2026년 6월, 혼자 사는 사람을 위한 정부·서울시·구청 정책 변화를 정리했습니다. 고독사에서 사회적 고립 예방으로의 전환, 기준중위소득 1인가구 차등 인상, 지자체 지원 확대와 협회의 정책 제언.">
+<title>1인가구협회 정책브리핑 제2026-06호 · 혼자 사는 사람을 위한 6월 정책 이야기</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#132a4e; --navy-deep:#0c1c36; --gold:#c8a45c; --gold-soft:#e3cd9b;
+    --ink:#232b36; --ink-soft:#4a5568; --paper:#ffffff; --tint:#f4f1ea;
+    --tint-blue:#eff3f8; --line:#e2e0d8; --line-strong:#c9cdd6; --maxw:920px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{margin:0; background:#e9e6df; color:var(--ink);
+    font-family:"Noto Sans KR","Apple SD Gothic Neo",-apple-system,"Malgun Gothic",sans-serif;
+    line-height:1.9; word-break:keep-all; font-weight:400; font-size:1.02rem;}
+  .wrap{max-width:var(--maxw); margin:0 auto; background:var(--paper); box-shadow:0 0 40px rgba(12,28,54,.10);}
+  a{color:var(--navy);}
+
+  .masthead{background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 55%,#1c3a63 100%);
+    color:#fff; padding:44px 48px 38px; position:relative; overflow:hidden;}
+  .masthead::after{content:""; position:absolute; right:-60px; top:-60px; width:220px; height:220px;
+    background:radial-gradient(circle,rgba(200,164,92,.22),transparent 68%);}
+  .brand{display:flex; align-items:center; gap:12px; font-size:.82rem; letter-spacing:.10em; color:var(--gold-soft); font-weight:500;}
+  .brand .dot{width:7px; height:7px; background:var(--gold); border-radius:50%;}
+  .issue-tag{display:inline-block; margin-top:20px; background:rgba(200,164,92,.16);
+    border:1px solid rgba(200,164,92,.55); color:var(--gold-soft);
+    font-size:.76rem; font-weight:700; letter-spacing:.06em; padding:5px 13px; border-radius:999px;}
+  .masthead h1{font-family:"Noto Serif KR",serif; font-weight:700; font-size:1.95rem; line-height:1.4; margin:16px 0 10px; color:#fff;}
+  .masthead .sub{color:#c6d2e4; font-size:1.04rem; font-weight:300; margin:0 0 26px; max-width:660px;}
+  .meta-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.14); border-radius:8px; overflow:hidden;}
+  .meta-grid div{background:rgba(12,28,54,.34); padding:11px 14px;}
+  .meta-grid .k{font-size:.66rem; letter-spacing:.06em; color:var(--gold-soft);}
+  .meta-grid .v{font-size:.9rem; color:#eef2f8; font-weight:500; margin-top:2px;}
+
+  .howto{background:var(--tint-blue); border:1px solid var(--line); border-radius:10px; padding:16px 20px; margin:22px 0 6px;}
+  .howto b{color:var(--navy);}
+
+  main{padding:8px 48px 10px;}
+  section{padding:30px 0; border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .kicker{font-size:.74rem; font-weight:700; letter-spacing:.10em; color:var(--gold); margin:0 0 4px;}
+  h2.sec{font-family:"Noto Serif KR",serif; font-size:1.5rem; font-weight:700; color:var(--navy); margin:0 0 4px; line-height:1.4;}
+  h2.sec .num{color:var(--gold); margin-right:8px;}
+  .sec-q{color:var(--ink-soft); font-size:.95rem; margin:0 0 6px;}
+  h3.lv{font-size:1.08rem; color:var(--navy-deep); font-weight:700; margin:24px 0 6px; padding-left:12px; border-left:4px solid var(--gold);}
+  p{margin:12px 0;}
+  em.hl{font-style:normal; font-weight:700; color:var(--navy); background:linear-gradient(transparent 62%,rgba(200,164,92,.32) 0);}
+  strong{color:var(--navy-deep); font-weight:700;}
+
+  .tldr{background:var(--tint); border-left:5px solid var(--gold); border-radius:0 8px 8px 0; padding:16px 20px; margin:16px 0; font-size:1.05rem;}
+  .tldr b{color:var(--navy-deep);}
+
+  .points{counter-reset:pc; margin:14px 0 0;}
+  .point{counter-increment:pc; position:relative; background:var(--tint); border:1px solid var(--line); border-left:5px solid var(--navy);
+    border-radius:8px; padding:18px 22px 18px 64px; margin:14px 0;}
+  .point::before{content:counter(pc); position:absolute; left:16px; top:16px; width:34px; height:34px;
+    background:var(--navy); color:var(--gold-soft); font-family:"Noto Serif KR",serif; font-weight:700; font-size:1.1rem;
+    display:flex; align-items:center; justify-content:center; border-radius:50%;}
+  .point .claim{font-weight:700; color:var(--navy-deep); font-size:1.04rem; display:block; margin-bottom:5px;}
+  .point .basis{color:var(--ink-soft); font-size:.95rem; margin:0;}
+
+  .term{background:#fbf4e6; border:1px dashed var(--gold); border-radius:6px; padding:2px 8px; font-size:.9rem; color:#6b5320; white-space:nowrap;}
+
+  .tbl-cap{font-size:.84rem; color:var(--ink-soft); margin:6px 0 8px; font-weight:500;}
+  .tbl-cap b{color:var(--navy);}
+  table{width:100%; border-collapse:collapse; font-size:.9rem; margin:6px 0 4px;}
+  thead th{background:var(--navy); color:#fff; font-weight:500; text-align:left; padding:10px 12px; border:1px solid var(--navy);}
+  tbody td{padding:9px 12px; border:1px solid var(--line); vertical-align:top;}
+  tbody tr:nth-child(even){background:var(--tint-blue);}
+  td .tag{display:inline-block; font-size:.72rem; font-weight:700; padding:1px 8px; border-radius:4px; background:var(--navy); color:#fff;}
+  td .tag.g{background:var(--gold); color:var(--navy-deep);}
+  td .tag.o{background:#8a6d2f; color:#fff;}
+
+  .issue{border-left:4px solid var(--gold); background:#faf8f3; padding:18px 22px; margin:18px 0; border-radius:0 8px 8px 0;}
+  .issue .no{font-size:.74rem; font-weight:700; letter-spacing:.06em; color:var(--gold);}
+  .issue h3{margin:2px 0 8px; font-size:1.14rem; color:var(--navy-deep); font-family:"Noto Serif KR",serif;}
+  .issue .row{font-size:.98rem; margin:8px 0;}
+  .issue .row b.lead{color:var(--gold); font-weight:700; margin-right:4px;}
+  .issue .row b{color:var(--navy);}
+  .verdict{background:var(--navy); color:#f2f5fa; border-radius:8px; padding:13px 18px; margin-top:12px;}
+  .verdict .lab{font-size:.72rem; font-weight:700; letter-spacing:.10em; color:var(--gold); display:block; margin-bottom:3px;}
+  .verdict p{margin:0; font-size:1rem; color:#fff; font-weight:500;}
+
+  .recs{counter-reset:rc; margin-top:10px;}
+  .rec{counter-increment:rc; position:relative; padding:16px 20px 16px 62px; margin:12px 0; background:var(--tint); border:1px solid var(--line); border-radius:8px;}
+  .rec::before{content:counter(rc); position:absolute; left:16px; top:16px; width:32px; height:32px;
+    background:var(--gold); color:var(--navy-deep); font-weight:900; font-size:1rem; display:flex; align-items:center; justify-content:center; border-radius:50%;}
+  .rec .rt{font-weight:700; color:var(--navy-deep); font-size:1.02rem;}
+  .rec .when{display:inline-block; font-size:.7rem; font-weight:700; background:var(--navy); color:var(--gold-soft); padding:2px 9px; border-radius:999px; margin-left:8px; vertical-align:middle;}
+  .rec p{margin:7px 0 0; font-size:.95rem; color:var(--ink-soft);}
+  .rec .who{font-size:.85rem; color:var(--navy); font-weight:700; margin-top:6px;}
+
+  .note{background:var(--tint-blue); border:1px solid var(--line); border-radius:8px; padding:16px 20px; margin:14px 0;}
+  .note .lab{font-weight:700; color:var(--navy); font-size:.9rem;}
+  .note p{margin:6px 0 0; font-size:.93rem; color:var(--ink-soft);}
+
+  .gloss{background:var(--tint-blue); border:1px solid var(--line); border-radius:10px; padding:18px 22px; margin:14px 0;}
+  .gloss dt{font-weight:700; color:var(--navy-deep); margin-top:10px;}
+  .gloss dt:first-child{margin-top:0;}
+  .gloss dd{margin:2px 0 0; color:var(--ink-soft); font-size:.95rem;}
+  .srclist{font-size:.86rem; color:var(--ink-soft); margin:10px 0 0; padding-left:18px;}
+  .srclist li{margin:4px 0;}
+
+  footer{background:var(--navy-deep); color:#b9c4d6; padding:34px 48px 40px; font-size:.86rem;}
+  footer h4{color:#fff; font-family:"Noto Serif KR",serif; font-size:1rem; margin:0 0 10px;}
+  footer .cols{display:grid; grid-template-columns:1.4fr 1fr; gap:26px;}
+  footer p{margin:6px 0; line-height:1.7;}
+  footer .gold{color:var(--gold-soft);}
+  footer .rule{height:1px; background:rgba(255,255,255,.14); margin:22px 0 16px;}
+  footer .fine{font-size:.78rem; color:#8593a8;}
+
+  @media (max-width:720px){
+    .masthead,main,footer{padding-left:22px; padding-right:22px;}
+    .masthead h1{font-size:1.55rem;}
+    .meta-grid{grid-template-columns:repeat(2,1fr);}
+    footer .cols{grid-template-columns:1fr;}
+    section{padding:24px 0;}
+    table{font-size:.84rem;}
+    .point{padding-left:58px;}
+  }
+  @media print{
+    body{background:#fff;}
+    .wrap{box-shadow:none; max-width:none;}
+    .masthead{background:var(--navy)!important; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+    thead th,.point::before,.rec::before,.verdict{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+    section{page-break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="brand"><span class="dot"></span> 1인가구협회 정책위원회 · 월간 정책브리핑</div>
+    <span class="issue-tag">제2026-06호</span>
+    <h1>혼자 사는 사람을 위한 6월 정책 이야기<br>— 나라가 ‘외로운 죽음’이 아니라 ‘외로움’부터 챙기기 시작했다</h1>
+    <p class="sub">2026년 6월, 정부·서울시·구청이 혼자 사는 사람(1인가구)을 위해 무엇을 바꿨는지 정리했습니다.</p>
+    <div class="meta-grid">
+      <div><div class="k">발행</div><div class="v">1인가구협회 정책위원회</div></div>
+      <div><div class="k">발행일</div><div class="v">2026-07-14</div></div>
+      <div><div class="k">다룬 기간</div><div class="v">2026년 6월</div></div>
+      <div><div class="k">바탕 자료</div><div class="v">정부·지자체 발표 등</div></div>
+    </div>
+  </header>
+
+  <main>
+
+    <section>
+      <p class="kicker">한눈에 보기</p>
+      <h2 class="sec">이번 달 꼭 알아둘 3가지</h2>
+      <div class="points">
+        <div class="point">
+          <span class="claim">나라가 ‘외로운 죽음(고독사)’을 <em class="hl">뒤늦게 수습하던 방식</em>에서, ‘외로움·고립’ 자체를 <em class="hl">미리 찾아 막는 방식</em>으로 바꿨습니다.</span>
+          <span class="basis">보건복지부 차관이 책임자를 맡아 여러 부처가 함께 움직이는 팀을 만들었고(2026-05-13), 관련 법 이름도 ‘고독사 예방법’에서 ‘사회적 고립 예방법’으로 바꾸는 작업을 시작했습니다.</span>
+        </div>
+        <div class="point">
+          <span class="claim">기초생활 지원의 기준 소득을 올릴 때, <em class="hl">혼자 사는 가구는 더 많이(7.20%) 올렸습니다.</em></span>
+          <span class="basis">4인 가구(6.51%)보다 높은 인상률입니다. 그동안 ‘4인 가족’을 기준으로 짜여 혼자 사는 사람에게 불리했던 계산 방식을 손보기 시작했다는 뜻입니다. 1인가구 생계급여는 월 82만 원대(82만 556원)가 됐습니다.</span>
+        </div>
+        <div class="point">
+          <span class="claim">‘무엇을 할지’는 정부가 정했는데 ‘돈과 실제 사업’은 지자체 몫이라, <em class="hl">사는 동네에 따라 받는 지원이 달라질 위험</em>이 있습니다.</span>
+          <span class="basis">서울은 6,316억 원, 인천은 3,646억 원처럼 지역마다 예산이 크게 달라, 전국 공통의 최소 기준이 없으면 격차가 굳어질 수 있습니다. 게다가 5년짜리 지역 계획(2027~2031)이 <b>지금</b> 짜이는 중이라, 목소리를 낼 시기가 바로 지금입니다.</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <p class="kicker">Ⅰ</p>
+      <h2 class="sec">왜 지금 중요한가</h2>
+      <p class="sec-q">혼자 사는 사람이 이미 ‘보통’이 됐기 때문입니다.</p>
+      <div class="tldr"><b>한 줄 요약.</b> 혼자 사는 집이 이미 열 집 중 서너 집인데, 복지·주거 제도는 아직 ‘4인 가족’ 기준으로 짜여 있습니다.</div>
+      <p>혼자 사는 가구는 2024년 처음 800만을 넘어 <strong>804만 5천 가구</strong>, 전체 가구의 <strong>36.1%</strong>가 됐습니다(국가데이터처, 2025-12 발표). 서울은 39.9%로 열 집 중 네 집꼴입니다. 그런데도 많은 복지·주거 제도는 여전히 ‘두 명 이상 함께 사는 집’을 기본으로 놓고 계산합니다. 그래서 문제는 ‘숫자가 많다’가 아니라 <em class="hl">‘제도의 기준이 아직 혼자 사는 사람을 향해 있지 않다’</em>는 데 있습니다.</p>
+      <p>여기에 불을 붙인 건 슬픈 통계였습니다. 2024년 외로운 죽음(고독사)이 <strong>3,924명</strong>으로 전년보다 7.2%(263명) 늘었고, 특히 20~30대 청년의 고독사가 늘면서 ‘외로움은 노인 문제’라는 생각이 깨졌습니다. 그래서 나라가 대응의 초점을 ‘죽은 뒤 수습’에서 ‘외로워지기 전에 찾아내기’로 옮기게 된 것입니다.</p>
+    </section>
+
+    <section>
+      <p class="kicker">Ⅱ</p>
+      <h2 class="sec">6월에 무슨 일이 있었나</h2>
+      <p class="sec-q">정부 → 시·도 → 우리 동네 순서로 정책이 내려왔습니다.</p>
+      <div class="tldr"><b>한 줄 요약.</b> 큰 방향은 정부가 정하고, 예산과 사업은 시·도가 짜고, 실제 손길은 구청·동에서 닿는 식으로 6월 한 달 사이 아래로 내려왔습니다.</div>
+
+      <h3 class="lv">① 정부 — 큰 기준을 새로 정함</h3>
+      <p>보건복지부가 ‘외로움·고립’을 국가가 챙길 과제로 정하고, 차관을 책임자로 한 여러 부처 합동팀(8개 부처·17개 시·도)을 만들었습니다. ‘고독사 예방법’을 ‘사회적 고립 예방법’으로 <strong>새로 고쳐 쓰는</strong> 작업도 시작했고, 전국 실태조사 뒤 5년 계획을 세웁니다. 또 기초생활 기준 소득을 혼자 사는 가구에 7.20% 더 올려 생계급여를 월 82만 원대로 높였습니다.</p>
+
+      <h3 class="lv">② 시·도 — 예산과 사업으로 옮김</h3>
+      <p>서울시는 지난 4년간 2조 3,545억 원을 쓴 데 이어, <strong>2027~2031년 5년 계획</strong>을 새로 짜기 시작했고 올해 6,316억 원으로 31개 사업을 합니다(고립 위험 가구 전담 창구 64→70곳, 병원·이사·마음까지 함께 가주는 ‘동행 서비스’, 전·월세 안심계약 도움). 인천은 3,646억 원(6개 분야 46개 사업), 종로구는 35개 사업으로 뒤따랐습니다.</p>
+
+      <h3 class="lv">③ 구청·동 — 실제 손길이 닿음</h3>
+      <p>강동구는 고독사 예방 사업을 12개 동에서 <strong>19개 모든 동</strong>으로 넓혔고(스마트 안부확인 + 이웃·복지통장 네트워크), 길동에서는 가스차단기·안전바 같은 <em class="hl">집 안전장치</em>까지 지원합니다. 광명시는 동네 주민 모임(‘그린돌봄단’)을 꾸렸고, 경기도는 AI로 안부를 확인하는 사업을 시작했습니다.</p>
+
+      <h3 class="lv">④ 생활 속 지원 — 목돈과 계절 위기</h3>
+      <p>청년이 목돈을 모으도록 돕는 ‘청년미래적금’이 6월 22일 나왔고(월 최대 50만 원·3년, 우대형 만기 최대 2,255만 원), 냉·난방비를 돕는 에너지바우처(혼자 사는 가구 29만 5,200원)도 6월 15일부터 신청을 받았습니다. 에너지바우처는 2026년부터 여름·겨울 구분 없이 연간 자유롭게 쓸 수 있게 바뀌었습니다.</p>
+
+      <p class="tbl-cap">[표] <b>6월에 있었던 일 정리</b></p>
+      <table>
+        <thead><tr><th style="width:80px">시점</th><th style="width:74px">누가</th><th>무슨 일</th><th style="width:130px">핵심 숫자</th></tr></thead>
+        <tbody>
+          <tr><td>5월 13일</td><td><span class="tag">정부</span></td><td>‘외로움·고립’ 합동 대응팀 구성·법 개정 시작</td><td>8개 부처</td></tr>
+          <tr><td>6월</td><td><span class="tag">정부</span></td><td>혼자 사는 가구 기준 소득 더 인상</td><td>생계급여 82만 원대</td></tr>
+          <tr><td>6월</td><td><span class="tag g">시·도</span></td><td>서울 5년 계획 착수·31개 사업</td><td>6,316억 원</td></tr>
+          <tr><td>6월</td><td><span class="tag g">시·도</span></td><td>인천·종로 지원 확대</td><td>3,646억/35사업</td></tr>
+          <tr><td>6월 15일</td><td><span class="tag o">생활</span></td><td>냉·난방비 지원(에너지바우처) 신청 시작</td><td>29만 5,200원</td></tr>
+          <tr><td>6월 22일</td><td><span class="tag o">생활</span></td><td>청년 목돈 모으기 ‘청년미래적금’ 출시</td><td>만기 최대 2,255만</td></tr>
+          <tr><td>6월</td><td><span class="tag">구청·동</span></td><td>강동 모든 동으로 고독사 예방 확대</td><td>19개 동</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <p class="kicker">Ⅲ</p>
+      <h2 class="sec">왜 이런 변화가 생겼나</h2>
+      <p class="sec-q">오래 쌓인 문제 + 최근의 나쁜 신호 + 정부의 대응, 세 가지가 겹쳤습니다.</p>
+      <div class="tldr"><b>한 줄 요약.</b> ‘제도가 시대를 못 따라간 것(오래된 문제)’에 ‘고독사·자살 증가(최근 신호)’가 겹쳐, 정부가 법·조직·예산을 한꺼번에 움직였습니다.</div>
+      <p><strong>① 오래 쌓인 문제.</strong> 혼자 사는 집이 3분의 1을 넘었는데도 제도의 기준은 여러 명이 함께 사는 가구에 맞춰져 있었습니다.</p>
+      <p><strong>② 최근의 나쁜 신호.</strong> 2024년 고독사가 3,924명으로 늘고, 올해 1분기 스스로 목숨을 끊은 사람이 3,069명에 이르는 등 지표가 나빠졌습니다.</p>
+      <p><strong>③ 정부의 대응.</strong> 그 결과 법을 바꾸고(법), 합동팀을 만들고(조직), 기준 소득을 올리고 지자체 사업을 확대(예산)하는 세 가지 대응이 나왔습니다.</p>
+      <div class="note">
+        <span class="lab">읽을 때 한 가지 참고</span>
+        <p>‘5월 정부 발표 → 6월 지자체 사업’ 순서로 보이지만, 지자체 사업은 원래 매년 초·상반기에 정해지는 <b>연간 일정</b>일 수도 있습니다. 즉 정부 발표 ‘때문에’ 생긴 게 아니라 ‘때마침 같은 시기’일 가능성도 있어, 협회는 몇 분기에 걸쳐 흐름을 더 지켜보고 있습니다.</p>
+      </div>
+    </section>
+
+    <section>
+      <p class="kicker">Ⅳ</p>
+      <h2 class="sec">짚어볼 점과 협회의 생각</h2>
+      <p class="sec-q">좋은 변화이지만, 이렇게 안 하면 ‘말뿐’이 될 수 있는 지점들입니다.</p>
+
+      <div class="issue">
+        <span class="no">짚어볼 점 1</span>
+        <h3>‘고독사’ 대신 ‘사회적 고립’ — 이름만 바뀐 게 아닙니다</h3>
+        <p class="row"><b class="lead">사실.</b> 법의 대상을 ‘외로운 죽음(결과)’에서 ‘외로움·고립 상태(원인)’로 넓히고, 대상도 노인뿐 아니라 청년·중장년까지로 늘립니다.</p>
+        <p class="row"><b class="lead">뜻풀이.</b> 나라가 ‘사람이 죽은 다음’이 아니라 ‘외로워지는 단계’에서 돕겠다는 뜻입니다. 법 이름을 바꾸는 건 곧 <b>나라가 무엇에 예산을 붙일지</b>를 다시 정하는 일입니다.</p>
+        <div class="verdict"><span class="lab">협회의 생각</span><p>큰 방향 전환의 <b>시작</b>입니다. 다만 시작일 뿐이라, ‘누가 위험한지’ 가려내는 구체적 기준이 뒤따르지 않으면 넓힌 대상은 서류상 이름에 그칠 수 있습니다.</p></div>
+      </div>
+
+      <div class="issue">
+        <span class="no">짚어볼 점 2</span>
+        <h3>혼자 사는 가구에 더 올린 생계 기준 — 반가운 첫걸음</h3>
+        <p class="row"><b class="lead">사실.</b> 기준 소득을 혼자 사는 가구에 7.20%, 4인 가구에 6.51%로 <b>다르게</b> 올렸습니다.</p>
+        <p class="row"><b class="lead">뜻풀이.</b> 그동안 계산법은 <span class="term">규모의 경제</span>, 즉 ‘같이 살면 1인당 생활비가 덜 든다’는 가정 위에 있어서 혼자 사는 사람이 불리했습니다. 이번 조치는 그 불리함을 조금 되돌린 것입니다.</p>
+        <div class="verdict"><span class="lab">협회의 생각</span><p>‘가족 있는 사람 위주’에서 ‘혼자 사는 사람도 챙기는’ 쪽으로 가는 첫 균열입니다. 다만 한 해 인상만으로는 계산법의 뿌리가 바뀌지 않아, 매년 다시 살펴야 하는 약한 진전입니다.</p></div>
+      </div>
+
+      <div class="issue">
+        <span class="no">짚어볼 점 3</span>
+        <h3>‘일은 지자체에, 돈은?’ — 사는 동네 따라 달라질 위험</h3>
+        <p class="row"><b class="lead">사실.</b> 정부는 대상을 넓혔지만 실제 사업·예산은 서울 6,316억, 인천 3,646억처럼 지자체마다 크게 다릅니다.</p>
+        <p class="row"><b class="lead">뜻풀이.</b> 해야 할 일은 늘었는데 그만큼의 돈이나 <span class="term">전국 공통 최소 기준</span>이 없으면, 재정이 넉넉한 동네와 아닌 동네의 차이가 그대로 지원 격차가 됩니다.</p>
+        <div class="verdict"><span class="lab">협회의 생각</span><p>최소 기준 없이 일만 넘기면 <b>격차가 굳어집니다</b>. 같은 위험에 처해도 사는 곳에 따라 도움이 갈린다면, 대상 확대가 오히려 불공평을 키울 수 있습니다.</p></div>
+      </div>
+
+      <div class="issue">
+        <span class="no">짚어볼 점 4</span>
+        <h3>대상은 청년까지 넓혔는데, 찾아내는 방식은 아직 노인 위주</h3>
+        <p class="row"><b class="lead">사실.</b> 대상은 전 연령으로 넓혔지만, 기존 예방센터 이용자 다수가 50대 이상이고 청년 고독사·자살은 늘고 있습니다.</p>
+        <p class="row"><b class="lead">뜻풀이.</b> 위험한 사람을 <b>찾아내는 명단·방식</b>이 노인 위주로 짜여 있으면, 정작 위험한 청년·40대가 <span class="term">빠져버리는 문제</span>가 생깁니다. ‘대상’과 ‘실제 도움받는 사람’이 어긋나는 것이죠.</p>
+        <div class="verdict"><span class="lab">협회의 생각</span><p>찾아내는 방식을 바꾸지 않으면 대상 확대는 <b>말뿐</b>이 됩니다. 일자리 단절·빚·관계 단절 같은 청년·중장년 신호를 잡아내는 기준이 필요합니다.</p></div>
+      </div>
+
+      <div class="issue">
+        <span class="no">짚어볼 점 5</span>
+        <h3>AI 안부확인, 사람의 손길을 ‘대신’하면 안 됩니다</h3>
+        <p class="row"><b class="lead">사실.</b> 강동구·경기도·서울 등에서 AI·스마트 기기로 안부를 확인하는 사업이 6월의 핵심이 됐습니다.</p>
+        <p class="row"><b class="lead">뜻풀이.</b> 이런 기술은 사람의 방문·연결을 <b>돕는 도구</b>일 때 좋습니다. 그런데 이것이 사람 손길을 <b>대신</b>해 버리면, 디지털이 익숙지 않은 어르신·저소득 가구는 ‘외로움’과 ‘디지털 소외’로 <span class="term">두 번 소외</span>됩니다.</p>
+        <div class="verdict"><span class="lab">협회의 생각</span><p>안부확인 기술은 <b>‘사람이 찾아가게 만드는 신호’</b>로 써야지, 그 자체가 끝이 되면 안 됩니다.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <p class="kicker">Ⅴ</p>
+      <h2 class="sec">그래서 이렇게 제안합니다</h2>
+      <p class="sec-q">위에서 짚은 문제를 풀기 위한 다섯 가지 제안입니다. (누가·언제 할지 함께 적었습니다.)</p>
+      <div class="recs">
+        <div class="rec">
+          <span class="rt">새 ‘고립 예방 위원회’에 혼자 사는 당사자·단체가 들어가기<span class="when">지금 바로</span></span>
+          <p>(짚어볼 점 1에서) 위원회가 새로 꾸려지는 지금이 참여의 기회입니다. ‘누가 위험한지’ 정하는 첫 단계에 당사자 목소리가 들어가야 실제로 도움이 됩니다.</p>
+          <p class="who">할 곳: 1인가구협회 · 보건복지부</p>
+        </div>
+        <div class="rec">
+          <span class="rt">전국 어디서나 지키는 ‘최소 기준’ 정하기<span class="when">2026 하반기</span></span>
+          <p>(짚어볼 점 3에서) 대상을 넓힌 만큼 돈을 함께 내려주는 원칙과, 지역이 지켜야 할 최소선을 정부가 정해 동네별 격차를 막아야 합니다.</p>
+          <p class="who">할 곳: 보건복지부 · 행정안전부</p>
+        </div>
+        <div class="rec">
+          <span class="rt">청년·중장년을 찾아내는 기준 새로 만들기<span class="when">2027 계획 짤 때</span></span>
+          <p>(짚어볼 점 4에서) 일자리 단절·빚·관계 단절 같은 신호로 청년·40대 위험군을 잡아내는 방식을 5년 계획에 넣어야 합니다.</p>
+          <p class="who">할 곳: 지자체 · 보건복지부</p>
+        </div>
+        <div class="rec">
+          <span class="rt">AI 안부확인엔 반드시 ‘사람 방문’을 함께<span class="when">상시</span></span>
+          <p>(짚어볼 점 5에서) 이상 신호가 오면 실제 사람이 찾아가 연결하는 절차를 사업의 기본으로 정해, 디지털에 약한 분들이 소외되지 않게 합니다.</p>
+          <p class="who">할 곳: 시·도, 구청의 고립 예방 담당 기구</p>
+        </div>
+        <div class="rec">
+          <span class="rt">40대 혼자 사는 사람을 위한 ‘재취업·소득’ 안전망 만들기<span class="when">2026 예산 짤 때</span></span>
+          <p>(짚어볼 점 4·배경에서) 40대의 일자리 단절은 가난·고립의 앞 단계인데 지원은 청년·노인에 몰려 있습니다. 중장년 재취업·소득 지원을 새로 만들어야 합니다.</p>
+          <p class="who">할 곳: 고용노동부 · 1인가구협회</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <p class="kicker">Ⅵ</p>
+      <h2 class="sec">자료와 출처</h2>
+      <p>본 브리핑에 인용한 주요 수치는 2026년 7월 기준, 정부·지방자치단체의 공식 발표 및 고시 원문으로 확인하였습니다.</p>
+      <ul class="srclist">
+        <li>1인가구 804만 5천 가구 · 전체의 36.1%(2024년) — 국가데이터처 「2025 통계로 보는 1인가구」(2025-12-09)</li>
+        <li>2024년 고독사 3,924명(전년 대비 +7.2%) — 보건복지부 고독사 사망자 실태조사</li>
+        <li>기준중위소득 1인가구 7.20% 인상 · 생계급여 82만 556원 — 보건복지부 중앙생활보장위원회</li>
+        <li>2026년 1분기 자살 사망자 3,069명(잠정) — 한국생명존중희망재단</li>
+        <li>서울 6,316억 원 · 31개 사업 — 서울특별시 / 인천 3,646억 원 · 46개 사업 — 인천광역시</li>
+        <li>에너지바우처 1인가구 29만 5,200원 — 산업통상자원부 · 한국에너지공단</li>
+        <li>청년미래적금(월 최대 50만 원 · 3년, 우대형 만기 최대 2,255만 원) — 금융위원회 · 서민금융진흥원</li>
+      </ul>
+      <p style="font-size:.86rem; color:var(--ink-soft); margin-top:12px">참고 자료 전체 목록은 협회 사무국에서 제공합니다.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="cols">
+      <div>
+        <h4>1인가구협회 정책위원회</h4>
+        <p>이 글은 1인가구협회 정책위원회가 매달 발행하는 <span class="gold">월간 정책브리핑</span>입니다.</p>
+      </div>
+      <div>
+        <h4>문의</h4>
+        <p>1인가구협회 정책위원회 · 사무국</p>
+        <p class="gold">info.ksaofficial@gmail.com</p>
+        <p>다룬 기간 2026년 6월 · 발행 2026-07-14</p>
+      </div>
+    </div>
+    <div class="rule"></div>
+    <p class="fine">ⓒ 2026 1인가구협회. 이 문서의 주요 수치는 2026년 7월 정부·지자체 발표 및 고시 원문으로 확인했습니다. 인용 시 출처를 밝혀 주시기 바랍니다.</p>
+  </footer>
+
+</div>
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
