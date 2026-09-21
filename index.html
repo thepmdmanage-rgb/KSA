@@ -765,6 +765,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
         <button class="nl" aria-haspopup="true">정책·연구 <span class="arr">▾</span></button>
         <div class="dd">
           <button onclick="go('pg-research-library')">자료실</button>
+          <button onclick="window.open('https://thepmdmanage-rgb.github.io/ksa-datahub/','_blank','noopener')" aria-label="1인가구 데이터 허브 새 창에서 열기">1인가구 데이터 허브 ↗</button>
         </div>
       </div>
 
@@ -833,6 +834,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
     <button class="mob-section-title" onclick="toggleMob(this)">정책·연구 <span class="arr">▾</span></button>
     <div class="mob-sub">
       <button onclick="go('pg-research-library');closeDrawer()">자료실</button>
+      <button onclick="window.open('https://thepmdmanage-rgb.github.io/ksa-datahub/','_blank','noopener');closeDrawer()">1인가구 데이터 허브 ↗</button>
     </div>
   </div>
   <div class="mob-section">
@@ -2015,7 +2017,14 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
     <div class="sl reveal">LIBRARY</div>
     <h2 class="st reveal reveal-d1">자료실</h2>
     <div class="dg reveal reveal-d1"></div>
-    <p class="ss reveal reveal-d2" style="margin-bottom:36px">협회의 모든 연구 자료는 출처를 밝히고 자유롭게 활용하실 수 있습니다.</p>
+    <p class="ss reveal reveal-d2" style="margin-bottom:24px">협회의 모든 연구 자료는 출처를 밝히고 자유롭게 활용하실 수 있습니다.</p>
+    <a href="https://thepmdmanage-rgb.github.io/ksa-datahub/" target="_blank" rel="noopener" class="reveal reveal-d2" style="display:flex;gap:14px;align-items:center;text-decoration:none;border:1px solid var(--navy);background:#eef2f7;border-radius:10px;padding:16px 20px;margin-bottom:32px;">
+      <div style="font-size:30px;flex-shrink:0;line-height:1;">📊</div>
+      <div style="flex:1;">
+        <div style="font-weight:700;color:var(--navy);font-size:16px;margin-bottom:3px;">1인가구 데이터 허브 <span style="font-size:12px;">↗</span></div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.5;">국가데이터처·성평등가족부 등에 흩어진 1인가구 공공데이터를 한곳에 모은 참고형 허브 (새 창)</div>
+      </div>
+    </a>
     <div class="lib-filter reveal reveal-d2">
       <button class="lib-btn active" data-cat="all">전체</button>
       <button class="lib-btn" data-cat="survey">실태조사·보고서</button>
