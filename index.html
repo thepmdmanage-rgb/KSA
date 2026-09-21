@@ -187,6 +187,7 @@ header { background: var(--white); border-bottom: 1px solid var(--border); posit
 .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
 .btn-ghost { border: 1.5px solid rgba(255,255,255,.45); color: var(--white); padding: 13px 30px; font-size: 15px; text-decoration: none; border-radius: 4px; background: none; cursor: pointer; font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif; transition: border-color var(--transition), background var(--transition); display: inline-flex; align-items: center; gap: 6px; }
 .btn-ghost:hover { border-color: rgba(255,255,255,.9); background: rgba(255,255,255,.07); }
+.hero-btns .lnk { min-width: 238px; justify-content: center; }
 .hero-card { background: rgba(255,255,255,.09); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,.18); border-radius: 14px; padding: 30px; }
 .hero-card-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--gold-light); text-transform: uppercase; margin-bottom: 22px; }
 .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
@@ -888,9 +889,10 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
         <div class="hero-btns">
           <button onclick="go('pg-about-vision')" class="btn-gold">협회 소개 보기 →</button>
           <button onclick="go('pg-seminar-schedule')" class="btn-ghost">세미나 일정 →</button>
-          <button onclick="window.open('https://ksaofficial.imweb.me/info','_blank','noopener')" class="btn-ghost">1인가구 라이프 인사이트 ↗</button>
-          <button onclick="window.open('https://1in.seoul.go.kr','_blank','noopener')" class="btn-ghost">서울 자치구 1인가구지원센터 ↗</button>
-          <button onclick="window.open('https://thepmdmanage-rgb.github.io/jeonse-one/','_blank','noopener')" class="btn-ghost">전세 안전 진단(전세ONE) ↗</button>
+          <button onclick="window.open('https://ksaofficial.imweb.me/info','_blank','noopener')" class="btn-ghost lnk">1인가구 라이프 인사이트 ↗</button>
+          <button onclick="window.open('https://1in.seoul.go.kr','_blank','noopener')" class="btn-ghost lnk">자치구 지원센터 ↗</button>
+          <button onclick="window.open('https://thepmdmanage-rgb.github.io/jeonse-one/','_blank','noopener')" class="btn-ghost lnk">전세 안전(전세ONE) ↗</button>
+          <button onclick="window.open('https://thepmdmanage-rgb.github.io/ksa-datahub/','_blank','noopener')" class="btn-ghost lnk">1인가구 데이터 허브 ↗</button>
         </div>
       </div>
       <div class="hero-card">
