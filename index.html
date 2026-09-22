@@ -187,6 +187,7 @@ header { background: var(--white); border-bottom: 1px solid var(--border); posit
 .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
 .btn-ghost { border: 1.5px solid rgba(255,255,255,.45); color: var(--white); padding: 13px 30px; font-size: 15px; text-decoration: none; border-radius: 4px; background: none; cursor: pointer; font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif; transition: border-color var(--transition), background var(--transition); display: inline-flex; align-items: center; gap: 6px; }
 .btn-ghost:hover { border-color: rgba(255,255,255,.9); background: rgba(255,255,255,.07); }
+.hero-btns .lnk { min-width: 238px; justify-content: center; }
 .hero-card { background: rgba(255,255,255,.09); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,.18); border-radius: 14px; padding: 30px; }
 .hero-card-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--gold-light); text-transform: uppercase; margin-bottom: 22px; }
 .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
@@ -765,6 +766,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
         <button class="nl" aria-haspopup="true">정책·연구 <span class="arr">▾</span></button>
         <div class="dd">
           <button onclick="go('pg-research-library')">자료실</button>
+          <button onclick="window.open('https://thepmdmanage-rgb.github.io/ksa-datahub/','_blank','noopener')" aria-label="1인가구 데이터 허브 새 창에서 열기">1인가구 데이터 허브 ↗</button>
         </div>
       </div>
 
@@ -833,6 +835,7 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
     <button class="mob-section-title" onclick="toggleMob(this)">정책·연구 <span class="arr">▾</span></button>
     <div class="mob-sub">
       <button onclick="go('pg-research-library');closeDrawer()">자료실</button>
+      <button onclick="window.open('https://thepmdmanage-rgb.github.io/ksa-datahub/','_blank','noopener');closeDrawer()">1인가구 데이터 허브 ↗</button>
     </div>
   </div>
   <div class="mob-section">
@@ -886,9 +889,10 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
         <div class="hero-btns">
           <button onclick="go('pg-about-vision')" class="btn-gold">협회 소개 보기 →</button>
           <button onclick="go('pg-seminar-schedule')" class="btn-ghost">세미나 일정 →</button>
-          <button onclick="window.open('https://ksaofficial.imweb.me/info','_blank','noopener')" class="btn-ghost">1인가구 라이프 인사이트 ↗</button>
-          <button onclick="window.open('https://1in.seoul.go.kr','_blank','noopener')" class="btn-ghost">서울 자치구 1인가구지원센터 ↗</button>
-          <button onclick="window.open('https://thepmdmanage-rgb.github.io/jeonse-one/','_blank','noopener')" class="btn-ghost">전세 안전 진단(전세ONE) ↗</button>
+          <button onclick="window.open('https://ksaofficial.imweb.me/info','_blank','noopener')" class="btn-ghost lnk">1인가구 라이프 인사이트 ↗</button>
+          <button onclick="window.open('https://1in.seoul.go.kr','_blank','noopener')" class="btn-ghost lnk">자치구 지원센터 ↗</button>
+          <button onclick="window.open('https://thepmdmanage-rgb.github.io/jeonse-one/','_blank','noopener')" class="btn-ghost lnk">전세 안전(전세ONE) ↗</button>
+          <button onclick="window.open('https://thepmdmanage-rgb.github.io/ksa-datahub/','_blank','noopener')" class="btn-ghost lnk">1인가구 데이터 허브 ↗</button>
         </div>
       </div>
       <div class="hero-card">
@@ -2015,7 +2019,14 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
     <div class="sl reveal">LIBRARY</div>
     <h2 class="st reveal reveal-d1">자료실</h2>
     <div class="dg reveal reveal-d1"></div>
-    <p class="ss reveal reveal-d2" style="margin-bottom:36px">협회의 모든 연구 자료는 출처를 밝히고 자유롭게 활용하실 수 있습니다.</p>
+    <p class="ss reveal reveal-d2" style="margin-bottom:24px">협회의 모든 연구 자료는 출처를 밝히고 자유롭게 활용하실 수 있습니다.</p>
+    <a href="https://thepmdmanage-rgb.github.io/ksa-datahub/" target="_blank" rel="noopener" class="reveal reveal-d2" style="display:flex;gap:14px;align-items:center;text-decoration:none;border:1px solid var(--navy);background:#eef2f7;border-radius:10px;padding:16px 20px;margin-bottom:32px;">
+      <div style="font-size:30px;flex-shrink:0;line-height:1;">📊</div>
+      <div style="flex:1;">
+        <div style="font-weight:700;color:var(--navy);font-size:16px;margin-bottom:3px;">1인가구 데이터 허브 <span style="font-size:12px;">↗</span></div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.5;">국가데이터처·성평등가족부 등에 흩어진 1인가구 공공데이터를 한곳에 모은 참고형 허브 (새 창)</div>
+      </div>
+    </a>
     <div class="lib-filter reveal reveal-d2">
       <button class="lib-btn active" data-cat="all">전체</button>
       <button class="lib-btn" data-cat="survey">실태조사·보고서</button>
