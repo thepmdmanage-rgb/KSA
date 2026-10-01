@@ -2883,9 +2883,14 @@ if (document.readyState !== 'loading') routeFromHash();
 <div id="ksaSemPopup" class="ksa-cpop" role="dialog" aria-modal="true" aria-label="10월 1인가구세미나 신청 안내" style="display:none;">
   <div class="ksa-cpop-box">
     <button class="ksa-cpop-x" onclick="ksaCloseSemPop()" aria-label="닫기">&times;</button>
+    <div class="ksa-cpop-media">
     <a href="https://forms.gle/6h7hQhjTw26Y9ujP6" target="_blank" rel="noopener" class="ksa-cpop-img" aria-label="10월 세미나 신청 폼 열기 (새 창)">
       <img src="seminar-2026-10-poster-v2.webp" alt="10월 1인가구세미나 〈내 통장은 왜 늘 비어 있을까〉 — 월급은 그대로인데: 기분 따라 새는 돈, 감정소비 점검하기 · 나의 소비해방일지 쓰기 (오늘아 고마워 김도현, 2026.10.22(목) 19:00~21:00 용산 청년지음 커뮤니티홀, 20~30대 청년 1인가구 선착순 30명, 무료)">
     </a>
+    <div class="ksa-cpop-video">
+      <iframe id="ksaSemPopVideo" data-src="https://www.youtube.com/embed/oUJ1Cr0lSAw?autoplay=1&amp;mute=1&amp;playsinline=1&amp;loop=1&amp;playlist=oUJ1Cr0lSAw&amp;rel=0&amp;modestbranding=1" title="1인가구 세미나 쇼츠 — 너 어제 퇴근길에 뭐 샀어? 통장이 텅장 되는 이유" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    </div>
     <a href="https://forms.gle/6h7hQhjTw26Y9ujP6" target="_blank" rel="noopener" class="ksa-cpop-apply">📝 10월 세미나 신청하기 →</a>
     <div class="ksa-cpop-bar">
       <label class="ksa-cpop-today"><input type="checkbox" id="ksaSemPopToday"> 오늘 하루 열지 않기</label>
@@ -2895,12 +2900,21 @@ if (document.readyState !== 'loading') routeFromHash();
 </div>
 <style>
 .ksa-cpop{position:fixed;inset:0;background:rgba(9,17,31,.66);z-index:99999;display:flex;align-items:center;justify-content:center;padding:16px;}
-.ksa-cpop-box{position:relative;width:min(440px,92vw);background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.5);display:flex;flex-direction:column;max-height:calc(100vh - 32px);}
-.ksa-cpop-img{display:block;min-height:0;flex:1 1 auto;background:#efece6;}
-.ksa-cpop-img img{display:block;width:100%;height:100%;max-height:calc(100vh - 190px);object-fit:contain;}
+.ksa-cpop-box{--ph:min(calc(100vh - 216px),680px,calc((100vw - 32px) / 1.27));position:relative;margin-top:46px;background:#fff;border-radius:16px;box-shadow:0 24px 70px rgba(0,0,0,.5);display:flex;flex-direction:column;}
+.ksa-cpop-media{display:flex;height:var(--ph);background:#0f1e33;border-radius:16px 16px 0 0;overflow:hidden;}
+.ksa-cpop-bar{border-radius:0 0 16px 16px;}
+.ksa-cpop-img{display:block;height:100%;aspect-ratio:1055/1491;flex:0 0 auto;background:#efece6;}
+.ksa-cpop-img img{display:block;width:100%;height:100%;object-fit:cover;}
+.ksa-cpop-video{height:100%;aspect-ratio:9/16;flex:0 0 auto;background:#000;}
+.ksa-cpop-video iframe{display:block;width:100%;height:100%;border:0;}
+@media (max-width:560px){
+  .ksa-cpop-apply{font-size:14px;padding:12px;}
+  .ksa-cpop-bar{padding:9px 12px;}
+  .ksa-cpop-today{font-size:13px;}
+}
 .ksa-cpop-apply{display:block;background:#c49a3c;color:#0f1e33;font-weight:700;font-size:15px;text-align:center;padding:14px 16px;text-decoration:none;font-family:'Noto Sans KR','Malgun Gothic',sans-serif;}
 .ksa-cpop-apply:hover{background:#e6c564;}
-.ksa-cpop-x{position:absolute;top:11px;right:12px;z-index:2;width:36px;height:36px;border:none;border-radius:50%;background:rgba(12,20,36,.6);color:#fff;font-size:23px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.ksa-cpop-x{position:absolute;top:-46px;right:0;z-index:2;width:36px;height:36px;border:none;border-radius:50%;background:rgba(255,255,255,.92);color:#1C2B49;font-size:23px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;}
 .ksa-cpop-bar{display:flex;align-items:center;justify-content:space-between;padding:11px 16px;background:#fff;border-top:1px solid #eee;}
 .ksa-cpop-today{display:flex;align-items:center;gap:8px;font-size:14px;color:#4b5563;cursor:pointer;}
 .ksa-cpop-today input{width:16px;height:16px;accent-color:#1C2B49;}
@@ -2911,8 +2925,8 @@ if (document.readyState !== 'loading') routeFromHash();
   var END=new Date('2026-10-22T19:00:00+09:00');
   var KEY='ksaSemPop202610';
   function hiddenToday(){try{return localStorage.getItem(KEY)===new Date().toDateString();}catch(e){return false;}}
-  window.ksaCloseSemPop=function(){var el=document.getElementById('ksaSemPopup');if(!el)return;try{var c=document.getElementById('ksaSemPopToday');if(c&&c.checked)localStorage.setItem(KEY,new Date().toDateString());}catch(e){}el.style.display='none';};
-  function init(){var el=document.getElementById('ksaSemPopup');if(!el)return;if(new Date()>END||hiddenToday()){el.parentNode&&el.parentNode.removeChild(el);return;}el.style.display='flex';el.addEventListener('click',function(e){if(e.target===el)ksaCloseSemPop();});document.addEventListener('keydown',function(e){if(e.key==='Escape')ksaCloseSemPop();});}
+  window.ksaCloseSemPop=function(){var el=document.getElementById('ksaSemPopup');if(!el)return;try{var c=document.getElementById('ksaSemPopToday');if(c&&c.checked)localStorage.setItem(KEY,new Date().toDateString());}catch(e){}var v=document.getElementById('ksaSemPopVideo');if(v)v.removeAttribute('src');el.style.display='none';};
+  function init(){var el=document.getElementById('ksaSemPopup');if(!el)return;if(new Date()>END||hiddenToday()){el.parentNode&&el.parentNode.removeChild(el);return;}var v=document.getElementById('ksaSemPopVideo');if(v)v.src=v.getAttribute('data-src');el.style.display='flex';el.addEventListener('click',function(e){if(e.target===el)ksaCloseSemPop();});document.addEventListener('keydown',function(e){if(e.key==='Escape')ksaCloseSemPop();});}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
 </script>
