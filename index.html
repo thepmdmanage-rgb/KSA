@@ -2877,37 +2877,44 @@ if (document.readyState !== 'loading') routeFromHash();
   });
 </script>
 
-<!-- ██ 추석 휴무 팝업 (2026) ██ -->
-<div id="ksaChuseokPopup" class="ksa-cpop" role="dialog" aria-modal="true" aria-label="추석 휴무 안내" style="display:none;">
+<!-- ██ 10월 세미나 팝업 (2026) ██ -->
+<div id="ksaSemPopup" class="ksa-cpop" role="dialog" aria-modal="true" aria-label="10월 1인가구세미나 신청 안내" style="display:none;">
   <div class="ksa-cpop-box">
-    <button class="ksa-cpop-x" onclick="ksaCloseChuseok()" aria-label="닫기">&times;</button>
-    <img src="chuseok-2026-popup.jpg" alt="추석 휴무 안내 — 1인가구협회 휴무 9월 23일(수)~25일(금). 혼자 지내는 분들을 위한 안내: 응급상황 대비 비상연락처 미리 확인, 택배·배달 수령 시 대면 안전 유의, 충분한 수분·식사·약 복용 챙기기.">
+    <button class="ksa-cpop-x" onclick="ksaCloseSemPop()" aria-label="닫기">&times;</button>
+    <a href="https://forms.gle/6h7hQhjTw26Y9ujP6" target="_blank" rel="noopener" class="ksa-cpop-img" aria-label="10월 세미나 신청 폼 열기 (새 창)">
+      <img src="seminar-2026-10-poster-v2.webp" alt="10월 1인가구세미나 〈내 통장은 왜 늘 비어 있을까〉 — 월급은 그대로인데: 기분 따라 새는 돈, 감정소비 점검하기 · 나의 소비해방일지 쓰기 (오늘아 고마워 김도현, 2026.10.22(목) 19:00~21:00 용산 청년지음 커뮤니티홀, 20~30대 청년 1인가구 선착순 30명, 무료)">
+    </a>
+    <a href="https://forms.gle/6h7hQhjTw26Y9ujP6" target="_blank" rel="noopener" class="ksa-cpop-apply">📝 10월 세미나 신청하기 →</a>
     <div class="ksa-cpop-bar">
-      <label class="ksa-cpop-today"><input type="checkbox" id="ksaChuseokToday"> 오늘 하루 열지 않기</label>
-      <button class="ksa-cpop-close" onclick="ksaCloseChuseok()">닫기</button>
+      <label class="ksa-cpop-today"><input type="checkbox" id="ksaSemPopToday"> 오늘 하루 열지 않기</label>
+      <button class="ksa-cpop-close" onclick="ksaCloseSemPop()">닫기</button>
     </div>
   </div>
 </div>
 <style>
-.ksa-cpop{position:fixed;inset:0;background:rgba(9,17,31,.66);z-index:99999;display:flex;align-items:center;justify-content:center;padding:22px;}
-.ksa-cpop-box{position:relative;width:min(860px,94vw);background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.5);}
-.ksa-cpop-box img{display:block;width:100%;height:auto;}
-.ksa-cpop-x{position:absolute;top:11px;right:12px;width:36px;height:36px;border:none;border-radius:50%;background:rgba(12,20,36,.55);color:#fff;font-size:23px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;}
-.ksa-cpop-bar{display:flex;align-items:center;justify-content:space-between;padding:13px 20px;background:#fff;border-top:1px solid #eee;}
+.ksa-cpop{position:fixed;inset:0;background:rgba(9,17,31,.66);z-index:99999;display:flex;align-items:center;justify-content:center;padding:16px;}
+.ksa-cpop-box{position:relative;width:min(440px,92vw);background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.5);display:flex;flex-direction:column;max-height:calc(100vh - 32px);}
+.ksa-cpop-img{display:block;min-height:0;flex:1 1 auto;background:#efece6;}
+.ksa-cpop-img img{display:block;width:100%;height:100%;max-height:calc(100vh - 190px);object-fit:contain;}
+.ksa-cpop-apply{display:block;background:#c49a3c;color:#0f1e33;font-weight:700;font-size:15px;text-align:center;padding:14px 16px;text-decoration:none;font-family:'Noto Sans KR','Malgun Gothic',sans-serif;}
+.ksa-cpop-apply:hover{background:#e6c564;}
+.ksa-cpop-x{position:absolute;top:11px;right:12px;z-index:2;width:36px;height:36px;border:none;border-radius:50%;background:rgba(12,20,36,.6);color:#fff;font-size:23px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.ksa-cpop-bar{display:flex;align-items:center;justify-content:space-between;padding:11px 16px;background:#fff;border-top:1px solid #eee;}
 .ksa-cpop-today{display:flex;align-items:center;gap:8px;font-size:14px;color:#4b5563;cursor:pointer;}
 .ksa-cpop-today input{width:16px;height:16px;accent-color:#1C2B49;}
-.ksa-cpop-close{background:#1C2B49;color:#fff;font-weight:700;font-size:14px;padding:10px 24px;border:none;border-radius:8px;cursor:pointer;}
+.ksa-cpop-close{background:#1C2B49;color:#fff;font-weight:700;font-size:14px;padding:9px 22px;border:none;border-radius:8px;cursor:pointer;}
 </style>
 <script>
 (function(){
-  var END=new Date('2026-09-27T23:59:59+09:00');
-  function hiddenToday(){try{return localStorage.getItem('ksaChuseok2026')===new Date().toDateString();}catch(e){return false;}}
-  window.ksaCloseChuseok=function(){var el=document.getElementById('ksaChuseokPopup');if(!el)return;try{var c=document.getElementById('ksaChuseokToday');if(c&&c.checked)localStorage.setItem('ksaChuseok2026',new Date().toDateString());}catch(e){}el.style.display='none';};
-  function init(){var el=document.getElementById('ksaChuseokPopup');if(!el)return;if(new Date()>END||hiddenToday()){el.parentNode&&el.parentNode.removeChild(el);return;}el.style.display='flex';el.addEventListener('click',function(e){if(e.target===el)ksaCloseChuseok();});document.addEventListener('keydown',function(e){if(e.key==='Escape')ksaCloseChuseok();});}
+  var END=new Date('2026-10-22T19:00:00+09:00');
+  var KEY='ksaSemPop202610';
+  function hiddenToday(){try{return localStorage.getItem(KEY)===new Date().toDateString();}catch(e){return false;}}
+  window.ksaCloseSemPop=function(){var el=document.getElementById('ksaSemPopup');if(!el)return;try{var c=document.getElementById('ksaSemPopToday');if(c&&c.checked)localStorage.setItem(KEY,new Date().toDateString());}catch(e){}el.style.display='none';};
+  function init(){var el=document.getElementById('ksaSemPopup');if(!el)return;if(new Date()>END||hiddenToday()){el.parentNode&&el.parentNode.removeChild(el);return;}el.style.display='flex';el.addEventListener('click',function(e){if(e.target===el)ksaCloseSemPop();});document.addEventListener('keydown',function(e){if(e.key==='Escape')ksaCloseSemPop();});}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
 </script>
-<!-- /추석 휴무 팝업 -->
+<!-- /10월 세미나 팝업 -->
 </body>
 </html>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
