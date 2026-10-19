@@ -73,7 +73,7 @@ body {
 .w { max-width: var(--max-w); margin: 0 auto; padding: 0 28px; }
 section { padding: 80px 0; }
 
-.sl { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
+.sl { font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
 .st { font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; font-size: clamp(24px, 2.8vw, 34px); font-weight: 700; color: var(--navy); line-height: 1.4; margin-bottom: 12px; }
 .ss { color: var(--muted); font-size: 15px; line-height: 1.9; max-width: 560px; }
 .dg { width: 38px; height: 3px; background: var(--gold); margin: 16px 0 44px; border-radius: 2px; }
@@ -425,9 +425,9 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
 .press-title { font-size:15px; font-weight:600; color:var(--navy); line-height:1.55; margin-bottom:8px; }
 .press-date { font-size:12px; color:var(--muted-light); }
 .press-list-item { display:flex; align-items:baseline; gap:14px; padding:14px 0; border-bottom:1px solid var(--border-light); text-decoration:none; color:inherit; cursor:pointer; background:none; border-left:none; border-right:none; border-top:none; width:100%; text-align:left; font-family:'Noto Sans KR',sans-serif; }
-.pls { font-size:11px; font-weight:700; color:var(--teal); white-space:nowrap; flex-shrink:0; }
-.plt { font-size:14px; color:var(--navy); flex:1; }
-.pld { font-size:12px; color:var(--muted-light); white-space:nowrap; }
+.pls { font-size:13px; font-weight:700; color:var(--teal); white-space:nowrap; flex-shrink:0; }
+.plt { font-size:16px; color:var(--navy); flex:1; line-height:1.55; min-width:0; }
+.pld { font-size:14px; color:var(--muted-light); white-space:nowrap; }
 .press-contact { background:var(--teal-pale); border:1px solid rgba(26,107,88,.15); border-radius:var(--radius); padding:20px 24px; margin-top:32px; font-size:14px; color:var(--teal); }
 /* 회원 가입 */
 .member-type-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:40px; }
@@ -654,6 +654,25 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
 .mk-list li { display: grid; grid-template-columns: 1.7em 1fr; align-items: baseline; text-indent: 0; }
 .mk-list li::before { content: none; }
 .don-benefits li { padding-left: 1.3em; text-indent: -1.3em; }
+
+/* ════ 뉴스·보도 목록 월별 접기 (2026-10-19) ════ */
+.press-fold { --pls-w: 7.6em; }
+.press-fold[data-short] { --pls-w: 4.6em; }
+.press-fold .press-list-item { display: grid; grid-template-columns: var(--pls-w) minmax(0, 1fr) auto; column-gap: 14px; align-items: baseline; text-align: left; }
+.press-fold .pls { justify-self: start; }
+.press-fold[data-short] .pls { min-width: 4.6em; text-align: center; }
+@media (max-width: 640px) { .press-fold .press-list-item { grid-template-columns: minmax(0, 1fr) auto; row-gap: 4px; } .press-fold .pls { grid-column: 1 / -1; } .press-fold .pf-month .press-list-item { padding-left: 14px; } }
+.pf-month { border-bottom: 1px solid var(--border-light); }
+.pf-month > summary { list-style: none; cursor: pointer; padding: 13px 0; font-size: 15px; font-weight: 700; color: var(--navy); display: flex; align-items: center; gap: 10px; }
+.pf-month > summary::-webkit-details-marker { display: none; }
+.pf-month > summary::before { content: '▸'; color: var(--teal); transition: transform .2s; display: inline-block; }
+.pf-month[open] > summary::before { transform: rotate(90deg); }
+.pf-month > summary .pf-n { font-size: 14px; font-weight: 400; color: var(--muted-light); }
+.pf-month > summary:hover { color: var(--teal); }
+.pf-month[open] > summary { border-bottom: 1px solid var(--border-light); }
+.pf-month .press-list-item { padding-left: 22px; }
+.pf-month .press-list-item:last-child { border-bottom: none; }
+.pf-head { margin: 22px 0 4px; font-size: 13px; font-weight: 700; letter-spacing: 1px; color: var(--muted); }
 </style>
 <link rel="canonical" href="https://ksaofficial.co.kr/">
 <meta name="robots" content="index,follow">
@@ -1367,7 +1386,7 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
     <div class="sl reveal" style="color:var(--teal);">OFFICIAL POSITION · 협회 공식 입장</div>
     <h2 class="st reveal reveal-d1">정책 의견서 — 고시원 ‘욕조 허용’ 개정안 반대</h2>
     <div class="dg reveal reveal-d1"></div>
-    <p class="reveal reveal-d1" style="color:var(--muted-light);font-size:13.5px;margin:0 0 20px;">문서번호 KSA-2026-08-001호 · 2026. 8. 13. · 수신: 국토교통부장관 &nbsp;|&nbsp; 제목: 「다중생활시설 건축기준」 일부개정고시(안)에 대한 의견 제출</p>
+    <p class="reveal reveal-d1" style="color:var(--muted-light);font-size:14px;margin:0 0 20px;">문서번호 KSA-2026-08-001호 · 2026. 8. 13. · 수신: 국토교통부장관 &nbsp;|&nbsp; 제목: 「다중생활시설 건축기준」 일부개정고시(안)에 대한 의견 제출</p>
     <div class="reveal reveal-d2" style="background:#fff;border:1px solid var(--border);border-left:4px solid var(--teal);border-radius:12px;padding:26px 28px;box-shadow:var(--shadow-sm);line-height:1.85;">
       <p style="font-weight:700;color:var(--navy);margin-bottom:12px;">1인가구협회는 이번 개정안(고시원 개별실 욕조 허용·학습시설 설치 의무 폐지)에 반대합니다.</p>
       <p style="color:var(--muted);margin-bottom:12px;">고시원(다중생활시설)은 「건축법 시행령」상 주택이 아닌 제2종 근린생활시설로, 본래 임시·단기 거처를 전제한 ‘비(非)주택’ 시설입니다. 다수의 1인 가구가 고시원에 거주하는 현실의 원인은 정상 주거로 이행할 경로가 부족하기 때문이지, 고시원이 주거로 적합해서가 아닙니다.</p>
@@ -1406,7 +1425,7 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
     <div class="reveal reveal-d2" style="margin-top:16px;background:var(--navy);color:#fff;border-radius:12px;padding:20px 24px;line-height:1.8;">
       <strong style="color:var(--gold-light);">의견서 전문이 필요하신가요?</strong><br>
       위 내용은 협회가 국토교통부에 제출한 의견서(KSA-2026-08-001호, 2026.8.13)의 <strong>요약 발췌</strong>입니다. 전문 및 첨부자료가 필요하신 기관·언론·연구자께서는 협회 사무국으로 요청해 주십시오.<br>
-      <span style="display:inline-block;margin-top:10px;font-size:14.5px;">📮 사무국 <a href="mailto:info.ksaofficial@gmail.com" style="color:var(--gold-light);font-weight:700;">info.ksaofficial@gmail.com</a> &nbsp;/&nbsp; ☎ <a href="tel:02-2635-9076" style="color:var(--gold-light);font-weight:700;">02-2635-9076</a></span>
+      <span style="display:inline-block;margin-top:10px;font-size:14px;">📮 사무국 <a href="mailto:info.ksaofficial@gmail.com" style="color:var(--gold-light);font-weight:700;">info.ksaofficial@gmail.com</a> &nbsp;/&nbsp; ☎ <a href="tel:02-2635-9076" style="color:var(--gold-light);font-weight:700;">02-2635-9076</a></span>
     </div>
   </div>
 </section>
@@ -1422,20 +1441,20 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
         <div style="font-size:13px;letter-spacing:2px;color:var(--gold);font-weight:700;">KSA WEEKLY</div>
         <div style="font-size:42px;font-weight:800;margin:6px 0;line-height:1;">제18호</div>
         <div style="font-size:13px;opacity:.82;">2026.10.19(월)</div>
-        <div style="font-size:12px;opacity:.62;margin-top:4px;">최신호</div>
+        <div style="font-size:14px;opacity:.7;margin-top:4px;">최신호</div>
       </div>
       <div style="padding:30px 32px;">
         <div style="font-size:19px;font-weight:700;margin-bottom:16px;">혼자 사는 삶을 위한 한 주의 정책·생활 소식</div>
         <ul style="list-style:none;padding:0;margin:0 0 22px;">
-          <li style="display:grid;grid-template-columns:2.1em 1fr;align-items:baseline;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:15px;word-break:keep-all;text-wrap:pretty;"><span style="color:var(--gold);font-weight:700;">01</span>10월 세미나 〈내 통장은 왜 늘 비어 있을까〉 — 10/22(목) 저녁 7시 · 용산 청년지음 커뮤니티홀 · 20~30대 청년 1인가구 선착순 30명 · 회원 무료 (신청 10/19 마감)</li>
-          <li style="display:grid;grid-template-columns:2.1em 1fr;align-items:baseline;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:15px;word-break:keep-all;text-wrap:pretty;"><span style="color:var(--gold);font-weight:700;">02</span>협회 동향 — 시민단체·청년센터·1인가구지원센터 방문, 뜻이 맞는 기관과 1인가구 지원 협력 · 제17차 사회적고립연결포럼 참석</li>
-          <li style="display:grid;grid-template-columns:2.1em 1fr;align-items:baseline;padding:8px 0;font-size:15px;word-break:keep-all;text-wrap:pretty;"><span style="color:var(--gold);font-weight:700;">03</span>지난주 블로그 4편 — LH 기숙사형 전세임대 500호 공모 · 화성 1인 생활공작소 · 전세사기 보증금 3분의 1 보장(11/13 시행) · 통합돌봄 첫 실태조사</li>
+          <li style="display:grid;grid-template-columns:2.1em 1fr;align-items:baseline;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:16px;word-break:keep-all;text-wrap:pretty;"><span style="color:var(--gold);font-weight:700;">01</span>10월 세미나 〈내 통장은 왜 늘 비어 있을까〉 — 10/22(목) 저녁 7시 · 용산 청년지음 커뮤니티홀 · 20~30대 청년 1인가구 선착순 30명 · 회원 무료 (신청 10/19 마감)</li>
+          <li style="display:grid;grid-template-columns:2.1em 1fr;align-items:baseline;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:16px;word-break:keep-all;text-wrap:pretty;"><span style="color:var(--gold);font-weight:700;">02</span>협회 동향 — 시민단체·청년센터·1인가구지원센터 방문, 뜻이 맞는 기관과 1인가구 지원 협력 · 제17차 사회적고립연결포럼 참석</li>
+          <li style="display:grid;grid-template-columns:2.1em 1fr;align-items:baseline;padding:8px 0;font-size:16px;word-break:keep-all;text-wrap:pretty;"><span style="color:var(--gold);font-weight:700;">03</span>지난주 블로그 4편 — LH 기숙사형 전세임대 500호 공모 · 화성 1인 생활공작소 · 전세사기 보증금 3분의 1 보장(11/13 시행) · 통합돌봄 첫 실태조사</li>
         </ul>
         <a href="newsletter-18.html" target="_blank" rel="noopener" style="display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;padding:11px 22px;border-radius:8px;text-decoration:none;">제18호 전문 보기 →</a>
       </div>
     </div>
 
-    <div class="reveal reveal-d3" style="margin-top:16px;">
+    <div class="reveal reveal-d3 press-fold" data-fold="3" data-short="1" style="margin-top:16px;">
       <button class="press-list-item" onclick="window.open('newsletter-17.html','_blank','noopener')"><span class="pls" style="background:var(--navy);color:#fff;">제17호</span><span class="plt">10월 세미나 〈내 통장은 왜 늘 비어 있을까〉 신청 · 상임이사 인사이드인 인터뷰 · '1인가구 데이터 허브' 오픈 · 정책브리핑 9월호·3분기호 · 지난주 블로그 4편</span><span class="pld">2026.10.12</span></button>
       <button class="press-list-item" onclick="window.open('newsletter-16.html','_blank','noopener')"><span class="pls" style="background:var(--navy);color:#fff;">제16호</span><span class="plt">청년미래센터 전국 17곳 · 주거안정플랜 청년월세 · '1인가구 데이터 허브' 홈페이지 오픈 · 정책브리핑 9월호·3분기호 발간 · 지난주 블로그 7편</span><span class="pld">2026.10.06</span></button>
       <button class="press-list-item" onclick="window.open('newsletter-15.html','_blank','noopener')"><span class="pls" style="background:var(--navy);color:#fff;">제15호</span><span class="plt">추석 연휴 생활 안내(협회 휴무 9/23~25) · 연휴 문 여는 병원·약국 · 명절 스미싱·큐싱 예방 · '데이터 허브' 홈페이지 준비 · 지난주 블로그 5편</span><span class="pld">2026.09.22</span></button>
@@ -1454,7 +1473,7 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
       <button class="press-list-item" onclick="window.open('newsletter-2.html','_blank','noopener')"><span class="pls" style="background:var(--navy);color:#fff;">제2호</span><span class="plt">7월 세미나 신청 시작 · 전월세 안심계약 · 1인가구 고립·자살예방 2026</span><span class="pld">2026.06.22</span></button>
       <button class="press-list-item" onclick="window.open('newsletter-1.html','_blank','noopener')"><span class="pls" style="background:var(--navy);color:#fff;">제1호</span><span class="plt">주거급여 7.2% 인상 · 여름 숙박할인권 · 대전 청년 보증금 이자지원</span><span class="pld">2026.06.15</span></button>
     </div>
-    <p class="reveal reveal-d3" style="text-align:center;margin-top:26px;color:var(--muted);font-size:14.5px;line-height:1.7;">매주 새 호가 발행되며 이곳에 차례로 추가됩니다.<br>뉴스레터를 메일로 받아보시려면 <button onclick="go('pg-member-join')" style="background:none;border:none;color:var(--navy);font-weight:700;text-decoration:underline;cursor:pointer;padding:0;font-size:inherit;">회원가입 →</button></p>
+    <p class="reveal reveal-d3" style="text-align:center;margin-top:26px;color:var(--muted);font-size:14px;line-height:1.7;">매주 새 호가 발행되며 이곳에 차례로 추가됩니다.<br>뉴스레터를 메일로 받아보시려면 <button onclick="go('pg-member-join')" style="background:none;border:none;color:var(--navy);font-weight:700;text-decoration:underline;cursor:pointer;padding:0;font-size:inherit;">회원가입 →</button></p>
   </div>
 </section>
 <section style="background:var(--cream);">
@@ -1463,6 +1482,7 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
     <h2 class="st reveal reveal-d1">1인가구 관련 주요 뉴스</h2>
     <div class="dg reveal reveal-d1"></div>
     <p class="reveal reveal-d1" style="text-align:left;margin:0 0 32px;color:var(--muted);line-height:1.8;">협회가 주목하는 1인가구 의제 — 주거·돌봄·고독사·사회적 고립 — 를 중심으로 정부·언론의 주요 소식을 선별해 연결합니다. 제목을 누르면 해당 기사로 이동합니다.</p>
+    <div class="press-fold" data-fold="5">
     <button class="press-list-item reveal reveal-d2" onclick="window.open('https://insidein.kr/View.aspx?No=4248666','_blank','noopener')"><span class="pls">인사이드인</span><span class="plt">[인터뷰] "국민 36%가 혼자 사는데 제도는 여전히 4인용… 일회성 특례로는 한계" — 김남순 1인가구협회 상임이사 (당사자 참여 정책 창구 · 전세ONE · 세미나 활동 소개)</span><span class="pld">2026.10.01</span></button>
     <button class="press-list-item reveal reveal-d2" onclick="window.open('https://www.newswire.co.kr/newsRead.php?no=1042425','_blank','noopener')"><span class="pls" style="background:var(--navy);color:#fff;padding:3px 8px;border-radius:4px;">협회 소식</span><span class="plt">1인가구협회, 전세사기 예방 원스톱 도구 '전세ONE' 공개 — 계약 전 예방부터 사고·부결 대응까지 단계별 안내, 협회 홈페이지에서 무료 제공</span><span class="pld">2026.09.14</span></button>
     <button class="press-list-item reveal reveal-d2" onclick="window.open('https://www.edaily.co.kr/News/Read?newsId=02870006645580120','_blank','noopener')"><span class="pls">이데일리</span><span class="plt">한부모·조손 아니어도 위기 닥치면 지원…가족정책 문턱 낮춘다 (1인가구 생활역량 강화 · 돌봄·주거·안전 보편 서비스)</span><span class="pld">2026.09.14</span></button>
@@ -1476,9 +1496,10 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
     <button class="press-list-item reveal reveal-d3" onclick="window.open('https://www.kmib.co.kr/article/view.asp?arcid=1778660729&amp;code=11131100&amp;sid1=soc','_blank','noopener')"><span class="pls">국민일보</span><span class="plt">고독사 6년새 1.6배 늘어…외로움, 이제 국가 관리 과제로</span><span class="pld">2026.05</span></button>
     <button class="press-list-item reveal reveal-d3" onclick="window.open('https://www.khan.co.kr/article/202605131627011/','_blank','noopener')"><span class="pls">경향신문</span><span class="plt">복지부 '사회적 고립 전담 차관' 지정…영국·일본 이어 고독사·고립 국가가 챙긴다</span><span class="pld">2026.05</span></button>
     <button class="press-list-item reveal reveal-d4" onclick="window.open('https://www.korea.kr/briefing/pressReleaseView.do?newsId=156734077','_blank','noopener')"><span class="pls">정책브리핑</span><span class="plt">2025 통계로 보는 1인가구 — 전체 가구의 36.1%, 804만 가구</span><span class="pld">2025.12</span></button>
+    </div>
     <div class="reveal reveal-d4" style="text-align:center;margin-top:22px;">
       <a href="https://1in.seoul.go.kr" target="_blank" rel="noopener" style="display:inline-block;background:var(--navy);color:#fff;font-weight:700;padding:11px 24px;border-radius:8px;text-decoration:none;">🏙️ 서울 자치구 1인가구지원센터 찾기 ↗</a>
-      <div style="font-size:12.5px;color:var(--muted-light);margin-top:8px;">서울시 공식 포털 ‘씽글벙글 서울’ · 서울 거주 1인가구 대상</div>
+      <div style="font-size:14px;color:var(--muted-light);margin-top:8px;">서울시 공식 포털 ‘씽글벙글 서울’ · 서울 거주 1인가구 대상</div>
     </div>
     <div class="press-contact reveal reveal-d4"><strong>보도자료·취재 문의</strong> info.ksaofficial@gmail.com</div>
   </div>
@@ -3054,5 +3075,39 @@ if (document.readyState !== 'loading') routeFromHash();
 })();
 </script>
 <!-- /10월 세미나 팝업 -->
+<script>
+/* 뉴스·보도 목록 정리: 최근 N개만 보이고 나머지는 월별로 접는다. 새 줄을 목록 맨 위에 추가하기만 하면 자동 정리된다(2026-10-19). */
+(function(){
+  function run(){
+    document.querySelectorAll('.press-fold').forEach(function(box){
+      if (box.dataset.folded) return; box.dataset.folded = '1';
+      var keep = parseInt(box.dataset.fold || '3', 10);
+      var rows = Array.prototype.filter.call(box.children, function(c){ return c.classList && c.classList.contains('press-list-item'); });
+      rows.forEach(function(r){
+        r.classList.remove('reveal','reveal-d1','reveal-d2','reveal-d3','reveal-d4'); r.style.opacity=''; r.style.transform='';
+        var d = r.querySelector('.pld'), tt = r.querySelector('.plt');
+        if (d) { var m = d.textContent.trim().match(/^(\d{4})\.(\d{1,2})(?:\.(\d{1,2}))?/); if (m) { r.dataset.ym = m[1] + '.' + ('0'+m[2]).slice(-2); if (m[3]) { d.textContent = ('0'+m[2]).slice(-2) + '.' + ('0'+m[3]).slice(-2); } } }
+        if (box.dataset.short && tt) { var full = tt.textContent.trim(), parts = full.split(' · '); if (parts.length > 1) { tt.textContent = parts[0]; r.title = full; } }
+      });
+      if (rows.length <= keep) return;
+      var rest = rows.slice(keep), groups = [], byKey = {};
+      rest.forEach(function(r){ var k = r.dataset.ym || '기타'; if (!byKey[k]) { byKey[k] = []; groups.push(k); } byKey[k].push(r); });
+      var head = document.createElement('div'); head.className = 'pf-head'; head.textContent = '지난 목록';
+      var anchor = rows[keep - 1].nextSibling;
+      var frag = document.createDocumentFragment(); frag.appendChild(head);
+      groups.forEach(function(k){
+        var det = document.createElement('details'); det.className = 'pf-month';
+        var sm = document.createElement('summary');
+        var label = k === '기타' ? '그 밖의 항목' : (k.split('.')[0] + '년 ' + parseInt(k.split('.')[1], 10) + '월');
+        sm.appendChild(document.createTextNode(label + ' '));
+        var n = document.createElement('span'); n.className = 'pf-n'; n.textContent = byKey[k].length + '건'; sm.appendChild(n);
+        det.appendChild(sm); byKey[k].forEach(function(r){ det.appendChild(r); }); frag.appendChild(det);
+      });
+      box.insertBefore(frag, anchor);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+})();
+</script>
 </body>
 </html>
