@@ -681,6 +681,20 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
 .press-fold .press-list-item[hidden] { display: none; }
 .press-fold .pct { display: inline-block; font-size: 13px; font-weight: 700; color: var(--teal); margin-right: 8px; white-space: nowrap; }
 .pf-head { margin: 22px 0 4px; font-size: 13px; font-weight: 700; letter-spacing: 1px; color: var(--muted); }
+
+/* ════ 히어로 소개 영상 (2026-10-27) ════ */
+.hero-vid { display: inline-flex; align-items: center; gap: 12px; margin-top: 22px; padding: 0; background: none; border: none; color: #fff; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; text-align: left; }
+.hero-vid .hv-play { width: 46px; height: 46px; border-radius: 50%; background: rgba(255,255,255,.14); border: 1.5px solid rgba(255,255,255,.55); display: inline-flex; align-items: center; justify-content: center; font-size: 15px; padding-left: 3px; transition: background .2s, transform .2s; }
+.hero-vid .hv-t { font-size: 16px; font-weight: 700; display: flex; flex-direction: column; line-height: 1.35; }
+.hero-vid .hv-d { font-size: 13px; font-weight: 400; opacity: .75; }
+.hero-vid:hover .hv-play, .hero-vid:focus-visible .hv-play { background: var(--gold); border-color: var(--gold); color: var(--navy); transform: scale(1.06); }
+.ksa-vmodal { position: fixed; inset: 0; z-index: 9999; background: rgba(10,16,30,.86); display: none; align-items: center; justify-content: center; padding: 16px; }
+.ksa-vmodal.on { display: flex; }
+.ksa-vmodal .vm-box { position: relative; width: min(960px, 100%); }
+.ksa-vmodal .vm-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+.ksa-vmodal video, .ksa-vmodal iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.ksa-vmodal .vm-close { position: absolute; top: -44px; right: 0; background: none; border: none; color: #fff; font-size: 15px; font-weight: 700; cursor: pointer; padding: 8px 4px; font-family: 'Noto Sans KR', sans-serif; }
+.ksa-vmodal .vm-cap { color: rgba(255,255,255,.75); font-size: 14px; margin-top: 12px; text-align: center; }
 </style>
 <link rel="canonical" href="https://ksaofficial.co.kr/">
 <meta name="robots" content="index,follow">
@@ -935,6 +949,7 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
           <button onclick="go('pg-about-vision')" class="btn-gold">협회 소개 보기 →</button>
           <button onclick="go('pg-seminar-schedule')" class="btn-ghost">세미나 일정 →</button>
         </div>
+        <button type="button" class="hero-vid" onclick="ksaOpenIntro()" aria-haspopup="dialog"><span class="hv-play" aria-hidden="true">▶</span><span class="hv-t">협회 소개 영상 보기<span class="hv-d">2분 15초</span></span></button>
       </div>
       <div class="hero-card">
         <div class="hero-card-title">숫자로 보는 1인 가구와 KSA</div>
@@ -959,15 +974,6 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
     </div>
   </nav>
 </section>
-</div>
-
-<!-- 공지 바 -->
-<div class="nbar">
-  <div class="w">
-    <span class="ntag">접수중</span>
-    <span class="ntxt">10월 청년 소비 세미나 〈월급은 그대로인데〉 — 10.22(목) 19:00 · 용산 청년지음 커뮤니티홀 · 무료·선착순 30명</span>
-    <button onclick="go('pg-seminar-schedule')" class="nmore">자세히 보기 →</button>
-  </div>
 </div>
 
 <!-- 협회 소개 -->
@@ -1061,7 +1067,7 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
     </div>
     <div class="reveal reveal-d1">
       <div class="bh"><div class="bt">공지사항</div><button onclick="go('pg-news-notice')" class="bm">전체 보기 →</button></div>
-      <button onclick="go('pg-seminar-schedule')" class="notice-row"><span class="nb nb-new">접수중</span><span class="nr-title">10월 청년 소비 세미나 〈월급은 그대로인데〉 신청 — 10.22(목) 19시 · 용산 청년지음 커뮤니티홀 · 무료·선착순 30명</span><span class="nr-date">09.28</span></button>
+      <button onclick="go('pg-seminar-schedule')" class="notice-row"><span class="nb nb-n">마감</span><span class="nr-title">10월 청년 소비 세미나 〈월급은 그대로인데〉 — 10.22(목) 19시 · 용산 청년지음 커뮤니티홀 · 무료·선착순 30명</span><span class="nr-date">09.28</span></button>
       <button onclick="window.open('https://ksaofficial.imweb.me/seminar-idea','_blank','noopener')" class="notice-row"><span class="nb nb-new">제안</span><span class="nr-title">듣고 싶은 강연·주제를 직접 제안해 주세요 — 회원 제안 게시판 ↗</span><span class="nr-date">상시</span></button>
       <button onclick="go('pg-news-notice')" class="notice-row"><span class="nb nb-imp">중요</span><span class="nr-title">사단법인 창립총회 성료 및 임원 선출 공고</span><span class="nr-date">26.04.30</span></button>
       <button onclick="go('pg-news-notice')" class="notice-row"><span class="nb nb-n">공지</span><span class="nr-title">회원 가입 안내 및 혜택 소개</span><span class="nr-date">25.04.01</span></button>
@@ -3045,58 +3051,34 @@ if (document.readyState !== 'loading') routeFromHash();
   });
 </script>
 
-<!-- ██ 10월 세미나 팝업 (2026) ██ -->
-<div id="ksaSemPopup" class="ksa-cpop" role="dialog" aria-modal="true" aria-label="10월 1인가구세미나 신청 안내" style="display:none;">
-  <div class="ksa-cpop-box">
-    <button class="ksa-cpop-x" onclick="ksaCloseSemPop()" aria-label="닫기">&times;</button>
-    <div class="ksa-cpop-media">
-    <a href="https://forms.gle/6h7hQhjTw26Y9ujP6" target="_blank" rel="noopener" class="ksa-cpop-img" aria-label="10월 세미나 신청 폼 열기 (새 창)">
-      <img src="seminar-2026-10-poster-v2.webp" alt="10월 1인가구세미나 〈내 통장은 왜 늘 비어 있을까〉 — 월급은 그대로인데: 기분 따라 새는 돈, 감정소비 점검하기 · 나의 소비해방일지 쓰기 (오늘아 고마워 김도현, 2026.10.22(목) 19:00~21:00 용산 청년지음 커뮤니티홀, 20~30대 청년 1인가구 선착순 30명, 무료)">
-    </a>
-    <div class="ksa-cpop-video">
-      <iframe id="ksaSemPopVideo" data-src="https://www.youtube.com/embed/oUJ1Cr0lSAw?autoplay=1&amp;mute=1&amp;playsinline=1&amp;loop=1&amp;playlist=oUJ1Cr0lSAw&amp;rel=0&amp;modestbranding=1" title="1인가구 세미나 쇼츠 — 너 어제 퇴근길에 뭐 샀어? 통장이 텅장 되는 이유" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-    </div>
-    </div>
-    <a href="https://forms.gle/6h7hQhjTw26Y9ujP6" target="_blank" rel="noopener" class="ksa-cpop-apply">📝 10월 세미나 신청하기 →</a>
-    <div class="ksa-cpop-bar">
-      <label class="ksa-cpop-today"><input type="checkbox" id="ksaSemPopToday"> 오늘 하루 열지 않기</label>
-      <button class="ksa-cpop-close" onclick="ksaCloseSemPop()">닫기</button>
-    </div>
+<!-- ██ 협회 소개 영상 (2026-10-27) — 유튜브에 올리면 YT_ID만 채우면 유튜브 재생으로 바뀐다 ██ -->
+<div id="ksaIntro" class="ksa-vmodal" role="dialog" aria-modal="true" aria-label="KSA 1인가구협회 소개 영상" onclick="if(event.target===this)ksaCloseIntro()">
+  <div class="vm-box">
+    <button type="button" class="vm-close" onclick="ksaCloseIntro()">닫기 ✕</button>
+    <div class="vm-frame" id="ksaIntroFrame"></div>
+    <div class="vm-cap">KSA 1인가구협회 소개 영상 · 2026</div>
   </div>
 </div>
-<style>
-.ksa-cpop{position:fixed;inset:0;background:rgba(9,17,31,.66);z-index:99999;display:flex;align-items:center;justify-content:center;padding:16px;}
-.ksa-cpop-box{--ph:min(calc(100vh - 216px),680px,calc((100vw - 32px) / 1.27));position:relative;margin-top:46px;background:#fff;border-radius:16px;box-shadow:0 24px 70px rgba(0,0,0,.5);display:flex;flex-direction:column;}
-.ksa-cpop-media{display:flex;height:var(--ph);background:#0f1e33;border-radius:16px 16px 0 0;overflow:hidden;}
-.ksa-cpop-bar{border-radius:0 0 16px 16px;}
-.ksa-cpop-img{display:block;height:100%;aspect-ratio:1055/1491;flex:0 0 auto;background:#efece6;}
-.ksa-cpop-img img{display:block;width:100%;height:100%;object-fit:cover;}
-.ksa-cpop-video{height:100%;aspect-ratio:9/16;flex:0 0 auto;background:#000;}
-.ksa-cpop-video iframe{display:block;width:100%;height:100%;border:0;}
-@media (max-width:560px){
-  .ksa-cpop-apply{font-size:14px;padding:12px;}
-  .ksa-cpop-bar{padding:9px 12px;}
-  .ksa-cpop-today{font-size:13px;}
-}
-.ksa-cpop-apply{display:block;background:#c49a3c;color:#0f1e33;font-weight:700;font-size:15px;text-align:center;padding:14px 16px;text-decoration:none;font-family:'Noto Sans KR','Malgun Gothic',sans-serif;}
-.ksa-cpop-apply:hover{background:#e6c564;}
-.ksa-cpop-x{position:absolute;top:-46px;right:0;z-index:2;width:36px;height:36px;border:none;border-radius:50%;background:rgba(255,255,255,.92);color:#1C2B49;font-size:23px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;}
-.ksa-cpop-bar{display:flex;align-items:center;justify-content:space-between;padding:11px 16px;background:#fff;border-top:1px solid #eee;}
-.ksa-cpop-today{display:flex;align-items:center;gap:8px;font-size:14px;color:#4b5563;cursor:pointer;}
-.ksa-cpop-today input{width:16px;height:16px;accent-color:#1C2B49;}
-.ksa-cpop-close{background:#1C2B49;color:#fff;font-weight:700;font-size:14px;padding:9px 22px;border:none;border-radius:8px;cursor:pointer;}
-</style>
 <script>
 (function(){
-  var END=new Date('2026-10-22T19:00:00+09:00');
-  var KEY='ksaSemPop202610';
-  function hiddenToday(){try{return localStorage.getItem(KEY)===new Date().toDateString();}catch(e){return false;}}
-  window.ksaCloseSemPop=function(){var el=document.getElementById('ksaSemPopup');if(!el)return;try{var c=document.getElementById('ksaSemPopToday');if(c&&c.checked)localStorage.setItem(KEY,new Date().toDateString());}catch(e){}var v=document.getElementById('ksaSemPopVideo');if(v)v.removeAttribute('src');el.style.display='none';};
-  function init(){var el=document.getElementById('ksaSemPopup');if(!el)return;if(new Date()>END||hiddenToday()){el.parentNode&&el.parentNode.removeChild(el);return;}var v=document.getElementById('ksaSemPopVideo');if(v)v.src=v.getAttribute('data-src');el.style.display='flex';el.addEventListener('click',function(e){if(e.target===el)ksaCloseSemPop();});document.addEventListener('keydown',function(e){if(e.key==='Escape')ksaCloseSemPop();});}
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+  var YT_ID = 'oAdoKEgwKzQ';
+  var box = document.getElementById('ksaIntro'), fr = document.getElementById('ksaIntroFrame'), last = null;
+  window.ksaOpenIntro = function(){
+    last = document.activeElement;
+    fr.innerHTML = YT_ID
+      ? '<iframe src="https://www.youtube-nocookie.com/embed/' + YT_ID + '?autoplay=1&rel=0" title="KSA 1인가구협회 소개 영상" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>'
+      : '<video src="ksa-intro-2026.mp4" poster="ksa-intro-poster.jpg" controls autoplay playsinline preload="metadata"></video>';
+    box.classList.add('on'); document.body.style.overflow = 'hidden';
+    box.querySelector('.vm-close').focus();
+  };
+  window.ksaCloseIntro = function(){
+    box.classList.remove('on'); fr.innerHTML = ''; document.body.style.overflow = '';
+    if (last && last.focus) last.focus();
+  };
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && box.classList.contains('on')) ksaCloseIntro(); });
 })();
 </script>
-<!-- /10월 세미나 팝업 -->
+<!-- /협회 소개 영상 -->
 <script>
 /* 뉴스·보도 목록 정리: 최근 N개만 보이고 나머지는 월별로 접는다. 새 줄을 목록 맨 위에 추가하기만 하면 자동 정리된다(2026-10-19).
    data-filter가 있는 목록은 위에 분야 버튼을 만든다. 각 줄의 data-cat에 분야 코드를 공백으로 나눠 적는다(첫 코드가 줄 앞 분야 표시). */
