@@ -1468,7 +1468,7 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
       </div>
     </div>
 
-    <div class="reveal reveal-d3 press-fold" data-fold="3" data-short="1" style="margin-top:16px;">
+    <div class="reveal reveal-d3 press-fold" data-fold="0" data-open="1" data-short="1" style="margin-top:16px;">
       <button class="press-list-item" onclick="window.open('newsletter-19.html','_blank','noopener')"><span class="pls" style="background:var(--navy);color:#fff;">제19호</span><span class="plt">협회 소개 영상 공개 · 기관방문 협력 소식 · 10월 세미나 마침 · 지난주 1인가구 소식 7건(노인복지주택 계속 거주·서울역 쪽방촌 공공임대 1,000호 등)</span><span class="pld">2026.10.29</span></button>
       <button class="press-list-item" onclick="window.open('newsletter-18.html','_blank','noopener')"><span class="pls" style="background:var(--navy);color:#fff;">제18호</span><span class="plt">협회 기관 방문·협력 소식 · 제17차 사회적고립연결포럼 참석 · 10월 세미나 신청 · 지난주 블로그 4편(LH 기숙사형 전세임대·전세사기 보증금 3분의 1 보장 등)</span><span class="pld">2026.10.19</span></button>
       <button class="press-list-item" onclick="window.open('newsletter-17.html','_blank','noopener')"><span class="pls" style="background:var(--navy);color:#fff;">제17호</span><span class="plt">10월 세미나 〈내 통장은 왜 늘 비어 있을까〉 신청 · 상임이사 인사이드인 인터뷰 · '1인가구 데이터 허브' 오픈 · 정책브리핑 9월호·3분기호 · 지난주 블로그 4편</span><span class="pld">2026.10.12</span></button>
@@ -3135,6 +3135,7 @@ if (document.readyState !== 'loading') routeFromHash();
 <!-- /협회 소개 영상 -->
 <script>
 /* 뉴스·보도 목록 정리: 최근 N개만 보이고 나머지는 월별로 접는다. 새 줄을 목록 맨 위에 추가하기만 하면 자동 정리된다(2026-10-19).
+   data-fold="0"이면 펼친 줄 없이 전부 월별로 묶는다. data-open이 있으면 가장 최근 달 묶음을 펼쳐 둔다(2026-11-03, 뉴스레터 목록).
    data-filter가 있는 목록은 위에 분야 버튼을 만든다. 각 줄의 data-cat에 분야 코드를 공백으로 나눠 적는다(첫 코드가 줄 앞 분야 표시). */
 (function(){
   var CATS = [['all','전체'],['house','주거'],['iso','고립·고독'],['conn','연결'],['forum','포럼·세미나'],['policy','정책·통계'],['ksa','협회 소식']];
@@ -3149,15 +3150,16 @@ if (document.readyState !== 'loading') routeFromHash();
     rest.forEach(function(r){ var k = r.dataset.ym || '기타'; if (!byKey[k]) { byKey[k] = []; groups.push(k); } byKey[k].push(r); });
     var head = document.createElement('div'); head.className = 'pf-head'; head.textContent = '지난 목록';
     var frag = document.createDocumentFragment(); frag.appendChild(head);
-    groups.forEach(function(k){
+    groups.forEach(function(k, i){
       var det = document.createElement('details'); det.className = 'pf-month';
+      if (i === 0 && box.dataset.open) det.open = true;
       var sm = document.createElement('summary');
       var label = k === '기타' ? '그 밖의 항목' : (k.split('.')[0] + '년 ' + parseInt(k.split('.')[1], 10) + '월');
       sm.appendChild(document.createTextNode(label + ' '));
       var n = document.createElement('span'); n.className = 'pf-n'; n.textContent = byKey[k].length + '건'; sm.appendChild(n);
       det.appendChild(sm); byKey[k].forEach(function(r){ det.appendChild(r); }); frag.appendChild(det);
     });
-    box.insertBefore(frag, rows[keep - 1].nextSibling);
+    box.insertBefore(frag, keep > 0 ? rows[keep - 1].nextSibling : box.firstChild);
   }
   function show(box, cat){
     unfold(box);
