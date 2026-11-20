@@ -3065,25 +3065,18 @@ if (document.readyState !== 'loading') routeFromHash();
 <div id="ksaForumPopup" class="ksa-cpop" role="dialog" aria-modal="true" aria-label="2026 1인가구 정책포럼 참가 신청 안내" style="display:none;">
   <div class="ksa-cpop-box">
     <button class="ksa-cpop-x" onclick="ksaCloseForumPop()" aria-label="닫기">&times;</button>
-    <div class="ksa-cpop-tag">2026 1인가구 정책포럼 · 사전 신청 중</div>
     <div class="ksa-cpop-media">
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqm2EUz-NdYT5f6C7dL_Qi8JYxgPM1k9gsa6qnLBek2Ipo_Q/viewform?usp=pp_url&amp;entry.1468485025=%ED%98%91%ED%9A%8C%20%EB%B8%94%EB%A1%9C%EA%B7%B8%C2%B7%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80" target="_blank" rel="noopener" class="ksa-cpop-img" aria-label="정책포럼 참가 신청 폼 열기 (새 창)">
       <img src="forum-2026-12-poster.jpg" alt="2026 1인가구 정책포럼 〈주거와 고립, 느슨한 연대로〉 — 2026.12.11(금) 14:00~16:00 국회의원회관 제1세미나실. 발제 01 1인가구 주거의 현실과 과제(김대호 2분뉴스 기자), 02 혼자 사는 삶은 고립으로 이어지는가(김성아 한국보건사회연구원 연구위원), 03 느슨한 연대와 지역의 연결(박우철 덕성여자대학교 교수). 공동주최 사회민주당 국회의원 한창민 · 1인가구협회">
     </a>
     <div class="ksa-cpop-video"><video id="ksaForumVideo" muted playsinline controls preload="none" aria-label="정책포럼 홍보 쇼츠"></video></div>
     </div>
-    <div class="ksa-ftabs" role="group" aria-label="쇼츠 고르기"><span>쇼츠</span><button type="button" data-i="0" aria-pressed="true">① 주거</button><button type="button" data-i="1" aria-pressed="false">② 고립</button><button type="button" data-i="2" aria-pressed="false">③ 연대</button></div>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqm2EUz-NdYT5f6C7dL_Qi8JYxgPM1k9gsa6qnLBek2Ipo_Q/viewform?usp=pp_url&amp;entry.1468485025=%ED%98%91%ED%9A%8C%20%EB%B8%94%EB%A1%9C%EA%B7%B8%C2%B7%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80" target="_blank" rel="noopener" class="ksa-cpop-apply">📝 포럼 참가 신청하기 · 12.11(금) 14시 · 국회의원회관 제1세미나실 →</a>
-    <div class="ksa-cpop-note">참가 무료 · 사전 신청 12월 4일(금) 18시까지 · 당일 신분증 지참<br>공동주최 사회민주당 한창민 의원실 · 1인가구협회 · 영상 일부 장면은 AI로 생성했습니다.</div>
-    <div class="ksa-cpop-bar">
-      <label class="ksa-cpop-today"><input type="checkbox" id="ksaForumPopToday"> 오늘 하루 열지 않기</label>
-      <button class="ksa-cpop-close" onclick="ksaCloseForumPop()">닫기</button>
-    </div>
   </div>
 </div>
 <style>
 .ksa-cpop{position:fixed;inset:0;background:rgba(9,17,31,.66);z-index:99999;display:flex;align-items:center;justify-content:center;padding:16px;overflow-y:auto;}
-.ksa-cpop-box{--ph:min(calc(100dvh - 340px),640px,calc((100vw - 32px) / 1.125));position:relative;margin-top:46px;background:#fff;border-radius:16px;box-shadow:0 24px 70px rgba(0,0,0,.5);display:flex;flex-direction:column;}
+.ksa-cpop-box{--ph:min(480px,calc(100dvh - 190px),calc((100vw - 32px) / 1.125));position:relative;margin-top:46px;background:#fff;border-radius:16px;box-shadow:0 24px 70px rgba(0,0,0,.5);display:flex;flex-direction:column;}
 .ksa-cpop-media{display:flex;height:var(--ph);background:#0f1e33;border-radius:16px 16px 0 0;overflow:hidden;}
 .ksa-cpop-bar{border-radius:0 0 16px 16px;}
 .ksa-cpop-img{display:block;height:100%;aspect-ratio:1080/1920;flex:0 0 auto;background:#efece6;}
@@ -3112,18 +3105,8 @@ if (document.readyState !== 'loading') routeFromHash();
 .ksa-ftabs span{font-size:12px;color:rgba(255,255,255,.6);margin-right:2px;}
 .ksa-ftabs button{border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;font-size:13px;padding:4px 11px;border-radius:999px;cursor:pointer;}
 .ksa-ftabs button[aria-pressed="true"]{background:#c49a3c;border-color:#c49a3c;color:#0f1e33;font-weight:700;}
-/* 11-20 크기 조정: 넓은 화면에서는 협회 소개영상 창과 같은 16:9(최대 960×540) 안에 포스터·쇼츠·안내를 가로로 배치 */
-@media (min-width:760px) and (min-height:500px){
-#ksaForumPopup .ksa-cpop-box{--W:min(960px,calc(100vw - 32px),calc((100dvh - 90px) * 16 / 9));--H:calc(var(--W) * 9 / 16);width:var(--W);height:var(--H);margin-top:46px;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto 1fr auto auto;background:#0f1e33;}
-#ksaForumPopup .ksa-cpop-media{grid-column:1;grid-row:1 / -1;height:var(--H);border-radius:16px 0 0 16px;}
-#ksaForumPopup .ksa-cpop-tag{grid-column:2;grid-row:1;border-radius:0 16px 0 0;padding:16px 14px 6px;font-size:14px;font-weight:700;color:#e6c564;}
-#ksaForumPopup .ksa-ftabs{grid-column:2;grid-row:2;justify-content:center;flex-wrap:wrap;padding:8px 12px;}
-#ksaForumPopup .ksa-cpop-note{grid-column:2;grid-row:3;align-self:center;background:transparent;color:rgba(255,255,255,.78);font-size:13px;padding:0 18px;}
-#ksaForumPopup .ksa-cpop-apply{grid-column:2;grid-row:4;margin:0 16px 14px;border-radius:10px;font-size:14.5px;line-height:1.5;word-break:keep-all;}
-#ksaForumPopup .ksa-cpop-bar{grid-column:2;grid-row:5;background:transparent;border-top:1px solid rgba(255,255,255,.12);border-radius:0 0 16px 0;}
-#ksaForumPopup .ksa-cpop-today{color:rgba(255,255,255,.75);font-size:13px;}
-#ksaForumPopup .ksa-cpop-close{background:rgba(255,255,255,.14);}
-}
+/* 11-20 사무국장: 포스터·영상만, 신청 링크는 그 아래. 안내 칸·하단 바 삭제 */
+#ksaForumPopup .ksa-cpop-apply{border-radius:0 0 16px 16px;font-size:14.5px;line-height:1.5;word-break:keep-all;}
 </style>
 <script>
 (function(){
