@@ -846,7 +846,7 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
 
       <!-- 전세 안전 (전세ONE · 외부) -->
       <div class="ni">
-        <button class="nl" onclick="window.open('https://thepmdmanage-rgb.github.io/jeonse-one/','_blank','noopener')" aria-label="전세 안전 진단 전세ONE 새 창에서 열기">전세 안전 <span class="arr" style="font-size:11px;vertical-align:1px;">↗</span></button>
+        <button class="nl" onclick="window.open('https://thepmdmanage-rgb.github.io/jeonse-one/','_blank','noopener')" aria-label="전세ONE 새 창에서 열기">전세ONE <span class="arr" style="font-size:11px;vertical-align:1px;">↗</span></button>
       </div>
 
       <!-- 회원·후원 -->
@@ -903,7 +903,7 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
       <button onclick="go('pg-news-notice');closeDrawer()">공지사항</button>
       <button onclick="go('pg-news-press');closeDrawer()">뉴스·보도</button>
       <button onclick="window.open('https://ksaofficial.imweb.me/info','_blank','noopener');closeDrawer()">1인가구 라이프 인사이트 ↗</button>
-      <button onclick="window.open('https://thepmdmanage-rgb.github.io/jeonse-one/','_blank','noopener');closeDrawer()">전세 안전(전세ONE) ↗</button>
+      <button onclick="window.open('https://thepmdmanage-rgb.github.io/jeonse-one/','_blank','noopener');closeDrawer()">전세ONE ↗</button>
       <button onclick="go('pg-news-faq');closeDrawer()">자주 묻는 질문</button>
     </div>
   </div>
@@ -969,7 +969,7 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
       <div class="hq-label">생활 서비스 바로가기</div>
       <button onclick="window.open('https://ksaofficial.imweb.me/info','_blank','noopener')" class="hq"><span class="hq-t">1인가구 라이프 인사이트 ↗</span><span class="hq-d">협회 생활 정보 콘텐츠</span></button>
       <button onclick="window.open('https://thepmdmanage-rgb.github.io/ksa-datahub/','_blank','noopener')" class="hq"><span class="hq-t">1인가구 데이터 허브 ↗</span><span class="hq-d">통계·정책 데이터 모음</span></button>
-      <button onclick="window.open('https://thepmdmanage-rgb.github.io/jeonse-one/','_blank','noopener')" class="hq"><span class="hq-t">전세 안전(전세ONE) ↗</span><span class="hq-d">전세 계약 위험 점검</span></button>
+      <button onclick="window.open('https://thepmdmanage-rgb.github.io/jeonse-one/','_blank','noopener')" class="hq"><span class="hq-t">전세ONE ↗</span><span class="hq-d">전세 계약 위험 점검</span></button>
       <button onclick="window.open('https://1in.seoul.go.kr','_blank','noopener')" class="hq"><span class="hq-t">자치구 지원센터 ↗</span><span class="hq-d">서울시 1인가구 포털</span></button>
     </div>
   </nav>
@@ -3112,6 +3112,18 @@ if (document.readyState !== 'loading') routeFromHash();
 .ksa-ftabs span{font-size:12px;color:rgba(255,255,255,.6);margin-right:2px;}
 .ksa-ftabs button{border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;font-size:13px;padding:4px 11px;border-radius:999px;cursor:pointer;}
 .ksa-ftabs button[aria-pressed="true"]{background:#c49a3c;border-color:#c49a3c;color:#0f1e33;font-weight:700;}
+/* 11-20 크기 조정: 넓은 화면에서는 협회 소개영상 창과 같은 16:9(최대 960×540) 안에 포스터·쇼츠·안내를 가로로 배치 */
+@media (min-width:760px) and (min-height:500px){
+#ksaForumPopup .ksa-cpop-box{--W:min(960px,calc(100vw - 32px),calc((100dvh - 90px) * 16 / 9));--H:calc(var(--W) * 9 / 16);width:var(--W);height:var(--H);margin-top:46px;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto 1fr auto auto;background:#0f1e33;}
+#ksaForumPopup .ksa-cpop-media{grid-column:1;grid-row:1 / -1;height:var(--H);border-radius:16px 0 0 16px;}
+#ksaForumPopup .ksa-cpop-tag{grid-column:2;grid-row:1;border-radius:0 16px 0 0;padding:16px 14px 6px;font-size:14px;font-weight:700;color:#e6c564;}
+#ksaForumPopup .ksa-ftabs{grid-column:2;grid-row:2;justify-content:center;flex-wrap:wrap;padding:8px 12px;}
+#ksaForumPopup .ksa-cpop-note{grid-column:2;grid-row:3;align-self:center;background:transparent;color:rgba(255,255,255,.78);font-size:13px;padding:0 18px;}
+#ksaForumPopup .ksa-cpop-apply{grid-column:2;grid-row:4;margin:0 16px 14px;border-radius:10px;font-size:14.5px;line-height:1.5;word-break:keep-all;}
+#ksaForumPopup .ksa-cpop-bar{grid-column:2;grid-row:5;background:transparent;border-top:1px solid rgba(255,255,255,.12);border-radius:0 0 16px 0;}
+#ksaForumPopup .ksa-cpop-today{color:rgba(255,255,255,.75);font-size:13px;}
+#ksaForumPopup .ksa-cpop-close{background:rgba(255,255,255,.14);}
+}
 </style>
 <script>
 (function(){
