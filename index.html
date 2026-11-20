@@ -1067,6 +1067,7 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
     </div>
     <div class="reveal reveal-d1">
       <div class="bh"><div class="bt">공지사항</div><button onclick="go('pg-news-notice')" class="bm">전체 보기 →</button></div>
+      <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfqm2EUz-NdYT5f6C7dL_Qi8JYxgPM1k9gsa6qnLBek2Ipo_Q/viewform?usp=pp_url&amp;entry.1468485025=%ED%98%91%ED%9A%8C%20%EB%B8%94%EB%A1%9C%EA%B7%B8%C2%B7%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80','_blank','noopener')" class="notice-row"><span class="nb nb-new">모집</span><span class="nr-title">2026 1인가구 정책포럼 〈주거와 고립, 느슨한 연대로〉 — 12.11(금) 14~16시 · 국회의원회관 제1세미나실 · 사전 신청 12.4(금) 18시까지 ↗</span><span class="nr-date">11.20</span></button>
       <button onclick="go('pg-seminar-schedule')" class="notice-row"><span class="nb nb-n">마감</span><span class="nr-title">11월 1인가구 세미나 〈탕진 말고 가심비〉 — 11.18(수) 19시 · 용산 청년지음</span><span class="nr-date">11.03</span></button>
       <button onclick="go('pg-seminar-schedule')" class="notice-row"><span class="nb nb-n">마감</span><span class="nr-title">10월 청년 소비 세미나 〈월급은 그대로인데〉 — 10.22(목) 19시 · 용산 청년지음 커뮤니티홀 · 무료·선착순 30명</span><span class="nr-date">09.28</span></button>
       <button onclick="window.open('https://ksaofficial.imweb.me/seminar-idea','_blank','noopener')" class="notice-row"><span class="nb nb-new">제안</span><span class="nr-title">듣고 싶은 강연·주제를 직접 제안해 주세요 — 회원 제안 게시판 ↗</span><span class="nr-date">상시</span></button>
@@ -3060,31 +3061,32 @@ if (document.readyState !== 'loading') routeFromHash();
   });
 </script>
 
-<!-- ██ 11월 1인가구 세미나 팝업 (세미나 시작 11/18 19:00에 자동 숨김). 왼쪽 포스터, 오른쪽 쇼츠 A(음소거 자동 반복) ██ -->
-<div id="ksaSemPopup" class="ksa-cpop" role="dialog" aria-modal="true" aria-label="11월 1인가구 세미나 신청 안내" style="display:none;">
+<!-- ██ 12월 정책포럼 팝업 (2026-11-20 사무국장 지시). 왼쪽 전자포스터 v31E, 오른쪽 쇼츠 3편(주거·고립·연대)을 차례로 음소거 재생. 사전 신청 마감 12/4 18:00에 자동 숨김 ██ -->
+<div id="ksaForumPopup" class="ksa-cpop" role="dialog" aria-modal="true" aria-label="2026 1인가구 정책포럼 참가 신청 안내" style="display:none;">
   <div class="ksa-cpop-box">
-    <button class="ksa-cpop-x" onclick="ksaCloseSemPop()" aria-label="닫기">&times;</button>
-    <div class="ksa-cpop-tag">11월 1인가구 세미나 · 신청 접수 중</div>
+    <button class="ksa-cpop-x" onclick="ksaCloseForumPop()" aria-label="닫기">&times;</button>
+    <div class="ksa-cpop-tag">2026 1인가구 정책포럼 · 사전 신청 중</div>
     <div class="ksa-cpop-media">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScrvzb9LGs7eKdyCwRMJYUIwbPnEV4kOMnxg357sfscWtFT6w/viewform?usp=pp_url&amp;entry.1468485025=%ED%98%91%ED%9A%8C%20%EB%B8%94%EB%A1%9C%EA%B7%B8%C2%B7%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80" target="_blank" rel="noopener" class="ksa-cpop-img" aria-label="11월 세미나 신청 폼 열기 (새 창)">
-      <img src="seminar-2026-11-poster.jpg" alt="11월 1인가구 세미나 〈탕진 말고 가심비〉 — 돈은 썼는데 마음까지 채워진 적, 있어요? 연사 잘살지현(유튜브 '잘살지현'), 2026.11.18(수) 저녁 7시, 용산 청년지음">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqm2EUz-NdYT5f6C7dL_Qi8JYxgPM1k9gsa6qnLBek2Ipo_Q/viewform?usp=pp_url&amp;entry.1468485025=%ED%98%91%ED%9A%8C%20%EB%B8%94%EB%A1%9C%EA%B7%B8%C2%B7%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80" target="_blank" rel="noopener" class="ksa-cpop-img" aria-label="정책포럼 참가 신청 폼 열기 (새 창)">
+      <img src="forum-2026-12-poster.jpg" alt="2026 1인가구 정책포럼 〈주거와 고립, 느슨한 연대로〉 — 2026.12.11(금) 14:00~16:00 국회의원회관 제1세미나실. 발제 01 1인가구 주거의 현실과 과제(김대호 2분뉴스 기자), 02 혼자 사는 삶은 고립으로 이어지는가(김성아 한국보건사회연구원 연구위원), 03 느슨한 연대와 지역의 연결(박우철 덕성여자대학교 교수). 공동주최 사회민주당 국회의원 한창민 · 1인가구협회">
     </a>
-    <div class="ksa-cpop-video"><video id="ksaSemPopVideo" data-src="seminar-2026-11-shorts-c-hp.mp4" poster="seminar-2026-11-shorts-c.jpg" muted loop playsinline controls preload="none" aria-label="11월 세미나 홍보 쇼츠 〈이거 진짜 필요해? …아직 안 뜯었네〉"></video></div>
+    <div class="ksa-cpop-video"><video id="ksaForumVideo" muted playsinline controls preload="none" aria-label="정책포럼 홍보 쇼츠"></video></div>
     </div>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScrvzb9LGs7eKdyCwRMJYUIwbPnEV4kOMnxg357sfscWtFT6w/viewform?usp=pp_url&amp;entry.1468485025=%ED%98%91%ED%9A%8C%20%EB%B8%94%EB%A1%9C%EA%B7%B8%C2%B7%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80" target="_blank" rel="noopener" class="ksa-cpop-apply">📝 11월 세미나 신청하기 · 11.18(수) 19시 · 선착순 30명 →</a>
-    <div class="ksa-cpop-note">회원 무료(비회원 3만 원) · 영상 일부 장면은 AI로 생성했습니다.</div>
+    <div class="ksa-ftabs" role="group" aria-label="쇼츠 고르기"><span>쇼츠</span><button type="button" data-i="0" aria-pressed="true">① 주거</button><button type="button" data-i="1" aria-pressed="false">② 고립</button><button type="button" data-i="2" aria-pressed="false">③ 연대</button></div>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqm2EUz-NdYT5f6C7dL_Qi8JYxgPM1k9gsa6qnLBek2Ipo_Q/viewform?usp=pp_url&amp;entry.1468485025=%ED%98%91%ED%9A%8C%20%EB%B8%94%EB%A1%9C%EA%B7%B8%C2%B7%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80" target="_blank" rel="noopener" class="ksa-cpop-apply">📝 포럼 참가 신청하기 · 12.11(금) 14시 · 국회의원회관 제1세미나실 →</a>
+    <div class="ksa-cpop-note">참가 무료 · 사전 신청 12월 4일(금) 18시까지 · 당일 신분증 지참<br>공동주최 사회민주당 한창민 의원실 · 1인가구협회 · 영상 일부 장면은 AI로 생성했습니다.</div>
     <div class="ksa-cpop-bar">
-      <label class="ksa-cpop-today"><input type="checkbox" id="ksaSemPopToday"> 오늘 하루 열지 않기</label>
-      <button class="ksa-cpop-close" onclick="ksaCloseSemPop()">닫기</button>
+      <label class="ksa-cpop-today"><input type="checkbox" id="ksaForumPopToday"> 오늘 하루 열지 않기</label>
+      <button class="ksa-cpop-close" onclick="ksaCloseForumPop()">닫기</button>
     </div>
   </div>
 </div>
 <style>
 .ksa-cpop{position:fixed;inset:0;background:rgba(9,17,31,.66);z-index:99999;display:flex;align-items:center;justify-content:center;padding:16px;overflow-y:auto;}
-.ksa-cpop-box{--ph:min(calc(100dvh - 250px),620px,calc((100vw - 32px) / 1.3625));position:relative;margin-top:46px;background:#fff;border-radius:16px;box-shadow:0 24px 70px rgba(0,0,0,.5);display:flex;flex-direction:column;}
+.ksa-cpop-box{--ph:min(calc(100dvh - 340px),640px,calc((100vw - 32px) / 1.125));position:relative;margin-top:46px;background:#fff;border-radius:16px;box-shadow:0 24px 70px rgba(0,0,0,.5);display:flex;flex-direction:column;}
 .ksa-cpop-media{display:flex;height:var(--ph);background:#0f1e33;border-radius:16px 16px 0 0;overflow:hidden;}
 .ksa-cpop-bar{border-radius:0 0 16px 16px;}
-.ksa-cpop-img{display:block;height:100%;aspect-ratio:864/1080;flex:0 0 auto;background:#efece6;}
+.ksa-cpop-img{display:block;height:100%;aspect-ratio:1080/1920;flex:0 0 auto;background:#efece6;}
 .ksa-cpop-img img{display:block;width:100%;height:100%;object-fit:cover;}
 .ksa-cpop-video{height:100%;aspect-ratio:9/16;flex:0 0 auto;background:#000;}
 .ksa-cpop-video iframe{display:block;width:100%;height:100%;border:0;}
@@ -3105,51 +3107,31 @@ if (document.readyState !== 'loading') routeFromHash();
 </style>
 <style>
 .ksa-cpop-video video{display:block;width:100%;height:100%;object-fit:cover;background:#000;}
-.ksa-cpop-note{font-size:12.5px;color:#5B6472;text-align:center;padding:8px 12px 0;background:#fff;font-family:'Noto Sans KR','Malgun Gothic',sans-serif;}
+.ksa-cpop-note{font-size:12.5px;line-height:1.6;color:#5B6472;text-align:center;padding:8px 12px 0;background:#fff;font-family:'Noto Sans KR','Malgun Gothic',sans-serif;word-break:keep-all;}
+.ksa-ftabs{display:flex;align-items:center;justify-content:flex-end;gap:6px;padding:8px 12px;background:#0f1e33;font-family:'Noto Sans KR','Malgun Gothic',sans-serif;}
+.ksa-ftabs span{font-size:12px;color:rgba(255,255,255,.6);margin-right:2px;}
+.ksa-ftabs button{border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;font-size:13px;padding:4px 11px;border-radius:999px;cursor:pointer;}
+.ksa-ftabs button[aria-pressed="true"]{background:#c49a3c;border-color:#c49a3c;color:#0f1e33;font-weight:700;}
 </style>
 <script>
 (function(){
-  var END=new Date('2026-11-18T19:00:00+09:00'), KEY='ksaSemPop202611';
+  var END=new Date('2026-12-04T18:00:00+09:00'), KEY='ksaForumPop202612';
+  var CLIPS=[['forum-2026-12-shorts-01.mp4','forum-2026-12-shorts-01.jpg'],['forum-2026-12-shorts-02.mp4','forum-2026-12-shorts-02.jpg'],['forum-2026-12-shorts-03.mp4','forum-2026-12-shorts-03.jpg']];
+  var cur=0;
   function hiddenToday(){try{return localStorage.getItem(KEY)===new Date().toDateString();}catch(e){return false;}}
-  window.ksaCloseSemPop=function(){var el=document.getElementById('ksaSemPopup');if(!el)return;try{var c=document.getElementById('ksaSemPopToday');if(c&&c.checked)localStorage.setItem(KEY,new Date().toDateString());}catch(e){}var v=document.getElementById('ksaSemPopVideo');if(v){v.pause();}el.style.display='none';};
-  function init(){var el=document.getElementById('ksaSemPopup');if(!el)return;if(new Date()>END||hiddenToday()){el.parentNode&&el.parentNode.removeChild(el);return;}
-    var v=document.getElementById('ksaSemPopVideo');if(v){v.src=v.getAttribute('data-src');var pr=v.play&&v.play();if(pr&&pr.catch)pr.catch(function(){});}
-    el.style.display='flex';el.addEventListener('click',function(e){if(e.target===el)ksaCloseSemPop();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&el.style.display!=='none')ksaCloseSemPop();});}
+  function play(i){var v=document.getElementById('ksaForumVideo');if(!v)return;cur=(i+CLIPS.length)%CLIPS.length;v.poster=CLIPS[cur][1];v.src=CLIPS[cur][0];
+    document.querySelectorAll('#ksaForumPopup .ksa-ftabs button').forEach(function(b){b.setAttribute('aria-pressed',String(+b.dataset.i===cur));});
+    var pr=v.play&&v.play();if(pr&&pr.catch)pr.catch(function(){});}
+  window.ksaCloseForumPop=function(){var el=document.getElementById('ksaForumPopup');if(!el)return;try{var c=document.getElementById('ksaForumPopToday');if(c&&c.checked)localStorage.setItem(KEY,new Date().toDateString());}catch(e){}var v=document.getElementById('ksaForumVideo');if(v)v.pause();el.style.display='none';};
+  function init(){var el=document.getElementById('ksaForumPopup');if(!el)return;if(new Date()>END||hiddenToday()){el.parentNode&&el.parentNode.removeChild(el);return;}
+    var v=document.getElementById('ksaForumVideo');v.addEventListener('ended',function(){play(cur+1);});
+    el.querySelectorAll('.ksa-ftabs button').forEach(function(b){b.addEventListener('click',function(){play(+b.dataset.i);});});
+    play(0);
+    el.style.display='flex';el.addEventListener('click',function(e){if(e.target===el)ksaCloseForumPop();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&el.style.display!=='none')ksaCloseForumPop();});}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
 </script>
-<!-- /11월 1인가구 세미나 팝업 -->
-<!-- ██ 협력 행사 알림 카드: 2026 청년정책연계망 포럼(서울광역청년센터 주관). 세미나 팝업과 겹치지 않게 화면 왼쪽 아래 작은 카드로 둔다. 신청 마감 11/5 18:00 후 자동 숨김 ██ -->
-<div id="ksaEvtCard" class="ksa-ecard" role="complementary" aria-label="함께 알리는 행사: 2026 청년정책연계망 포럼" style="display:none;">
-  <button class="ksa-ecard-x" onclick="ksaCloseEvtCard()" aria-label="닫기">&times;</button>
-  <a href="https://forms.gle/MMKDCruCC12c2Zw87" target="_blank" rel="noopener" class="ksa-ecard-in">
-    <img src="forum-2026-11-youth-policy.jpg" alt="">
-    <span class="ksa-ecard-t"><span class="ksa-ecard-k">함께 알리는 행사 · 서울광역청년센터</span><strong>2026 청년정책연계망 포럼</strong><span class="ksa-ecard-d">11.12(목) 14시 · 한양대 백남학술정보관</span><span class="ksa-ecard-go">참가 신청 (11.5(목) 18시 마감) →</span></span>
-  </a>
-</div>
-<style>
-.ksa-ecard{position:fixed;left:20px;bottom:20px;z-index:9990;width:340px;max-width:calc(100vw - 32px);background:#fff;border-radius:12px;box-shadow:0 12px 36px rgba(15,30,51,.28);font-family:'Noto Sans KR','Malgun Gothic',sans-serif;}
-.ksa-ecard-in{display:flex;gap:12px;align-items:center;padding:12px 36px 12px 12px;text-decoration:none;color:#1C2B49;}
-.ksa-ecard-in img{width:64px;height:90px;object-fit:cover;object-position:top;border-radius:6px;flex:0 0 auto;}
-.ksa-ecard-t{display:flex;flex-direction:column;gap:2px;min-width:0;word-break:keep-all;}
-.ksa-ecard-k{font-size:12px;color:#1F7A6D;font-weight:700;}
-.ksa-ecard-t strong{font-size:15px;line-height:1.35;}
-.ksa-ecard-d{font-size:13px;color:#5B6472;}
-.ksa-ecard-go{font-size:13px;font-weight:700;color:#a87b1f;margin-top:2px;}
-.ksa-ecard-in:hover .ksa-ecard-go{text-decoration:underline;}
-.ksa-ecard-x{position:absolute;top:6px;right:6px;width:28px;height:28px;border:none;background:none;color:#5B6472;font-size:20px;line-height:1;cursor:pointer;border-radius:50%;}
-.ksa-ecard-x:hover{background:#f1f1f1;}
-@media (max-width:560px){.ksa-ecard{left:16px;bottom:16px;}.ksa-ecard-in img{width:52px;height:72px;}}
-</style>
-<script>
-(function(){
-  var END=new Date('2026-11-05T18:00:00+09:00'), KEY='ksaEvtCard202611';
-  window.ksaCloseEvtCard=function(){var el=document.getElementById('ksaEvtCard');if(el)el.style.display='none';try{sessionStorage.setItem(KEY,'1');}catch(e){}};
-  function init(){var el=document.getElementById('ksaEvtCard');if(!el)return;var off=false;try{off=sessionStorage.getItem(KEY)==='1';}catch(e){}if(new Date()>END||off){el.parentNode&&el.parentNode.removeChild(el);return;}el.style.display='block';}
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
-})();
-</script>
-<!-- /협력 행사 알림 카드 -->
+<!-- /12월 정책포럼 팝업 -->
 <!-- ██ 협회 소개 영상 (2026-10-27) — 유튜브에 올리면 YT_ID만 채우면 유튜브 재생으로 바뀐다 ██ -->
 <div id="ksaIntro" class="ksa-vmodal" role="dialog" aria-modal="true" aria-label="KSA 1인가구협회 소개 영상" onclick="if(event.target===this)ksaCloseIntro()">
   <div class="vm-box">
