@@ -3106,6 +3106,9 @@ if (document.readyState !== 'loading') routeFromHash();
 .ksa-ftabs button{border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;font-size:13px;padding:4px 11px;border-radius:999px;cursor:pointer;}
 .ksa-ftabs button[aria-pressed="true"]{background:#c49a3c;border-color:#c49a3c;color:#0f1e33;font-weight:700;}
 /* 11-20 사무국장: 포스터·영상만, 신청 링크는 그 아래. 안내 칸·하단 바 삭제 */
+/* 11-20 사무국장: 배경막 없음 — 팝업 칸만 떠 있고 나머지 화면은 밝게 보이고 누를 수 있음 */
+#ksaForumPopup{background:transparent;pointer-events:none;}
+#ksaForumPopup .ksa-cpop-box{pointer-events:auto;}
 #ksaForumPopup .ksa-cpop-apply{border-radius:0 0 16px 16px;font-size:14.5px;line-height:1.5;word-break:keep-all;}
 </style>
 <script>
