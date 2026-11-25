@@ -326,7 +326,7 @@ header { background: var(--white); border-bottom: 1px solid var(--border); posit
 footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px; }
 .fg { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 44px; margin-bottom: 40px; }
 .fb .name { font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; font-size: 16px; color: var(--white); font-weight: 700; margin-bottom: 3px; }
-.fb .en { font-size: 11px; color: rgba(255,255,255,.38); letter-spacing: .8px; margin-bottom: 18px; display: block; }
+.fb .en { font-size: 11px; color: rgba(255,255,255,.55); letter-spacing: .8px; margin-bottom: 18px; display: block; }
 .fb .addr { font-size: 13px; line-height: 2.1; color: rgba(255,255,255,.5); }
 .fb .addr a { color: rgba(255,255,255,.55); text-decoration: none; }
 .fb .addr a:hover { color: var(--gold-light); }
@@ -336,9 +336,9 @@ footer { background: #0d1b2e; color: rgba(255,255,255,.5); padding: 56px 0 26px;
 .fc a, .fc button { color: rgba(255,255,255,.48); text-decoration: none; font-size: 13px; transition: color var(--transition); background: none; border: none; cursor: pointer; font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif; text-align: left; padding: 0; }
 .fc a:hover, .fc button:hover { color: var(--gold-light); }
 .fbot { border-top: 1px solid rgba(255,255,255,.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-.fcopy { font-size: 12px; color: rgba(255,255,255,.4); }
+.fcopy { font-size: 12px; color: rgba(255,255,255,.55); }
 .flinks { display: flex; gap: 18px; }
-.flinks a { color: rgba(255,255,255,.38); font-size: 12px; text-decoration: none; }
+.flinks a { color: rgba(255,255,255,.55); font-size: 12px; text-decoration: none; }
 .flinks a:hover { color: rgba(255,255,255,.7); }
 
 /* ══ 서브페이지 공통 CSS ══ */
@@ -744,6 +744,7 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
 .ksa-vmodal .vm-close { position: absolute; top: -44px; right: 0; background: none; border: none; color: #fff; font-size: 15px; font-weight: 700; cursor: pointer; padding: 8px 4px; font-family: 'Noto Sans KR', sans-serif; }
 .ksa-vmodal .vm-cap { color: rgba(255,255,255,.75); font-size: 14px; margin-top: 12px; text-align: center; }
 </style>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="canonical" href="https://ksaofficial.co.kr/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
@@ -831,7 +832,7 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
 <!-- HEADER -->
 <header>
   <div class="w header-inner">
-    <button class="logo" onclick="go('pg-home')" aria-label="1인가구협회 홈으로 이동">
+    <button class="logo" onclick="go('pg-home')">
       <div class="logo-em">KSA</div>
       <div class="logo-tx">
         <span class="ko">1인가구협회</span>
