@@ -199,7 +199,7 @@ header { background: var(--white); border-bottom: 1px solid var(--border); posit
 .stat-label { color: rgba(255,255,255,.65); font-size: 12px; margin-top: 5px; line-height: 1.5; }
 .stat-divider { grid-column: 1/-1; height: 1px; background: rgba(255,255,255,.12); }
 .hquick { position: relative; z-index: 2; background: rgba(10,22,38,.6); border-top: 1px solid rgba(255,255,255,.1); }
-.hquick-in { display: grid; grid-template-columns: 120px repeat(4,1fr); }
+.hquick-in { display: grid; grid-template-columns: 120px repeat(5,1fr); }
 .hq-label { display: flex; align-items: center; padding: 20px 0; font-size: 13px; font-weight: 700; line-height: 1.5; color: var(--gold-light); }
 .hq { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 20px 24px; background: none; border: none; border-left: 1px solid rgba(255,255,255,.1); color: var(--white); text-align: left; cursor: pointer; font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif; transition: background var(--transition); }
 .hq:hover { background: rgba(255,255,255,.06); }
@@ -682,6 +682,54 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
 .press-fold .pct { display: inline-block; font-size: 13px; font-weight: 700; color: var(--teal); margin-right: 8px; white-space: nowrap; }
 .pf-head { margin: 22px 0 4px; font-size: 13px; font-weight: 700; letter-spacing: 1px; color: var(--muted); }
 
+/* ════ 영상 모음 (2026-11-25) ════ */
+.vb-lead { font-size: 15px; color: var(--muted); margin: 0 0 22px; line-height: 1.7; }
+.vb-lead button { background: none; border: none; padding: 0; color: var(--teal); font-weight: 700; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; font-size: inherit; }
+.vb-filters { position: sticky; top: 64px; z-index: 5; background: var(--white); padding: 10px 0 12px; margin-bottom: 8px; border-bottom: 1px solid var(--border-light); }
+.vb-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.vb-row + .vb-row { margin-top: 8px; }
+.vb-row button { border: 1px solid var(--border-light); background: var(--white); color: var(--navy); border-radius: 999px; padding: 7px 15px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; }
+.vb-row button .vb-c { color: var(--muted); font-weight: 400; margin-left: 4px; font-size: 13px; }
+.vb-row button[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
+.vb-row button[aria-pressed="true"] .vb-c { color: rgba(255,255,255,.75); }
+.vb-tabs { display: flex; gap: 4px; overflow-x: auto; border-bottom: 2px solid var(--border-light); scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.vb-tabs::-webkit-scrollbar { display: none; }
+.vb-tabs button { flex: 0 0 auto; border: none; border-bottom: 3px solid transparent; margin-bottom: -2px; background: none; color: var(--muted); padding: 12px 16px 10px; font-size: 15px; font-weight: 700; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; border-radius: 0; white-space: nowrap; }
+.vb-tabs button .vb-c { font-weight: 400; font-size: 13px; margin-left: 4px; color: var(--muted); }
+.vb-tabs button:hover { color: var(--navy); }
+.vb-tabs button[aria-selected="true"] { color: var(--navy); border-bottom-color: var(--gold); background: none; }
+.vb-tabs button[aria-selected="true"] .vb-c { color: var(--teal); }
+.vb-line { display: flex; align-items: flex-end; gap: 16px; border-bottom: 2px solid var(--border-light); padding-bottom: 0; }
+.vb-line .vb-tabs { flex: 1 1 auto; min-width: 0; border-bottom: none; }
+.vb-line .vb-kind { flex: 0 0 auto; margin: 0 0 8px; flex-wrap: nowrap; }
+.vb-strip { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x proximity; padding-bottom: 10px; scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
+.vb-strip { align-items: flex-start; }
+.vb-strip > .vcard { flex: 0 0 auto; scroll-snap-align: start; align-self: flex-start; }
+.vb-strip.s > .vcard { width: 168px; }
+.vb-strip.v > .vcard { width: 300px; }
+.vb-strip.s .vt { aspect-ratio: 9 / 16; }
+.vb-strip.v .vt { aspect-ratio: 16 / 9; }
+.vb-gh { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+.vb-nav { display: flex; gap: 6px; margin-bottom: 14px; }
+.vb-nav button { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--border-light); background: var(--white); color: var(--navy); font-size: 16px; cursor: pointer; line-height: 1; }
+.vb-nav button:hover { border-color: var(--navy); }
+@media (max-width: 600px) { .vb-line { flex-direction: column; align-items: stretch; gap: 8px; } .vb-line .vb-kind { margin: 0 0 10px; } .vb-strip.s > .vcard { width: 140px; } .vb-strip.v > .vcard { width: 250px; } .vb-nav { display: none; } }
+.vb-kind button { padding: 5px 13px; font-size: 13px; }
+.vb-grp { margin-top: 30px; }
+.vb-grp h3 { font-size: 17px; color: var(--navy); margin: 0 0 4px; font-weight: 700; word-break: keep-all; }
+.vb-grp .vb-gm { font-size: 13px; color: var(--muted); margin: 0 0 14px; }
+.vcard { display: block; width: 100%; text-align: left; background: none; border: none; padding: 0; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; color: var(--navy); }
+.vcard .vt { position: relative; display: block; border-radius: 10px; overflow: hidden; background: #0d1b2a; }
+.vcard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .25s; }
+.vcard:hover img, .vcard:focus-visible img { transform: scale(1.04); }
+.vcard .vp { position: absolute; left: 50%; top: 50%; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; background: rgba(10,16,30,.55); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 14px; padding-left: 3px; opacity: .9; }
+.vcard .vx { position: absolute; right: 8px; bottom: 8px; background: rgba(10,16,30,.75); color: #fff; font-size: 11px; padding: 3px 7px; border-radius: 4px; }
+.vcard .vn { display: block; margin-top: 8px; font-size: 14px; font-weight: 700; line-height: 1.45; word-break: keep-all; }
+.vcard .vs { display: block; font-size: 13px; color: var(--muted); line-height: 1.45; margin-top: 2px; word-break: keep-all; }
+.vb-empty { padding: 40px 0; color: var(--muted); text-align: center; }
+#ksaVid .vm-box.short { width: min(400px, 100%, calc((100dvh - 150px) * 9 / 16)); }
+#ksaVid .vm-box.short .vm-frame { aspect-ratio: 9 / 16; }
+@media (max-width: 600px) { .vb-filters { top: 56px; } }
 /* ════ 히어로 소개 영상 (2026-10-27) ════ */
 .hero-vid { display: inline-flex; align-items: center; gap: 12px; margin-top: 22px; padding: 0; background: none; border: none; color: #fff; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; text-align: left; }
 .hero-vid .hv-play { width: 46px; height: 46px; border-radius: 50%; background: rgba(255,255,255,.14); border: 1.5px solid rgba(255,255,255,.55); display: inline-flex; align-items: center; justify-content: center; font-size: 15px; padding-left: 3px; transition: background .2s, transform .2s; }
@@ -836,12 +884,13 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
           <button onclick="go('pg-news-notice')">공지사항</button>
           <button onclick="go('pg-news-press')">뉴스·보도</button>
           <button onclick="go('pg-news-faq')">자주 묻는 질문</button>
+          <button onclick="go('pg-news-video')">미디어 아카이브</button>
         </div>
       </div>
 
       <!-- 정보게시판 (매일 업데이트 · 외부) -->
       <div class="ni">
-        <button class="nl" onclick="window.open('https://ksaofficial.imweb.me/info','_blank','noopener')" aria-label="1인가구 라이프 인사이트 새 창에서 열기">1인가구 라이프 인사이트 <span class="arr" style="font-size:11px;vertical-align:1px;">↗</span></button>
+        <button class="nl" onclick="window.open('https://ksaofficial.imweb.me/info','_blank','noopener')" aria-label="스몰 리빙 인사이트 새 창에서 열기">스몰 리빙 인사이트 <span class="arr" style="font-size:11px;vertical-align:1px;">↗</span></button>
       </div>
 
       <!-- 전세 안전 (전세ONE · 외부) -->
@@ -902,9 +951,10 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
     <div class="mob-sub">
       <button onclick="go('pg-news-notice');closeDrawer()">공지사항</button>
       <button onclick="go('pg-news-press');closeDrawer()">뉴스·보도</button>
-      <button onclick="window.open('https://ksaofficial.imweb.me/info','_blank','noopener');closeDrawer()">1인가구 라이프 인사이트 ↗</button>
+      <button onclick="window.open('https://ksaofficial.imweb.me/info','_blank','noopener');closeDrawer()">스몰 리빙 인사이트 ↗</button>
       <button onclick="window.open('https://thepmdmanage-rgb.github.io/jeonse-one/','_blank','noopener');closeDrawer()">전세ONE ↗</button>
       <button onclick="go('pg-news-faq');closeDrawer()">자주 묻는 질문</button>
+      <button onclick="go('pg-news-video');closeDrawer()">미디어 아카이브</button>
     </div>
   </div>
   <div class="mob-section">
@@ -967,10 +1017,11 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
   <nav class="hquick" aria-label="1인가구 생활 서비스 바로가기">
     <div class="w hquick-in">
       <div class="hq-label">생활 서비스 바로가기</div>
-      <button onclick="window.open('https://ksaofficial.imweb.me/info','_blank','noopener')" class="hq"><span class="hq-t">1인가구 라이프 인사이트 ↗</span><span class="hq-d">협회 생활 정보 콘텐츠</span></button>
+      <button onclick="window.open('https://ksaofficial.imweb.me/info','_blank','noopener')" class="hq" aria-label="스몰 리빙 인사이트 새 창에서 열기"><span class="hq-t">스몰 리빙 인사이트 ↗</span><span class="hq-d">1인가구 생활정보</span></button>
       <button onclick="window.open('https://thepmdmanage-rgb.github.io/ksa-datahub/','_blank','noopener')" class="hq"><span class="hq-t">1인가구 데이터 허브 ↗</span><span class="hq-d">통계·정책 데이터 모음</span></button>
       <button onclick="window.open('https://thepmdmanage-rgb.github.io/jeonse-one/','_blank','noopener')" class="hq"><span class="hq-t">전세ONE ↗</span><span class="hq-d">전세 계약 위험 점검</span></button>
       <button onclick="window.open('https://1in.seoul.go.kr','_blank','noopener')" class="hq"><span class="hq-t">자치구 지원센터 ↗</span><span class="hq-d">서울시 1인가구 포털</span></button>
+      <button onclick="go('pg-news-video')" class="hq"><span class="hq-t">미디어 아카이브 →</span><span class="hq-d">세미나·포럼·쇼츠 모음</span></button>
     </div>
   </nav>
 </section>
@@ -1674,6 +1725,32 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
 </section>
 </main>
 </div><!-- /pg-news-faq -->
+
+<div class="page" id="pg-news-video">
+<div class="page-banner">
+  <div class="w">
+    <nav class="breadcrumb"><button onclick="go('pg-home')">홈</button><span>›</span><span>소식·알림</span><span>›</span><span style="color:rgba(255,255,255,.85);">미디어 아카이브</span></nav>
+    <h1>미디어 아카이브</h1>
+    <p class="pg-desc">협회의 세미나·포럼 기록과 캠페인·쇼츠 영상을 주제별로 모았습니다.</p>
+    <div class="gold-line"></div>
+  </div>
+</div>
+<main>
+<section style="background:var(--white);">
+  <div class="w">
+    <div class="sl reveal">MEDIA ARCHIVE</div>
+    <h2 class="st reveal reveal-d1">세미나·포럼·캠페인 영상</h2>
+    <div class="dg reveal reveal-d1"></div>
+    <p class="vb-lead">썸네일을 누르면 이 화면에서 바로 재생됩니다. 새 영상은 <button type="button" onclick="window.open('https://www.youtube.com/@1인가구협회','_blank','noopener')">유튜브 채널 ↗</button>에 먼저 올라옵니다.</p>
+    <div class="vb-filters vb-line">
+      <div class="vb-tabs" id="vbTopic" role="tablist" aria-label="영상 주제"></div>
+      <div class="vb-row vb-kind" id="vbKind" role="group" aria-label="종류"></div>
+    </div>
+    <div id="vbList" role="tabpanel" aria-live="polite"></div>
+  </div>
+</section>
+</main>
+</div><!-- /pg-news-video -->
 
 <!-- ██ 회원 가입 ██ -->
 <div class="page" id="pg-member-join">
@@ -2881,6 +2958,7 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
           <li><button onclick="go('pg-news-notice')">공지사항</button></li>
           <li><button onclick="window.open('https://ksaofficial.imweb.me/info','_blank','noopener')">1인가구 라이프 인사이트 ↗</button></li>
           <li><button onclick="go('pg-news-faq')">자주 묻는 질문</button></li>
+          <li><button onclick="go('pg-news-video')">미디어 아카이브</button></li>
         </ul>
       </div>
     </div>
@@ -2905,7 +2983,7 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
 const ALL_PAGES = [
   'pg-home','pg-about-greeting','pg-about-vision','pg-about-history',
   'pg-about-board',
-  'pg-news-notice','pg-news-press','pg-news-faq',
+  'pg-news-notice','pg-news-press','pg-news-faq','pg-news-video',
   'pg-member-join','pg-member-support','pg-member-receipt',
   'pg-programs-research','pg-programs-local',
   'pg-seminar-schedule','pg-research-library',
@@ -3204,6 +3282,220 @@ if (document.readyState !== 'loading') routeFromHash();
 })();
 </script>
 <!-- /협회 소개 영상 -->
+<!-- 영상 모음 재생 창·목록 (2026-11-25) -->
+<div id="ksaVid" class="ksa-vmodal" role="dialog" aria-modal="true" aria-label="영상 재생" onclick="if(event.target===this)ksaVidClose()">
+  <div class="vm-box" id="ksaVidBox">
+    <button type="button" class="vm-close" onclick="ksaVidClose()">닫기 ✕</button>
+    <div class="vm-frame" id="ksaVidFrame"></div>
+    <div class="vm-cap" id="ksaVidCap"></div>
+  </div>
+</div>
+<script>
+/* 영상 모음 (2026-11-25). 새 영상은 VB_DATA 맨 끝에 한 줄 추가한다.
+   id=유튜브 영상 ID, f=홈페이지에 직접 올린 mp4 이름(확장자 빼고), k=s(쇼츠)/v(영상), c=주제 코드, s=묶음 이름, t=제목, u=부제, d=날짜, x=1이면 유튜브에서만 재생(퍼가기 막힘) */
+var VB_DATA = [
+{"id":"gRRmc4buFe4","k":"s","c":"sem","s":"8월 세미나 「좁은 원룸이 두 배 넓어지는 법」","t":"벽지에 난 꼬꼬핀 구멍?","u":"숟가락 하나로 원상복구!","d":"2026-09-18"},
+{"id":"Z9z2aTcyHJk","k":"s","c":"sem","s":"8월 세미나 「좁은 원룸이 두 배 넓어지는 법」","t":"다이소 수납함 사기 전","u":"이것 모르면 백프로 후회","d":"2026-09-18"},
+{"id":"QCMlTNhwnIg","k":"s","c":"sem","s":"8월 세미나 「좁은 원룸이 두 배 넓어지는 법」","t":"원룸에 오픈형 가구?","u":"오히려 집이 좁아 보여요","d":"2026-09-19"},
+{"id":"ovGPxcA85eo","k":"s","c":"sem","s":"8월 세미나 「좁은 원룸이 두 배 넓어지는 법」","t":"바닥 스크래치 덤터기?","u":"이 사진 한 장이면 해결!","d":"2026-09-19"},
+{"id":"1zhBvBWyXSU","k":"s","c":"sem","s":"8월 세미나 「좁은 원룸이 두 배 넓어지는 법」","t":"찢어진 벽지 감쪽같이?","u":"안 보이는 벽지 쓰세요!","d":"2026-09-20"},
+{"id":"AX7BjbbNbmI","k":"s","c":"sem","s":"8월 세미나 「좁은 원룸이 두 배 넓어지는 법」","t":"가구 배치하기 전에","u":"콘센트부터 빼두세요","d":"2026-09-20"},
+{"id":"j4bVGuSF6GI","k":"s","c":"sem","s":"8월 세미나 「좁은 원룸이 두 배 넓어지는 법」","t":"이사할 때 원상복구?","u":"사진 찍고 라벨링 필수!","d":"2026-09-21"},
+{"id":"cLe6fDA2N70","k":"s","c":"sem","s":"8월 세미나 「좁은 원룸이 두 배 넓어지는 법」","t":"가구 색상은 딱 2개만","u":"좁은 방 2배 넓어집니다","d":"2026-09-21"},
+{"id":"QKcKhRhiu50","k":"s","c":"sem","s":"8월 세미나 「좁은 원룸이 두 배 넓어지는 법」","t":"실리콘 바를 때 망한다면?","u":"마르기 전 이 테이프 떼기","d":"2026-09-22"},
+{"id":"-kA6Os7Xw7k","k":"s","c":"sem","s":"8월 세미나 「좁은 원룸이 두 배 넓어지는 법」","t":"작은 가구 여러 개 사면","u":"수납도 안 되고 짐만 늘어","d":"2026-09-22"},
+{"id":"SojvzqUN1ew","k":"s","c":"sem","s":"8월 세미나 「좁은 원룸이 두 배 넓어지는 법」","t":"안 떨어지는 강력 후크?","u":"드라이기 10초면 해결!","d":"2026-09-23"},
+{"id":"rF4AmLxVgKQ","k":"s","c":"sem","s":"8월 세미나 「좁은 원룸이 두 배 넓어지는 법」","t":"남의 집 인테리어 복구?","u":"집주인도 반한 해결 비법","d":"2026-09-23"},
+{"id":"ABpdOj67nIc","k":"s","c":"sem","s":"8월 세미나 「좁은 원룸이 두 배 넓어지는 법」","t":"우리 집만 왜 좁아 보일까?","u":"물건의 제자리만 정하세요","d":"2026-09-24"},
+{"id":"5gFM4Gay19A","k":"s","c":"sem","s":"8월 세미나 「좁은 원룸이 두 배 넓어지는 법」","t":"요리도 안 하는데","u":"주방은 꽉 찬 이유","d":"2026-09-24"},
+{"id":"zEfDNglx2YY","k":"s","c":"sem","s":"9월 AI 특별세미나","t":"사진 한 장에 박제된 불화설","u":"악수조차 거부하는 두 천재","d":"2026-09-25"},
+{"id":"PayPr6LM5ts","k":"s","c":"sem","s":"9월 AI 특별세미나","t":"오픈AI 뛰쳐나온 천재 남매","u":"그렇게 탄생한 클로드의 비밀","d":"2026-09-25"},
+{"id":"vBp4iRxfWS4","k":"s","c":"sem","s":"9월 AI 특별세미나","t":"세종대왕이 던진 맥북?","u":"AI가 그럴싸하게 사기 치는 이유","d":"2026-09-26"},
+{"id":"D-JaNvdaBhI","k":"s","c":"sem","s":"9월 AI 특별세미나","t":"AI를 100배 더 잘 쓰는 비결","u":"바이브코딩 전후로 나뉩니다","d":"2026-09-26"},
+{"id":"4xCrZi0Bvg0","k":"s","c":"sem","s":"9월 AI 특별세미나","t":"대체 클로드는 왜 쓰나요?","u":"GPT와 클로드 명확한 사용법","d":"2026-09-27"},
+{"id":"jkQNaYp-6uI","k":"s","c":"sem","s":"9월 AI 특별세미나","t":"AI 이미지 만들 때 꿀팁","u":"GPT는 최고, 클로드는 최악","d":"2026-09-27"},
+{"id":"P9LsgiEoPoU","k":"s","c":"sem","s":"9월 AI 특별세미나","t":"지적하면 똥고집 부리는 AI","u":"너가 틀렸다고 우기는 클로드","d":"2026-09-27"},
+{"id":"K0BB_LMO-cs","k":"s","c":"life","s":"직업 귀천 쇼츠","t":"우리가 대기업에 집착하는","u":"진짜 이유는 자존감 때문?","d":"2026-09-28"},
+{"id":"gfMzAbT1zH8","k":"s","c":"life","s":"직업 귀천 쇼츠","t":"직업에는 귀천이 존재할까","u":"냉혹하게 갈리는 두 가지 기준","d":"2026-09-28"},
+{"id":"zuWDbymnKJo","k":"s","c":"life","s":"직업 귀천 쇼츠","t":"힘들고 고된 직업일수록","u":"왜 돈은 더 벌지 못할까?","d":"2026-09-29"},
+{"id":"grqDS2_xXJs","k":"s","c":"life","s":"직업 귀천 쇼츠","t":"아무리 가치 있는 일도","u":"돈 안 되면 못 버티는 이유","d":"2026-09-29"},
+{"id":"cW09yeJrnBA","k":"s","c":"life","s":"텅장 쇼츠","t":"Hello, 텅장. 월급은 그대로인데 통장은 왜?","d":"2026-09-30"},
+{"id":"2Ge2JFll5ZU","k":"s","c":"life","s":"직업 귀천 쇼츠","t":"대기업 다닌다고 말하는 순간","u":"주변 시선이 바뀌는 진짜 이유","d":"2026-09-30"},
+{"id":"m6O3IlbtOX8","k":"s","c":"life","s":"직업 귀천 쇼츠","t":"직장에서 자아실현 꿈꾸기","u":"현실은 스트레스인 진짜 이유","d":"2026-09-30"},
+{"id":"oUJ1Cr0lSAw","k":"s","c":"life","s":"텅장 쇼츠","t":"너 어제 퇴근길에 뭐 샀어? 통장이 텅장 되는 이유","d":"2026-10-01"},
+{"id":"is14_-zcbMQ","k":"s","c":"life","s":"텅장 쇼츠","t":"월급 들어왔는데 8,700원? 내가 이랬다고?","d":"2026-10-02"},
+{"id":"9BhGnWTmgp0","k":"s","c":"life","s":"텅장 쇼츠","t":"입금 3일 만에 텅장… 감정소비? 나잖아","d":"2026-10-03"},
+{"id":"_Z9ZFTnmq_A","k":"s","c":"life","s":"텅장 쇼츠","t":"돈 없다며? 근데 또 샀다며? 친구한테 팩폭 당함","d":"2026-10-04"},
+{"id":"jbPIWuwXtF4","k":"s","c":"sem","s":"9월 AI 특별세미나","t":"인간 vs AI 수요예측, AI 오차율 9%로 완승","d":"2026-10-05"},
+{"id":"l4bw2OHCaCE","k":"s","c":"life","s":"텅장 쇼츠","t":"이쁘고 귀엽단 말이야! …그거 감정소비래","d":"2026-10-05"},
+{"id":"eRn3TWLvT_I","k":"s","c":"life","s":"관계·인맥 쇼츠","t":"아 몰라, 그냥 샀어. 친구가 보여준 쇼츠 한 편","d":"2026-10-05"},
+{"id":"jReW4-JY1hI","k":"s","c":"sem","s":"9월 AI 특별세미나","t":"반복 노가다 그만! 스킬을 만들어 주는 AI","d":"2026-10-06"},
+{"id":"Wu4G8TUmop4","k":"s","c":"sem","s":"9월 AI 특별세미나","t":"업무 시간 3분의 1로, 정답은 스킬 커스텀화","d":"2026-10-06"},
+{"id":"G8wd8Lcy3LI","k":"s","c":"sem","s":"9월 AI 특별세미나","t":"매번 양식 올리시나요? 클로드 '프로젝트'로 해결","d":"2026-10-07"},
+{"id":"B0jXbpul1J4","k":"s","c":"sem","s":"9월 AI 특별세미나","t":"AI는 사장님 스타일? 직접 일할 줄 모릅니다","d":"2026-10-08"},
+{"id":"yFnq6WzFrM8","k":"s","c":"sem","s":"9월 AI 특별세미나","t":"프롬프트 대충 쓰면 손해, 구체적일수록 퀄리티 대박","d":"2026-10-09"},
+{"id":"SDE-pI2pDaQ","k":"s","c":"pol","s":"주거안정플랜 좌담회","t":"관리비 15만 원, 이거 ㄹㅇ 어디 감?","d":"2026-10-10"},
+{"id":"hkVfTwYdh-M","k":"s","c":"pol","s":"주거안정플랜 좌담회","t":"월세는 평생 내는데, 지원은 평생 한 번?","d":"2026-10-11"},
+{"id":"vFpHV6oJs5E","k":"s","c":"pol","s":"주거안정플랜 좌담회","t":"내년 5월이면, 저는 어떡해요?","d":"2026-10-12"},
+{"id":"3dw_GGVGtN0","k":"s","c":"life","s":"텅장 쇼츠","t":"욜로도 요노도 아닌데… 텅장은 왜 매달 올까","d":"2026-10-13"},
+{"id":"OgivjbLfeq0","k":"s","c":"pol","s":"주거안정플랜 좌담회","t":"신혼도 아니고, 청년은 막차… 나 어디 들어가지?","d":"2026-10-13"},
+{"id":"cvlPDBVgdLU","k":"s","c":"life","s":"텅장 쇼츠","t":"월급 3일 만에 텅장, 나만 그래? 통장이 말을 걸었다","d":"2026-10-14"},
+{"id":"VqcLcyRFM4k","k":"s","c":"pol","s":"주거안정플랜 좌담회","t":"등기부, 시세, 보증보험, 확정일자. 다 봤어요. 그런데요.","d":"2026-10-14"},
+{"id":"z5nNa372EiU","k":"s","c":"pol","s":"주거안정플랜 좌담회","t":"청년도 신혼도 아닌데, 저도 혼자 삽니다","d":"2026-10-15"},
+{"id":"p_OPGmEwkjI","k":"s","c":"life","s":"관계·인맥 쇼츠","t":"5만 원짜리 친구, 10만 원짜리 친구? 결혼하고 보인 인맥 등급표","d":"2026-10-16"},
+{"id":"v9b2SiB20j4","k":"s","c":"life","s":"관계·인맥 쇼츠","t":"오랜만에 온 카톡, 끝까지 읽으면 \"나 결혼해\"","d":"2026-10-16"},
+{"id":"vy3NO7zUIoY","k":"s","c":"life","s":"관계·인맥 쇼츠","t":"요즘 축의금 얼마 내세요? 안 가면 5만, 호텔이면?","d":"2026-10-17"},
+{"id":"wydgHDkH28E","k":"s","c":"life","s":"관계·인맥 쇼츠","t":"내 편인 줄 알았는데… 친구 사이 현타 와서 인맥 싹 정리한 순간","d":"2026-10-18"},
+{"id":"Y28Nk1na_Bg","k":"s","c":"life","s":"관계·인맥 쇼츠","t":"아는 사람이면 다 인맥일까? 나이 들수록 관계가 좁아지는 이유","d":"2026-10-19"},
+{"id":"cuSx2AbVuys","k":"s","c":"life","s":"관계·인맥 쇼츠","t":"\"능력은 향기와 같다\" 인맥, 억지로 안 맺어도 되는 이유","d":"2026-10-19"},
+{"id":"3VbaYKadd18","k":"s","c":"life","s":"집순이 vs 밖돌이","t":"\"이대로 죽어도 여한이 없다\" 극I가 꼽은 인생 최고의 순간","d":"2026-10-22"},
+{"id":"lI8VvcAwBUA","k":"s","c":"life","s":"집순이 vs 밖돌이","t":"약속 취소 문자 받으면 기쁘다 vs 아쉽다, 당신은?","d":"2026-10-23"},
+{"id":"jl7HXd1TLcQ","k":"s","c":"life","s":"집순이 vs 밖돌이","t":"친구 만나고 몇 시간 뒤, 집순이 얼굴에 생기는 일","d":"2026-10-24"},
+{"id":"J-_LVf_3eTU","k":"s","c":"life","s":"집순이 vs 밖돌이","t":"생일 선물은 '약속 0개' 집순이 vs 생일 '주간' 밖돌이","d":"2026-10-25"},
+{"id":"h1yO8pr0XJw","k":"s","c":"life","s":"관계·인맥 쇼츠","t":"친구 만나는 게 쉬는 거야, 일이야? I와 E의 쉬는 날 논쟁","d":"2026-10-26"},
+{"id":"OppmpvR2Nqo","k":"s","c":"life","s":"집순이 vs 밖돌이","t":"관객은 강아지 두 마리, 집순이의 방구석 콘서트","d":"2026-10-27"},
+{"id":"qBh5cz1fJYc","k":"s","c":"life","s":"집순이 vs 밖돌이","t":"\"몇 날 며칠 몇 시 괜찮아?\" 약속 하나에 머리 터지는 집순이","d":"2026-10-28"},
+{"id":"8n15pXxpYJ0","k":"s","c":"life","s":"배달파 vs 요리파","t":"시댁 어른이 갑자기 오신다면? 망한 집밥 vs 배달 음식","d":"2026-11-02"},
+{"id":"PXCW1C9EocU","k":"s","c":"life","s":"배달파 vs 요리파","t":"자취 3년 차가 요리를 접은 이유 \"두부가 취두부 되는 걸 봤어요\"","d":"2026-11-03"},
+{"id":"Ram0RSWYjZw","k":"s","c":"life","s":"배달파 vs 요리파","t":"배달 닭발 먹고 지하철에서 내림… 직접 만들었으면 응급실?","d":"2026-11-04"},
+{"id":"HJWu3DNfQ_Y","k":"s","c":"sem","s":"11월 세미나 홍보","t":"어제 산 거, 기억나? 탕진 말고 가심비","d":"2026-11-05"},
+{"id":"VnUTLxUA69M","k":"s","c":"sem","s":"11월 세미나 홍보","t":"이번 달 탕진 얼마야? \"탕진 아니고 투자야\"","d":"2026-11-06"},
+{"id":"aK9c1384uYI","k":"s","c":"sem","s":"11월 세미나 홍보","t":"장바구니에 몇 개 담겨 있어? 가심비 밸런스 게임","d":"2026-11-07"},
+{"id":"enivpsUhg80","k":"s","c":"sem","s":"11월 세미나 홍보","t":"결제 버튼 누르기 0.5초 전… 이거 진짜 필요해?","d":"2026-11-08"},
+{"id":"mBTKMGRAJlg","k":"s","c":"sem","s":"11월 세미나 홍보","t":"마음까지 채워졌어? …택배만 채워졌는데?","d":"2026-11-09"},
+{"id":"jj2ez1eRNas","k":"s","c":"sem","s":"11월 세미나 홍보","t":"이거 진짜 필요해? …아직 안 뜯었네","d":"2026-11-10"},
+{"id":"MifB2RRukuo","k":"s","c":"sem","s":"11월 세미나 홍보","t":"탕진 아니고 투자라며? 그래서 뭐가 남았어?","d":"2026-11-11"},
+{"id":"IEbAczVuFAc","k":"s","c":"sem","s":"10월 세미나 현장","t":"물건 사기 전 던지는 질문: 필요인가, 단순 원함인가","d":"2026-11-12"},
+{"id":"NX5i0UCQilE","k":"s","c":"sem","s":"10월 세미나 현장","t":"헛돈 쓰는 악순환 잡는 법: 안 쓰는 물건 아까워도 버리기","d":"2026-11-13"},
+{"id":"qaun9xg1IvM","k":"s","c":"sem","s":"10월 세미나 현장","t":"갑자기 옷을 지르고 싶을 때 내면의 불안감 직시하는 법","d":"2026-11-14"},
+{"id":"H4tKcRK2h24","k":"s","c":"sem","s":"10월 세미나 현장","t":"물건 사기 전 꼭 생각할 점: 소유는 의무의 시작이다","d":"2026-11-15"},
+{"id":"4bh_0g-pGjM","k":"s","c":"sem","s":"10월 세미나 현장","t":"20대 단칸방 고시원 생활, 그래도 버틸 수 있던 이유","d":"2026-11-16"},
+{"id":"QFDBWrtxoy4","k":"s","c":"sem","s":"10월 세미나 현장","t":"충동구매 줄이는 현실 꿀팁: SNS 팔로우 싹 정리하기","d":"2026-11-17"},
+{"id":"LzlTfxL4iHM","k":"s","c":"sem","s":"10월 세미나 현장","t":"스트레스받으면 떡볶이 폭식, 가짜 보상인 거 알면서도 못 끊음","d":"2026-11-18"},
+{"id":"wisKsVRCWjg","k":"s","c":"pol","s":"12월 정책포럼 홍보","t":"1인가구 절반, 40㎡ 이하 집에 삽니다","d":"2026-11-24"},
+{"id":"oAdoKEgwKzQ","k":"v","c":"ksa","s":"협회 소개·캠페인","t":"KSA 1인가구협회 소개영상 2026","d":"2026-10-27"},
+{"id":"l6lWAV_jX-U","k":"v","c":"ksa","s":"협회 소개·캠페인","t":"'고독사'가 아니라 '고립사'입니다","d":"2026-09-18"},
+{"id":"7mEzPJxjNm8","k":"v","c":"pol","s":"주거안정플랜 좌담회","t":"우리도 전세사기 피해자가 될 수 있습니다","d":"2026-09-18","x":1},
+{"f":"forum-2026-12-shorts-02","k":"s","c":"pol","s":"12월 정책포럼 홍보","t":"아플 때 부를 사람, 10명 중 3명은 없습니다","d":"2026-11-24"},
+{"f":"forum-2026-12-shorts-03","k":"s","c":"pol","s":"12월 정책포럼 홍보","t":"우울할 때 말할 사람, 4명 중 1명은 없습니다","d":"2026-11-24"},
+{"id":"bIH4vElkv1k","k":"v","c":"arch","s":"혼돈낭만展 특별전시","t":"일러스트 기획전 작가 인터뷰 Part3 (양심1그램)","d":"2022"},
+{"id":"fAg4SJyNBnE","k":"v","c":"arch","s":"혼돈낭만展 특별전시","t":"일러스트 기획전 작가 인터뷰 Part2 (어른이 되는 시간)","d":"2022"},
+{"id":"gmC7FMtRnMQ","k":"v","c":"arch","s":"혼돈낭만展 특별전시","t":"일러스트 기획전 작가 인터뷰 Part1 (홀로욕구)","d":"2022"},
+{"id":"6qwxMYPH9ss","k":"v","c":"arch","s":"Tea키타카","t":"직업은 우리에게 어떤 의미일까?","d":"2022"},
+{"id":"bhtGuOyScT4","k":"v","c":"arch","s":"Tea키타카","t":"경조사로 정리되는 나의 인간관계?!","d":"2022"},
+{"id":"FbCSl70PaU8","k":"v","c":"arch","s":"노답썰","t":"배달 음식과 해 먹는 요리 모두 정성 가득! 배달파 vs 요리파","d":"2022"},
+{"id":"lQ4foH7iaC8","k":"v","c":"arch","s":"혼돈낭만展 특별전시","t":"현장 스케치","d":"2022"},
+{"id":"atOPwklr56M","k":"v","c":"arch","s":"노답썰","t":"집순이 “집이 최고야” VS 밖돌이 “나가자!” 유형 전격 비교!","d":"2022"},
+{"id":"2LF24qm2Zm0","k":"v","c":"arch","s":"1인가구 콘퍼런스","t":"나만 알고 싶은 1인가구 생활서비스","d":"2022"},
+{"id":"q_pJYzIe1KE","k":"v","c":"arch","s":"1인가구 콘퍼런스","t":"프로 일잘러의 3가지 업무 스킬","d":"2022"},
+{"id":"PZx-iQedHmo","k":"v","c":"arch","s":"1인가구 콘퍼런스","t":"당당하게 말하는 어른의 소통법","d":"2022"},
+{"id":"om2Wf_IQ5v8","k":"v","c":"arch","s":"1인가구 콘퍼런스","t":"웹툰작가들의 리얼 독립 이야기! 현실판 나혼자산다","d":"2022"},
+{"id":"cgSHjuvZRsw","k":"v","c":"arch","s":"1인가구 콘퍼런스","t":"이제는 1인가구가 대세!","d":"2022"},
+{"id":"seDzNVnu_nk","k":"v","c":"arch","s":"1인가구 콘퍼런스","t":"아는 만큼 보이는 청년 1인가구 정책","d":"2022"},
+{"id":"-NdanFW5EK0","k":"v","c":"arch","s":"1인가구 콘퍼런스","t":"대한자취외국인들과함께 둘러보는 K-자취!","d":"2022"},
+{"id":"G5NoY5ZBzn0","k":"v","c":"arch","s":"1인가구 콘퍼런스","t":"청년 여성 1인 가구로서 임시적 삶과 주거 불안정","d":"2022"},
+{"id":"mOL8NvhSuAc","k":"v","c":"arch","s":"1인가구 콘퍼런스","t":"씨네토크, 영화로 살펴보는 ‘혼자 사는 사람들’","d":"2022"},
+{"id":"G-k77-adZEQ","k":"v","c":"arch","s":"1인가구 콘퍼런스","t":"MZ세대에게 필요한 집이란?","d":"2022"},
+{"id":"UsB5f6DCizM","k":"v","c":"arch","s":"Tea키타카","t":"돈이 많으면 더 행복할까?","d":"2022"},
+{"id":"jj2jIDnyvQI","k":"v","c":"arch","s":"1인가구 콘퍼런스","t":"당신의 첫 독립이 OO할 수 있도록","d":"2022"},
+{"id":"mJ-eGQytvko","k":"v","c":"arch","s":"Tea키타카","t":"내가 꿈꾸던 자취 생활과 현실의 갭차이는!?","d":"2022"},
+{"id":"onM9yEqRyos","k":"v","c":"arch","s":"노답썰","t":"MZ세대가 행복을 추구하는 2가지 방법! 짠테크족 VS 욜로족","d":"2022"},
+{"id":"RbMLb1NkP5M","k":"v","c":"arch","s":"1인가구 콘퍼런스","t":"1인가구의 고민과 행복, '1인가구 콘퍼런스'와 함께 이야기 해보세요 / 딥플러그 김남순 대표 인터뷰 (90초)","d":"2022"},
+{"id":"cE6_Ze-L4co","k":"v","c":"arch","s":"1인가구 콘퍼런스","t":"1인가구의 고민과 행복, '1인가구 콘퍼런스'와 함께 이야기 해보세요 / 딥플러그 김남순 대표 인터뷰","d":"2022"},
+{"id":"_9KUh7ZfBB0","k":"v","c":"arch","s":"노답썰","t":"30대 남성이 생각하는 결혼에 대한 가치관? 결혼 VS 비혼","d":"2022"},
+{"id":"QXz2r5i2Vo0","k":"v","c":"arch","s":"1인가구 콘퍼런스","t":"한 걸음 더, DeePlug(딥플러그)","d":"2022"}
+];
+(function(){
+  var TOP = [['ksa','협회 소개·캠페인'],['sem','1인가구 세미나'],['pol','정책·포럼'],['life','생활 공감 쇼츠'],['arch','지난 영상(2022)'],['all','전체']];
+  var KIND = [['all','전체'],['v','영상'],['s','쇼츠']];
+  var st = {c:'ksa', k:'all'};
+  var list = document.getElementById('vbList'); if (!list) return;
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m];}); }
+  function thumb(v){
+    if (v.f) return v.f + '.jpg';
+    return 'https://i.ytimg.com/vi/' + v.id + (v.k==='s' ? '/oar2.jpg' : '/mqdefault.jpg');
+  }
+  function okC(v){ return st.c==='all' || v.c===st.c; }
+  function okK(v){ return st.k==='all' || v.k===st.k; }
+  function btns(box, arr, key){
+    box.innerHTML = arr.map(function(a){
+      var n = VB_DATA.filter(function(v){
+        return (a[0]==='all' || v[key]===a[0]) && (key==='c' ? okK(v) : okC(v));
+      }).length;
+      var on = st[key]===a[0];
+      return key==='c'
+        ? '<button type="button" role="tab" data-v="'+a[0]+'" aria-selected="'+on+'" tabindex="'+(on?0:-1)+'">'+a[1]+'<span class="vb-c">'+n+'</span></button>'
+        : '<button type="button" data-v="'+a[0]+'" aria-pressed="'+on+'">'+a[1]+'<span class="vb-c">'+n+'</span></button>';
+    }).join('');
+  }
+  function maxD(arr){ return arr.reduce(function(m,v){ return v.d>m ? v.d : m; }, ''); }
+  function ym(d){ return d.slice(0,7).replace('-','.'); }
+  function card(v){
+    var lab = esc(v.t + (v.u ? ' — ' + v.u : ''));
+    var img = '<img loading="lazy" alt="" src="'+thumb(v)+'"';
+    if (v.k==='s' && v.id) img += ' data-fb="https://i.ytimg.com/vi/'+v.id+'/hqdefault.jpg"';
+    img += '>';
+    return '<button type="button" class="vcard" data-i="'+v._i+'" aria-label="'+lab+(v.x ? ' (유튜브 새 창)' : ' 재생')+'">'
+      + '<span class="vt">'+img+'<span class="vp">▶</span>'+(v.x ? '<span class="vx">유튜브에서 보기 ↗</span>' : '')+'</span>'
+      + '<span class="vn">'+esc(v.t)+'</span>'+(v.u ? '<span class="vs">'+esc(v.u)+'</span>' : '')+'</button>';
+  }
+  function render(){
+    btns(document.getElementById('vbTopic'), TOP, 'c');
+    btns(document.getElementById('vbKind'), KIND, 'k');
+    var rows = VB_DATA.filter(function(v){ return okC(v) && okK(v); });
+    if (!rows.length) { list.innerHTML = '<p class="vb-empty">이 조건에 맞는 영상이 없습니다.</p>'; return; }
+    var groups = {}, order = [];
+    rows.forEach(function(v){ var g = v.s + '|' + v.k; if (!groups[g]) { groups[g] = []; order.push(g); } groups[g].push(v); });
+    order.sort(function(a,b){ return maxD(groups[b]).localeCompare(maxD(groups[a])); });
+    list.innerHTML = order.map(function(g){
+      var vs = groups[g].slice().sort(function(a,b){ return a.d.localeCompare(b.d) || a._i - b._i; });
+      var k = vs[0].k, d0 = vs[0].d, d1 = vs[vs.length-1].d, when;
+      if (d0.length <= 4) when = d0;
+      else if (ym(d0) === ym(d1)) when = ym(d0);
+      else when = ym(d0) + ' ~ ' + ym(d1);
+      return '<div class="vb-grp"><div class="vb-gh"><div><h3>'+esc(vs[0].s)+'</h3><p class="vb-gm">'+(k==='s' ? '쇼츠' : '영상')+' '+vs.length+'편 · '+when+'</p></div>'
+        + '<div class="vb-nav"><button type="button" data-d="-1" aria-label="이전 영상">‹</button><button type="button" data-d="1" aria-label="다음 영상">›</button></div></div>'
+        + '<div class="vb-strip '+k+'">' + vs.map(card).join('') + '</div></div>';
+    }).join('');
+    list.querySelectorAll('.vb-grp').forEach(function(g){
+      var sp = g.querySelector('.vb-strip'), nav = g.querySelector('.vb-nav');
+      function upd(){ nav.style.visibility = sp.scrollWidth > sp.clientWidth + 4 ? 'visible' : 'hidden'; }
+      nav.addEventListener('click', function(e){ var b = e.target.closest('button'); if (b) sp.scrollBy({left: +b.getAttribute('data-d') * sp.clientWidth * 0.8, behavior: 'smooth'}); });
+      upd(); window.addEventListener('resize', upd);
+    });
+    list.querySelectorAll('img[data-fb]').forEach(function(im){
+      im.addEventListener('error', function(){ var fb = im.getAttribute('data-fb'); if (fb) { im.removeAttribute('data-fb'); im.src = fb; } });
+    });
+  }
+  VB_DATA.forEach(function(v,i){ v._i = i; });
+  var tabs = document.getElementById('vbTopic');
+  tabs.addEventListener('click', function(e){ var b = e.target.closest('button'); if (b) { st.c = b.getAttribute('data-v'); render(); var t = tabs.querySelector('[aria-selected="true"]'); if (t) t.scrollIntoView({block:'nearest', inline:'nearest'}); } });
+  tabs.addEventListener('keydown', function(e){
+    if (e.key!=='ArrowRight' && e.key!=='ArrowLeft') return;
+    var i = TOP.findIndex(function(a){ return a[0]===st.c; }) + (e.key==='ArrowRight' ? 1 : -1);
+    i = (i + TOP.length) % TOP.length; st.c = TOP[i][0]; render();
+    var t = tabs.querySelector('[aria-selected="true"]'); if (t) t.focus(); e.preventDefault();
+  });
+  document.getElementById('vbKind').addEventListener('click', function(e){ var b = e.target.closest('button'); if (b) { st.k = b.getAttribute('data-v'); render(); } });
+  var box = document.getElementById('ksaVid'), vbox = document.getElementById('ksaVidBox'), fr = document.getElementById('ksaVidFrame'), cap = document.getElementById('ksaVidCap'), last = null;
+  list.addEventListener('click', function(e){
+    var b = e.target.closest('.vcard'); if (!b) return;
+    var v = VB_DATA[+b.getAttribute('data-i')];
+    if (v.x) { window.open('https://www.youtube.com/watch?v=' + v.id, '_blank', 'noopener'); return; }
+    last = b;
+    vbox.className = 'vm-box' + (v.k==='s' ? ' short' : '');
+    fr.innerHTML = v.f
+      ? '<video src="'+v.f+'.mp4" poster="'+v.f+'.jpg" controls autoplay playsinline preload="metadata"></video>'
+      : '<iframe src="https://www.youtube-nocookie.com/embed/'+v.id+'?autoplay=1&rel=0" title="'+esc(v.t)+'" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+    cap.textContent = v.s + ' · ' + v.t + (v.u ? ' — ' + v.u : '');
+    box.classList.add('on'); document.body.style.overflow = 'hidden';
+    box.querySelector('.vm-close').focus();
+  });
+  window.ksaVidClose = function(){ box.classList.remove('on'); fr.innerHTML = ''; document.body.style.overflow = ''; if (last && last.focus) last.focus(); };
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && box.classList.contains('on')) ksaVidClose(); });
+  render();
+})();
+</script>
 <script>
 /* 뉴스·보도 목록 정리: 최근 N개만 보이고 나머지는 월별로 접는다. 새 줄을 목록 맨 위에 추가하기만 하면 자동 정리된다(2026-10-19).
    data-fold="0"이면 펼친 줄 없이 전부 월별로 묶는다. data-open이 있으면 가장 최근 달 묶음을 펼쳐 둔다(2026-11-03, 뉴스레터 목록).
