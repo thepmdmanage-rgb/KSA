@@ -726,6 +726,9 @@ p, li, dd, dt, td, th, blockquote, .ss, .ni-title, .nr-title, .plt, .notice-box,
 .vcard .vx { position: absolute; right: 8px; bottom: 8px; background: rgba(10,16,30,.75); color: #fff; font-size: 11px; padding: 3px 7px; border-radius: 4px; }
 .vcard .vn { display: block; margin-top: 8px; font-size: 14px; font-weight: 700; line-height: 1.45; word-break: keep-all; }
 .vcard .vs { display: block; font-size: 13px; color: var(--muted); line-height: 1.45; margin-top: 2px; word-break: keep-all; }
+/* 11-27 사무국장: 제목+부제 합쳐 2줄 — 부제가 있으면 제목·부제 각 1줄(넘치면 …), 부제가 없으면 제목 2줄까지. 전체 문구는 마우스를 올리면 보임 */
+.vcard .vn, .vcard .vs { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; word-break: break-all; }
+.vcard .vn:has(+ .vs), .vcard .vs { -webkit-line-clamp: 1; }
 .vb-empty { padding: 40px 0; color: var(--muted); text-align: center; }
 #ksaVid .vm-box.short { width: min(400px, 100%, calc((100dvh - 150px) * 9 / 16)); }
 #ksaVid .vm-box.short .vm-frame { aspect-ratio: 9 / 16; }
@@ -3365,7 +3368,7 @@ var VB_DATA = [
     var img = '<img loading="lazy" alt="" src="'+thumb(v)+'"';
     if (v.k==='s' && v.id) img += ' data-fb="https://i.ytimg.com/vi/'+v.id+'/hqdefault.jpg"';
     img += '>';
-    return '<button type="button" class="vcard" data-i="'+v._i+'" aria-label="'+lab+(v.x ? ' (유튜브 새 창)' : ' 재생')+'">'
+    return '<button type="button" class="vcard" data-i="'+v._i+'" title="'+lab+'" aria-label="'+lab+(v.x ? ' (유튜브 새 창)' : ' 재생')+'">'
       + '<span class="vt">'+img+'<span class="vp">▶</span>'+(v.x ? '<span class="vx">유튜브에서 보기 ↗</span>' : '')+'</span>'
       + '<span class="vn">'+esc(v.t)+'</span>'+(v.u ? '<span class="vs">'+esc(v.u)+'</span>' : '')+'</button>';
   }
